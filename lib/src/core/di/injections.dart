@@ -34,6 +34,9 @@ import 'package:designerwardrobe/src/features/setting/presentation/views/widgets
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:designerwardrobe/src/features/authentication/domain/repositories/auth_repository.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/cubit/auth_cubit.dart';
+import 'package:designerwardrobe/src/features/autumn_collection/domain/repositories/autumn_collection_repository.dart';
+import 'package:designerwardrobe/src/features/autumn_collection/data/repositories/autumn_collection_repository_impl.dart';
+import 'package:designerwardrobe/src/features/autumn_collection/presentation/cubit/autumn_collection_cubit.dart';
 
 part 'banner_di.dart';
 part 'movie_di.dart';
@@ -95,7 +98,13 @@ Future<void> initDependencies() async {
     ..registerFactory<ThemeCubit>(
       () => ThemeCubit(),
     )
-    ..registerSingleton<HomeRepository>(HomeRepositoryImpl());
+    ..registerSingleton<HomeRepository>(HomeRepositoryImpl())
+    ..registerSingleton<AutumnCollectionRepository>(
+      AutumnCollectionRepositoryImpl(homeRepository: di<HomeRepository>()),
+    )
+    ..registerFactory<AutumnCollectionCubit>(
+      () => AutumnCollectionCubit(autumnCollectionRepository: di<AutumnCollectionRepository>()),
+    );
 
   injectHomeDependencies(di);
   injectPaymentDependencies(di);
