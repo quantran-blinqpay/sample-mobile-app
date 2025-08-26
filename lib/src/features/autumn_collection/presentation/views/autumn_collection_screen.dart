@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:designerwardrobe/src/components/appbar/custom_app_bar.dart';
 import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
+import 'package:designerwardrobe/src/core/di/injections.dart';
 import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
 import 'package:designerwardrobe/src/features/autumn_collection/presentation/cubit/autumn_collection_cubit.dart';
 import 'package:designerwardrobe/src/features/autumn_collection/presentation/views/widgets/autumn_collection_product_grid.dart';
@@ -11,8 +12,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 @RoutePage(name: 'AutumnCollectionScreenRoute')
-class AutumnCollectionScreen extends StatefulWidget {
+class AutumnCollectionScreen extends StatefulWidget implements AutoRouteWrapper {
   const AutumnCollectionScreen({super.key});
+
+  @override
+  Widget wrappedRoute(BuildContext context) {
+    return BlocProvider<AutumnCollectionCubit>(
+      create: (context) => di<AutumnCollectionCubit>(),
+      child: this,
+    );
+  }
 
   @override
   State<AutumnCollectionScreen> createState() => _AutumnCollectionScreenState();

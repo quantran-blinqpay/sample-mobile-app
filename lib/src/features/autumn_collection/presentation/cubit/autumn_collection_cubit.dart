@@ -56,7 +56,10 @@ class AutumnCollectionCubit extends Cubit<AutumnCollectionState> {
       final nextItems = await _autumnCollectionRepository.getNextItems();
       
       if (nextItems.isNotEmpty) {
-        final updatedItems = [...(state.recommendedItems ?? []), ...nextItems];
+        final List<ProductTile> updatedItems = [
+          ...(state.recommendedItems ?? <ProductTile>[]),
+          ...nextItems
+        ];
         emit(state.copyWith(
           fetchNextItemsStatus: ProgressStatus.success,
           recommendedItems: updatedItems,
@@ -78,7 +81,7 @@ class AutumnCollectionCubit extends Cubit<AutumnCollectionState> {
 
   Future<void> refreshItems() async {
     emit(state.copyWith(
-      recommendedItems: null,
+      recommendedItems: <ProductTile>[],
       canLoadMoreItems: true,
     ));
     await loadRecommendedItems();
