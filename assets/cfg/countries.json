@@ -1,0 +1,73 @@
+[
+  {
+    "idx": 1,
+    "country_name": "New Zealand",
+    "phone_code": "+64",
+    "flag": "\uD83C\uDDF3\uD83C\uDDFF",
+    "closest_towns": [
+      {
+        "group_name": "Northland",
+        "towns": [
+          "Northland - Dargaville",
+          "Northland - Kaikohe",
+          "Northland - Kaitaia",
+          "Northland - Kawakawa",
+          "Northland - Kerikeri",
+          "Northland - Mangawhai",
+          "Northland - Maungaturoto",
+          "Northland - Paihia",
+          "Northland - Whangarei"
+        ]
+      },
+      {
+        "group_name": "Auckland",
+        "towns": [
+          "Auckland - Albany",
+          "Auckland - Auckland City",
+          "Auckland - Botany Downs",
+          "Auckland - Clevedon",
+          "Auckland - Franklin",
+          "Auckland - Great Barrier Island",
+          "Auckland - Helensville",
+          "Auckland - Henderson",
+          "Auckland - Hibiscus Coast",
+          "Auckland - Kumeu",
+          "Auckland - Mangere",
+          "Auckland - Manukau",
+          "Auckland - New Lynn",
+          "Auckland - North Shore",
+          "Auckland - Onehunga",
+          "Auckland - Papakura",
+          "Auckland - Pukekohe",
+          "Auckland - Remuera",
+          "Auckland - Waiheke Island",
+          "Auckland - Waitakere",
+          "Auckland - Waiuku",
+          "Auckland - Warkworth",
+          "Auckland - Wellsford"
+        ]
+      }
+    ]
+  },
+  {
+    "idx": 2,
+    "country_name": "Australia",
+    "phone_code": "+61",
+    "flag": "\uD83C\uDDE6\uD83C\uDDFA",
+    "closest_towns": [
+      {
+        "group_name": "",
+        "towns": [
+          "New South Wales (NSW)",
+          "Queensland (QLD)",
+          "Northern Territory (NT)",
+          "Western Australia (WA)",
+          "South Australia (SA)",
+          "Victoria (VIC)",
+          "Autralia Capital Territory (ACT)",
+          "Tasmania (TAS)"
+        ]
+      }
+    ]
+  }
+]

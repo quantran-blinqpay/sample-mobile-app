@@ -1,0 +1,36 @@
+const String splashScreenName = 'SplashScreenRoute';
+const String homeScreenName = 'HomeScreenRoute';
+const String filterWrapperScreenName = 'FilterWrapperScreenRoute';
+const String filterScreenName = 'FilterRoute';
+const String filterSortScreenName = 'FilterSortRoute';
+const String detailFilterSortScreenName = 'DetailFilterSortRoute';
+const String filterBrandScreenName = 'filterBrandRoute';
+const String yourFilterSizeScreenName = 'YourFilterSizeRoute';
+const String homeWrapperScreenName = 'homeWrapperScreenRoute';
+const String detailScreenName = 'DetailScreenRoute';
+const String registerScreenName = 'RegisterScreenRoute';
+const String forgotPasswordScreenName = 'ForgotPasswordScreenRoute';
+const String profileScreenName = 'ProfileScreenRoute';
+const String draftsScreenName = 'DraftsScreenRoute';
+const String signInScreenRoute = 'SignInScreenRoute';
+const String changePasswordScreenName = 'ChangePasswordScreenRoute';
+const String settingScreenName = 'SettingScreenRoute';
+const String itemDetailWrapperScreenName = 'ItemDetailWrapperScreenRoute';
+const String itemDetailScreenName = 'ItemDetailScreenRoute';
+const String previewImageScreenName = 'PreviewImageScreenRoute';
+const String walletScreenName = 'WalletScreenRoute';
+const String sellerScreenName = 'SellerScreenRoute';
+const String createListingWrapperScreenName = 'CreateListingWrapperScreenRoute';
+const String createListingScreenName = 'CreateListingScreenRoute';
+const String selectDepartmentScreenName = 'SelectDepartmentScreenRoute';
+const String selectCategoryScreenName = 'SelectCategoryScreenRoute';
+const String selectSubCategoryScreenName = 'SelectSubCategoryScreenRoute';
+const String selectSecondSubCategoryScreenName =
+    'SelectSecondSubCategoryScreenRoute';
+const String selectBrandsScreenName = 'SelectBrandsScreenRoute';
+const String selectSizesScreenName = 'SelectSizesScreenRoute';
+const String selectColoursScreenName = 'SelectColoursScreenRoute';
+const String selectConditionScreenName = 'SelectConditionScreenRoute';
+
+const String paymentWrapperScreenName = 'PaymentWrapperScreenRoute';
+const String paymentWebViewScreenName = 'PaymentWebViewScreenRoute';

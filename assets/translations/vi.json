@@ -1,0 +1,76 @@
+{
+    "home": {
+        "title": "Vinh Cine",
+        "tab": {
+            "comming_soon": "Sắp Chiếu",
+            "now": "Đang Chiếu",
+            "special": "Đặc Biệt"
+        },
+        "button": {
+            "booking": "Đặt Vé"
+        }
+    },
+    "setting": {
+        "title": "Cài đặt",
+        "language": "Ngôn ngữ",
+        "theme": "Giao diện",
+        "light": "Sáng",
+        "dark": "Tối"
+    },
+    "profile": {
+        "member": "Thành viên",
+        "total_pay": "Tổng chi tiêu",
+        "point": "Điểm tích luỹ",
+        "watched_film_number": "Số phim đã xem",
+        "update_info": "Thay đổi thông tin tài khoản",
+        "change_password": "Thay đổi mật khẩu",
+        "transaction_history": "Lịch sử giao dịch",
+        "logout": "Đăng xuất"
+    },
+    "sign_in": {
+        "log_in": "Log In",
+        "remember_me": "Remember me",
+        "forgot_password": "Forgot password",
+        "or_sign_in_with": "or sign in with:",
+        "dont_have_an_account_yet": "Don't have an account yet?",
+        "sign_up": "Sign up",
+        "google": "Google",
+        "facebook": "Facebook",
+        "apple": "Apple",
+        "password": "Password",
+        "email": "Email"
+    },
+    "filter": {
+        "search_for_anything": "Search for anything",
+        "no_result_found":"No results found",
+        "please_try_broader":"Please try a broader search term or clear any filter.",
+        "sale":"SALE"
+    },
+    "filter_sort": {
+        "filter_sort": "Filter & Sort",
+        "show_results": "Show results",
+        "clear_all": "Clear all",
+        "clear": "Clear",
+        "sort_by": "Sort by",
+        "category": "Category",
+        "brand": "Brand",
+        "size": "Size",
+        "colour": "Colour",
+        "price": "Price",
+        "discount": "Discount",
+        "condition": "Condition",
+        "item_location": "Item Location",
+        "price_from": "Price from",
+        "to": "To",
+        "search_for_brands": "Search for brands",
+        "turn_on_my_size": "Turn on ‘My Size’",
+        "your_sizes": "YOUR SIZES",
+        "edit_my_size": "Edit My Size",
+        "always_filter_by_my_size": "Always filter by ‘My Size’",
+        "apply": "Apply",
+        "save_sizes": "Save Sizes",
+        "results": "results",
+        "top_seller": "Top Seller",
+        "off": "off"
+    }
+}
