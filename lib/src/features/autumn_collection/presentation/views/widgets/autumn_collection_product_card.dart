@@ -7,8 +7,8 @@ import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class EnhancedProductCard extends StatelessWidget {
-  const EnhancedProductCard({
+class AutumnCollectionProductCard extends StatelessWidget {
+  const AutumnCollectionProductCard({
     required this.id,
     required this.imageUrl,
     required this.brand,
@@ -47,7 +47,7 @@ class EnhancedProductCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 4,
               offset: const Offset(0, 2),
             ),
@@ -92,27 +92,26 @@ class EnhancedProductCard extends StatelessWidget {
                         ),
                       ),
                     ),
-                  // Top Seller tag (if many watchers)
-                  if ((numberOfWatchers ?? 0) > 10)
-                    Positioned(
-                      top: isSale ? 28 : 8,
-                      left: 8,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
-                        decoration: BoxDecoration(
-                          color: appColors.black,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
-                        child: Text(
-                          'TOP SELLER',
-                          style: AppStyles.of(context).copyWith(
-                            fontSize: 8,
-                            fontWeight: FontWeight.w700,
-                            color: appColors.white,
-                          ),
+                  // Autumn Collection tag
+                  Positioned(
+                    top: isSale ? 28 : 8,
+                    left: 8,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: Colors.orange.shade700,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Text(
+                        'AUTUMN',
+                        style: AppStyles.of(context).copyWith(
+                          fontSize: 8,
+                          fontWeight: FontWeight.w700,
+                          color: appColors.white,
                         ),
                       ),
                     ),
+                  ),
                   // Wishlist icon
                   Positioned(
                     bottom: 8,
@@ -124,7 +123,7 @@ class EnhancedProductCard extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.all(4),
                         decoration: BoxDecoration(
-                          color: appColors.white.withOpacity(0.9),
+                          color: appColors.white.withValues(alpha: 0.9),
                           shape: BoxShape.circle,
                         ),
                         child: SvgPicture.asset(

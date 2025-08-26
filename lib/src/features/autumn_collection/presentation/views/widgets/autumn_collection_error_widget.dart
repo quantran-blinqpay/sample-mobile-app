@@ -1,8 +1,8 @@
 import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
 import 'package:flutter/material.dart';
 
-class PaginationErrorWidget extends StatelessWidget {
-  const PaginationErrorWidget({
+class AutumnCollectionErrorWidget extends StatelessWidget {
+  const AutumnCollectionErrorWidget({
     required this.onRetry,
     super.key,
   });
@@ -22,7 +22,7 @@ class PaginationErrorWidget extends StatelessWidget {
             Icon(
               Icons.error_outline,
               size: 80,
-              color: appColors.brightRed,
+              color: Colors.orange.shade600,
             ),
             const SizedBox(height: 24),
             Text(
@@ -37,7 +37,7 @@ class PaginationErrorWidget extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              'We couldn\'t load the recommended products.\nPlease check your connection and try again.',
+              'We couldn\'t load the autumn collection.\nPlease check your connection and try again.',
               style: AppStyles.of(context).copyWith(
                 fontSize: 14,
                 color: appColors.silverSand,
@@ -49,7 +49,7 @@ class PaginationErrorWidget extends StatelessWidget {
             ElevatedButton(
               onPressed: onRetry,
               style: ElevatedButton.styleFrom(
-                backgroundColor: appColors.black,
+                backgroundColor: Colors.orange.shade700,
                 foregroundColor: appColors.white,
                 padding: const EdgeInsets.symmetric(
                   horizontal: 32,

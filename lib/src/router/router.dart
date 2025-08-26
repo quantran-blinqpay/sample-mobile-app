@@ -33,7 +33,7 @@ import 'package:designerwardrobe/src/features/payment/presentation/payment_wrapp
 import 'package:designerwardrobe/src/features/profile/presentation/views/seller_screen.dart';
 import 'package:designerwardrobe/src/features/splash/splash_screen.dart';
 import 'package:designerwardrobe/src/features/hello_world/presentation/views/hello_world_screen.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/pagination_screen.dart';
+import 'package:designerwardrobe/src/features/autumn_collection/presentation/views/autumn_collection_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:designerwardrobe/src/core/di/injections.dart';

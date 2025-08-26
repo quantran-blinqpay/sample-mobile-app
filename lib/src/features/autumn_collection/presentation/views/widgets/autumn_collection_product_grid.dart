@@ -1,10 +1,10 @@
 import 'package:designerwardrobe/src/features/home/data/remote/dtos/product_tile.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/pagination/widgets/enhanced_product_card.dart';
+import 'package:designerwardrobe/src/features/autumn_collection/presentation/views/widgets/autumn_collection_product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart' as refresh;
 
-class PaginationProductGrid extends StatefulWidget {
-  const PaginationProductGrid({
+class AutumnCollectionProductGrid extends StatefulWidget {
+  const AutumnCollectionProductGrid({
     required this.products,
     required this.canLoadMore,
     required this.isLoadingMore,
@@ -20,10 +20,10 @@ class PaginationProductGrid extends StatefulWidget {
   final Future<void> Function() onRefresh;
 
   @override
-  State<PaginationProductGrid> createState() => _PaginationProductGridState();
+  State<AutumnCollectionProductGrid> createState() => _AutumnCollectionProductGridState();
 }
 
-class _PaginationProductGridState extends State<PaginationProductGrid> {
+class _AutumnCollectionProductGridState extends State<AutumnCollectionProductGrid> {
   final refresh.RefreshController _refreshController = refresh.RefreshController();
 
   @override
@@ -70,7 +70,7 @@ class _PaginationProductGridState extends State<PaginationProductGrid> {
         itemCount: widget.products.length,
         itemBuilder: (context, index) {
           final product = widget.products[index];
-          return EnhancedProductCard(
+          return AutumnCollectionProductCard(
             id: int.tryParse(product.id ?? '0'),
             imageUrl: product.values?.imageUrl,
             brand: product.values?.brand,
