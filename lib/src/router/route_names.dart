@@ -34,3 +34,4 @@ const String selectConditionScreenName = 'SelectConditionScreenRoute';
 
 const String paymentWrapperScreenName = 'PaymentWrapperScreenRoute';
 const String paymentWebViewScreenName = 'PaymentWebViewScreenRoute';
+const String helloWorldScreenName = 'HelloWorldScreenRoute';
