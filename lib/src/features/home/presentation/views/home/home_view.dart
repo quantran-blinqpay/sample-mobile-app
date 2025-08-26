@@ -120,7 +120,7 @@ class HomeView extends StatelessWidget {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                context.router.push(HelloWorldScreenRoute());
+                                context.router.push(PaginationScreenRoute());
                               },
                               child: Text(
                                 "Recommended for you",
