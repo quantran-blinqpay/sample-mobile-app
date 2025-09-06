@@ -9,6 +9,10 @@ final _authRoutes = [
     transitionsBuilder: TransitionsBuilders.slideBottom,
     duration: Duration(milliseconds: 300),
   ),
+  AutoRoute(path: 'onboarding_one', page: OnboardingOneScreenRoute.page),
+  AutoRoute(path: 'account_type', page: AccountTypeScreenRoute.page),
+  AutoRoute(path: 'create_personal_account', page: CreatePersonalAccountScreenRoute.page),
+  AutoRoute(path: 'create_personal_account', page: BasicInformationScreenRoute.page),
 ];
 
 @RoutePage(name: 'AuthWrapperPageRoute')

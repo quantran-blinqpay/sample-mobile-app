@@ -11,6 +11,9 @@
 class FontFamily {
   FontFamily._();
 
+  /// Font family: CreatoDisplay
+  static const String creatoDisplay = 'CreatoDisplay';
+
   /// Font family: FeatureDeckCondensed
   static const String featureDeckCondensed = 'FeatureDeckCondensed';
 
