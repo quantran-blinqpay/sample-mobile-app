@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:designerwardrobe/src/core/constants/filter_class.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/account_type.dart';
+import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/account_verification.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/basic_information.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/create_personal_account_screen.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/onboarding_one.dart';

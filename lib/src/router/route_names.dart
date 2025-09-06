@@ -39,3 +39,4 @@ const String onboardingOneRoute = 'OnboardingOneScreenRoute';
 const String accountTypeRoute = 'AccountTypeScreenRoute';
 const String createPersonalAccountRoute = 'CreatePersonalAccountScreenRoute';
 const String basicInformationRoute = 'BasicInformationScreenRoute';
+const String accountVerificationRoute = 'AccountVerificationScreenRoute';

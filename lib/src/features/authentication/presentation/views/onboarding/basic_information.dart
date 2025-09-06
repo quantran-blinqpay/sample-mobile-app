@@ -1,5 +1,7 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage(name: basicInformationRoute)
@@ -169,7 +171,9 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
                 width: double.infinity,
                 height: 52,
                 child: ElevatedButton(
-                  onPressed: null, // Disabled until form valid
+                  onPressed: (){
+                    context.router.push(AccountVerificationScreenRoute());
+                  }, // Disabled until form valid
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFF4F4F4),
                     shape: RoundedRectangleBorder(

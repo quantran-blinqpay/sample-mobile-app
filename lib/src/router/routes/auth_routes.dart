@@ -13,6 +13,8 @@ final _authRoutes = [
   AutoRoute(path: 'account_type', page: AccountTypeScreenRoute.page),
   AutoRoute(path: 'create_personal_account', page: CreatePersonalAccountScreenRoute.page),
   AutoRoute(path: 'create_personal_account', page: BasicInformationScreenRoute.page),
+  AutoRoute(path: 'account_verification_screen', page: AccountVerificationScreenRoute.page),
+
 ];
 
 @RoutePage(name: 'AuthWrapperPageRoute')
