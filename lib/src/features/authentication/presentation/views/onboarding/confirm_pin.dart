@@ -1,5 +1,7 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage(name: confirmPinRoute)
@@ -86,7 +88,6 @@ class _ConfirmPinScreenState extends State<ConfirmPinScreen> {
 
             // PIN input boxes
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(
                 4,
                     (index) => _buildPinBox(index),
@@ -99,11 +100,13 @@ class _ConfirmPinScreenState extends State<ConfirmPinScreen> {
               width: double.infinity,
               height: 52,
               child: ElevatedButton(
-                onPressed: _isPinComplete
+                onPressed: (){
+                  context.router.push(SecurityQuestionsScreenRoute());
+                }/*_isPinComplete
                     ? () {
                   // TODO: confirm PIN action
                 }
-                    : null,
+                    : null*/,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: _isPinComplete
                       ? const Color(0xFF0092FF)
@@ -132,34 +135,37 @@ class _ConfirmPinScreenState extends State<ConfirmPinScreen> {
   }
 
   Widget _buildPinBox(int index) {
-    return SizedBox(
-      width: 52,
-      height: 56,
-      child: TextField(
-        controller: _controllers[index],
-        maxLength: 1,
-        textAlign: TextAlign.center,
-        keyboardType: TextInputType.number,
-        decoration: InputDecoration(
-          counterText: "",
-          filled: true,
-          fillColor: Colors.white,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(
-              color: Color(0xFFE1E5EA),
-              width: 1,
+    return Padding(
+      padding: const EdgeInsets.only(right: 8.0),
+      child: SizedBox(
+        width: 52,
+        height: 56,
+        child: TextField(
+          controller: _controllers[index],
+          maxLength: 1,
+          textAlign: TextAlign.center,
+          keyboardType: TextInputType.number,
+          decoration: InputDecoration(
+            counterText: "",
+            filled: true,
+            fillColor: Colors.white,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Color(0xFFE1E5EA),
+                width: 1,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Color(0xFF0092FF),
+                width: 1.5,
+              ),
             ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(
-              color: Color(0xFF0092FF),
-              width: 1.5,
-            ),
-          ),
+          onChanged: (_) => setState(() {}),
         ),
-        onChanged: (_) => setState(() {}),
       ),
     );
   }

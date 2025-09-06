@@ -18,6 +18,8 @@ final _authRoutes = [
   AutoRoute(path: 'contact_information', page: ContactInformationScreenRoute.page),
   AutoRoute(path: 'security_and_pin', page: SecurityAndPinScreenRoute.page),
   AutoRoute(path: 'setup_pin', page: SetupPinScreenRoute.page),
+  AutoRoute(path: 'confirm_pin', page: ConfirmPinScreenRoute.page),
+  AutoRoute(path: 'security_questions', page: SecurityQuestionsScreenRoute.page),
 ];
 
 @RoutePage(name: 'AuthWrapperPageRoute')

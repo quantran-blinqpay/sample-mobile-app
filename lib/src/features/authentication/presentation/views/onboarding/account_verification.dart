@@ -103,11 +103,13 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
               width: double.infinity,
               height: 52,
               child: ElevatedButton(
-                onPressed: _isCodeComplete
+                onPressed: () {
+                  context.router.push(PersonalInformationScreenRoute());
+                }/*_isCodeComplete
                     ? () {
                       context.router.push(PersonalInformationScreenRoute());
                     }
-                    : null,
+                    : null*/,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: _isCodeComplete
                       ? const Color(0xFF0092FF)
