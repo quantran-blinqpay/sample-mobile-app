@@ -47,6 +47,9 @@ const String icQwidProfile = "$svgPath/ic_qwid_profile.svg";
 const String icQwidSecurity = "$svgPath/ic_qwid_security.svg";
 const String icQwidSearch = "$svgPath/ic_qwid_search.svg";
 const String icQwidError = "$svgPath/ic_qwid_error.svg";
+const String icQwidEyeOff = "$svgPath/ic_qwid_eye_off.svg";
+const String icQwidEyeOn = "$svgPath/ic_qwid_eye_on.svg";
+const String icQwidSuccess = "$svgPath/ic_qwid_success.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";

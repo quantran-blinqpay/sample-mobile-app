@@ -15,6 +15,12 @@ class BasicInformationScreen extends StatefulWidget {
   State<BasicInformationScreen> createState() => _BasicInformationScreenState();
 }
 
+enum TextFieldStatus {
+  notValidated,
+  valid,
+  invalid,
+}
+
 class _BasicInformationScreenState extends State<BasicInformationScreen> {
   final _formKey = GlobalKey<FormState>();
   final _countryController = TextEditingController();
@@ -22,6 +28,9 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
   String? _errorText;
+  TextFieldStatus _lengthStatus = TextFieldStatus.notValidated;
+  TextFieldStatus? _specialCharacterStatus = TextFieldStatus.notValidated;
+  String? _errorConfirmText;
 
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
@@ -37,17 +46,34 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
           onPressed: () => Navigator.pop(context),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 16.0),
+            padding: const EdgeInsets.only(right: 16.0),
             child: Center(
-              child: Text(
-                "Step 1 of 4",
-                style: TextStyle(
-                  fontFamily: "Creato Display",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text:
+                      'Step 1 ',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'of 4',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff92939E),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -126,7 +152,7 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
                       errorStyle: TextStyle(height: 0), // hide default error
                     ),
                     keyboardType: TextInputType.emailAddress,
-                    onChanged: (_) => _validate(),
+                    onChanged: (_) => _validateEmail(),
                   ),
 
                   // Custom error widget
@@ -158,16 +184,22 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
 
               // Password
               TextFormField(
+                onChanged: (_) {
+                  _validate8Character();
+                  _validateSpecialCharacter();
+                },
                 controller: _passwordController,
                 obscureText: _obscurePassword,
                 cursorColor: Color(0xff0092FF),
                 decoration: InputDecoration(
                   labelText: "Password",
                   suffixIcon: IconButton(
-                    icon: Icon(
+                    icon: SvgPicture.asset(
                       _obscurePassword
-                          ? Icons.visibility_off
-                          : Icons.visibility,
+                          ? icQwidEyeOff
+                          : icQwidEyeOn,
+                      width: 24,
+                      height: 24,
                       color: Color(0xFF92939E),
                     ),
                     onPressed: () {
@@ -185,7 +217,12 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
               const SizedBox(height: 8),
               Row(
                 children: [
-                  SvgPicture.asset(icQwidInformation, width: 14, height: 14, color: Color(0xFFAEAFC0)),
+                  SvgPicture.asset(
+                      _lengthStatus == TextFieldStatus.valid
+                          ? icQwidSuccess
+                          : _lengthStatus == TextFieldStatus.invalid
+                            ? icQwidError
+                            : icQwidInformation, width: 14, height: 14),
                   SizedBox(width: 4),
                   Text(
                     "Password must be at least 8 characters",
@@ -198,7 +235,12 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
               ),
               Row(
                 children: [
-                  SvgPicture.asset(icQwidInformation, width: 14, height: 14, color: Color(0xFFAEAFC0)),
+                  SvgPicture.asset(
+                      _specialCharacterStatus == TextFieldStatus.valid
+                          ? icQwidSuccess
+                          : _specialCharacterStatus == TextFieldStatus.invalid
+                            ? icQwidError
+                            : icQwidInformation, width: 14, height: 14),
                   SizedBox(width: 4),
                   Text(
                     "Password must contain a special character",
@@ -212,31 +254,61 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
               const SizedBox(height: 16),
 
               // Confirm Password
-              TextFormField(
-                controller: _confirmPasswordController,
-                obscureText: _obscureConfirmPassword,
-                cursorColor: Color(0xff0092FF),
-                decoration: InputDecoration(
-                  labelText: "Confirm Password",
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _obscureConfirmPassword
-                          ? Icons.visibility_off
-                          : Icons.visibility,
-                      color: Color(0xFF92939E),
+              Column(
+                children: [
+                  TextFormField(
+                    controller: _confirmPasswordController,
+                    obscureText: _obscureConfirmPassword,
+                    cursorColor: Color(0xff0092FF),
+                    decoration: InputDecoration(
+                      labelText: "Confirm Password",
+                      suffixIcon: IconButton(
+                        icon: SvgPicture.asset(
+                          _obscureConfirmPassword
+                              ? icQwidEyeOff
+                              : icQwidEyeOn,
+                          width: 24,
+                          height: 24,
+                          color: Color(0xFF92939E),
+                        ),
+                        onPressed: () {
+                          setState(() =>
+                          _obscureConfirmPassword = !_obscureConfirmPassword);
+                        },
+                      ),
+                      enabledBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                      ),
+                      focusedBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
+                      ),
                     ),
-                    onPressed: () {
-                      setState(() =>
-                      _obscureConfirmPassword = !_obscureConfirmPassword);
-                    },
+                    onChanged: (_) => _validateConfirmCharacter(),
                   ),
-                  enabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
-                  ),
-                  focusedBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
-                  ),
-                ),
+                  // Custom error widget
+                  if (_errorConfirmText != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 6),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                              icQwidError,
+                              width: 16,
+                              height: 16,
+                              color: Colors.red),
+                          const SizedBox(width: 4),
+                          Text(
+                            _errorConfirmText!,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              color: Colors.red,
+                              fontFamily: "Creato Display",
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                ],
               ),
               const Spacer(),
 
@@ -290,7 +362,7 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
     }
   }
 
-  void _validate() {
+  void _validateEmail() {
     final value = _emailController.text;
     if (value.isEmpty) {
       setState(() => _errorText = "Email is required");
@@ -300,6 +372,47 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
         setState(() => _errorText = "Invalid email address");
       } else {
         setState(() => _errorText = null);
+      }
+    }
+  }
+
+  void _validate8Character() {
+    final value = _passwordController.text;
+    if (value.isEmpty) {
+      setState(() => _lengthStatus = TextFieldStatus.notValidated);
+    } else {
+      if (value.length < 8) {
+        setState(() => _lengthStatus = TextFieldStatus.invalid);
+      } else {
+        setState(() => _lengthStatus = TextFieldStatus.valid);
+      }
+    }
+  }
+
+  void _validateSpecialCharacter() {
+    final value = _passwordController.text;
+    if (value.isEmpty) {
+      setState(() => _specialCharacterStatus = TextFieldStatus.notValidated);
+    } else {
+      final hasSpecialChar = RegExp(r'[!@#$%^&*(),.?":{}|<>]');;
+      if (!hasSpecialChar.hasMatch(value)) {
+        setState(() => _specialCharacterStatus = TextFieldStatus.invalid);
+      } else {
+        setState(() => _specialCharacterStatus = TextFieldStatus.valid);
+      }
+    }
+  }
+
+  void _validateConfirmCharacter() {
+    final password = _confirmPasswordController.text;
+    final confirmPassword = _passwordController.text;
+    if (confirmPassword.isEmpty) {
+      setState(() => _errorConfirmText = "Password is required");
+    } else {
+      if (password != confirmPassword) {
+        setState(() => _errorConfirmText = "Password does not match");
+      } else {
+        setState(() => _errorConfirmText = null);
       }
     }
   }

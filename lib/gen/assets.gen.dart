@@ -268,6 +268,12 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_error.svg
   String get icQwidError => 'assets/svgs/ic_qwid_error.svg';
 
+  /// File path: assets/svgs/ic_qwid_eye_off.svg
+  String get icQwidEyeOff => 'assets/svgs/ic_qwid_eye_off.svg';
+
+  /// File path: assets/svgs/ic_qwid_eye_on.svg
+  String get icQwidEyeOn => 'assets/svgs/ic_qwid_eye_on.svg';
+
   /// File path: assets/svgs/ic_qwid_global.svg
   String get icQwidGlobal => 'assets/svgs/ic_qwid_global.svg';
 
@@ -285,6 +291,9 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/ic_qwid_security.svg
   String get icQwidSecurity => 'assets/svgs/ic_qwid_security.svg';
+
+  /// File path: assets/svgs/ic_qwid_success.svg
+  String get icQwidSuccess => 'assets/svgs/ic_qwid_success.svg';
 
   /// File path: assets/svgs/ic_radio.svg
   String get icRadio => 'assets/svgs/ic_radio.svg';
@@ -407,12 +416,15 @@ class $AssetsSvgsGen {
         icQwidArrowDown,
         icQwidBuilding,
         icQwidError,
+        icQwidEyeOff,
+        icQwidEyeOn,
         icQwidGlobal,
         icQwidIdentification,
         icQwidInformation,
         icQwidProfile,
         icQwidSearch,
         icQwidSecurity,
+        icQwidSuccess,
         icRadio,
         icRadioFillSelected,
         icRadioSelected,
