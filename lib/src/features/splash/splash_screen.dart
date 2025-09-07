@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen>
   void _onNavigated() {
     if (!mounted || _navigated) return;
     _navigated = true;
-    context.router.replace(OnboardingOneScreenRoute());
+    context.router.replace(OnboardingScreenRoute());
   }
 
   Future<void> _startAfterLoaded() async {

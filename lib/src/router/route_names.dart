@@ -35,7 +35,7 @@ const String selectConditionScreenName = 'SelectConditionScreenRoute';
 const String paymentWrapperScreenName = 'PaymentWrapperScreenRoute';
 const String paymentWebViewScreenName = 'PaymentWebViewScreenRoute';
 
-const String onboardingOneRoute = 'OnboardingOneScreenRoute';
+const String onboardingRoute = 'OnboardingScreenRoute';
 const String accountTypeRoute = 'AccountTypeScreenRoute';
 const String createPersonalAccountRoute = 'CreatePersonalAccountScreenRoute';
 const String basicInformationRoute = 'BasicInformationScreenRoute';
