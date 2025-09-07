@@ -45,6 +45,8 @@ const String icQwidIdentification = "$svgPath/ic_qwid_identification.svg";
 const String icQwidInformation = "$svgPath/ic_qwid_information.svg";
 const String icQwidProfile = "$svgPath/ic_qwid_profile.svg";
 const String icQwidSecurity = "$svgPath/ic_qwid_security.svg";
+const String icQwidSearch = "$svgPath/ic_qwid_search.svg";
+const String icQwidError = "$svgPath/ic_qwid_error.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";

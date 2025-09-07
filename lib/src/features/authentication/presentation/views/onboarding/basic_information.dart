@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
+import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/select_country_bottom_sheet.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  String? _errorText;
 
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
@@ -86,6 +88,9 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
                 controller: _countryController,
                 readOnly: true,
                 cursorColor: Color(0xff0092FF),
+                onTap: (){
+                  _openCountrySelector(context);
+                },
                 decoration: InputDecoration(
                   labelText: "Country of Residence",
                   suffixIcon: Padding(
@@ -103,19 +108,51 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
               const SizedBox(height: 16),
 
               // Email
-              TextFormField(
-                controller: _emailController,
-                cursorColor: Color(0xff0092FF),
-                decoration: const InputDecoration(
-                  labelText: "Email Address",
-                  enabledBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextFormField(
+                    controller: _emailController,
+                    cursorColor: const Color(0xff0092FF),
+                    decoration: const InputDecoration(
+                      labelText: "Email Address",
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
+                      ),
+                      errorStyle: TextStyle(height: 0), // hide default error
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                    onChanged: (_) => _validate(),
                   ),
-                  focusedBorder: const UnderlineInputBorder(
-                    borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
-                  ),
-                ),
-                keyboardType: TextInputType.emailAddress,
+
+                  // Custom error widget
+                  if (_errorText != null)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 6),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            icQwidError,
+                            width: 16,
+                            height: 16,
+                            color: Colors.red),
+                          const SizedBox(width: 4),
+                          Text(
+                            _errorText!,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              color: Colors.red,
+                              fontFamily: "Creato Display",
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                ],
               ),
               const SizedBox(height: 16),
 
@@ -238,5 +275,32 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
         ),
       ),
     );
+  }
+
+  void _openCountrySelector(BuildContext context) async {
+    final selected = await showModalBottomSheet<String>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => const SelectCountryBottomSheet(),
+    );
+
+    if (selected != null) {
+      print("Selected country: $selected");
+    }
+  }
+
+  void _validate() {
+    final value = _emailController.text;
+    if (value.isEmpty) {
+      setState(() => _errorText = "Email is required");
+    } else {
+      final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+      if (!emailRegex.hasMatch(value)) {
+        setState(() => _errorText = "Invalid email address");
+      } else {
+        setState(() => _errorText = null);
+      }
+    }
   }
 }
