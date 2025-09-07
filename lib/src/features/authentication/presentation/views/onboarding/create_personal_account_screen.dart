@@ -1,8 +1,10 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 @RoutePage(name: createPersonalAccountRoute)
 class CreatePersonalAccountScreen extends StatelessWidget {
@@ -31,7 +33,7 @@ class CreatePersonalAccountScreen extends StatelessWidget {
               style: const TextStyle(
                 fontFamily: "Creato Display",
                 fontSize: 24,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w400,
                 color: Color(0xFF0A0A0C), // rgb(10,10,12)
               ),
             ),
@@ -51,25 +53,25 @@ class CreatePersonalAccountScreen extends StatelessWidget {
 
             // Steps
             _stepItem(
-              icon: Icons.public_outlined,
+              icon: icQwidGlobal,
               title: "Basic Information",
               subtitle:
               "We need your basic information like country of residence and email to create your account",
             ),
             _stepItem(
-              icon: Icons.person_outline,
+              icon: icQwidProfile,
               title: "Personal Information",
               subtitle:
               "We need your personal details like your full name and email address to set up your account",
             ),
             _stepItem(
-              icon: Icons.contact_mail_outlined,
+              icon: icQwidIdentification,
               title: "Contact Information",
               subtitle:
               "To complete your registration, please provide your phone number, address, city, state, and postal code.",
             ),
             _stepItem(
-              icon: Icons.shield_outlined,
+              icon: icQwidSecurity,
               title: "Security and PIN",
               subtitle:
               "Add a layer of security by setting up your password, transaction PIN, and biometrics",
@@ -78,26 +80,30 @@ class CreatePersonalAccountScreen extends StatelessWidget {
             const Spacer(),
 
             // Get Started button
-            SizedBox(
-              width: double.infinity,
-              height: 52,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF0092FF),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+            SafeArea(
+              child: SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0, // remove shadow
+                    shadowColor: Colors.transparent, // optional, ensures no shadow color
+                    backgroundColor: const Color(0xFF0092FF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                   ),
-                ),
-                onPressed: () {
-                  context.router.push(BasicInformationScreenRoute());
-                },
-                child: const Text(
-                  "Get Started",
-                  style: TextStyle(
-                    fontFamily: "Creato Display",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
+                  onPressed: () {
+                    context.router.push(BasicInformationScreenRoute());
+                  },
+                  child: const Text(
+                    "Get Started",
+                    style: TextStyle(
+                      fontFamily: "Creato Display",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -110,7 +116,7 @@ class CreatePersonalAccountScreen extends StatelessWidget {
   }
 
   Widget _stepItem({
-    required IconData icon,
+    required String icon,
     required String title,
     required String subtitle,
   }) {
@@ -119,7 +125,7 @@ class CreatePersonalAccountScreen extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, size: 24, color: Color(0xFF92939E)),
+          SvgPicture.asset(icon, width: 24, height: 24, color: Color(0xFF92939E)),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
@@ -130,7 +136,7 @@ class CreatePersonalAccountScreen extends StatelessWidget {
                   style: const TextStyle(
                     fontFamily: "Creato Display",
                     fontSize: 16,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w400,
                     color: Color(0xFF0A0A0C),
                   ),
                 ),

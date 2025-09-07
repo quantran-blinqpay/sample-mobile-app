@@ -66,6 +66,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 height: 48,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
+                    elevation: 0, // remove shadow
+                    shadowColor: Colors.transparent, // optional, ensures no shadow color
                     backgroundColor: const Color(0xFF0092FF), // primary blue
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50),
@@ -93,6 +95,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 height: 48,
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
+                    elevation: 0, // remove shadow
+                    shadowColor: Colors.transparent, // optional, ensures no shadow color
                     side: const BorderSide(
                       color: Color(0xFFE1E5EA),
                     ),

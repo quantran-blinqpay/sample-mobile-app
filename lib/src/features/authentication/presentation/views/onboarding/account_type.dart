@@ -1,8 +1,10 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 @RoutePage(name: accountTypeRoute)
 class AccountTypeScreen extends StatelessWidget {
@@ -52,7 +54,7 @@ class AccountTypeScreen extends StatelessWidget {
             // List
             _accountItem(
               context,
-              icon: Icons.person_outline,
+              icon: icQwidProfile,
               title: "Personal account",
               subtitle: "Send, spend, and receive money from around the world",
               onTap: () {
@@ -61,7 +63,7 @@ class AccountTypeScreen extends StatelessWidget {
             ),
             _accountItem(
               context,
-              icon: Icons.business_outlined,
+              icon: icQwidBuilding,
               title: "Business account",
               subtitle: "Do business or work as a freelancer internationally",
               onTap: () {
@@ -76,7 +78,7 @@ class AccountTypeScreen extends StatelessWidget {
 
   Widget _accountItem(
       BuildContext context, {
-        required IconData icon,
+        required String icon,
         required String title,
         required String subtitle,
         VoidCallback? onTap,
@@ -92,7 +94,7 @@ class AccountTypeScreen extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Icon(icon, size: 24, color: Color(0xFF92939E)),
+            SvgPicture.asset(icon, width: 24, height: 24, color: Color(0xFF92939E)),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -112,7 +114,7 @@ class AccountTypeScreen extends StatelessWidget {
                     subtitle,
                     style: const TextStyle(
                       fontFamily: "Creato Display",
-                      fontSize: 12,
+                      fontSize: 13,
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF92939E),
                     ),

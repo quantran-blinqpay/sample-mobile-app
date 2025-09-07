@@ -38,6 +38,13 @@ const String icRadioSelected = "$svgPath/ic_radio_selected.svg";
 const String icRadio = "$svgPath/ic_radio.svg";
 const String icEdge = "$svgPath/ic_edge.svg";
 const String icProtection = "$svgPath/ic_protection.svg";
+const String icQwidArrowDown = "$svgPath/ic_qwid_arrow_down.svg";
+const String icQwidBuilding = "$svgPath/ic_qwid_building.svg";
+const String icQwidGlobal = "$svgPath/ic_qwid_global.svg";
+const String icQwidIdentification = "$svgPath/ic_qwid_identification.svg";
+const String icQwidInformation = "$svgPath/ic_qwid_information.svg";
+const String icQwidProfile = "$svgPath/ic_qwid_profile.svg";
+const String icQwidSecurity = "$svgPath/ic_qwid_security.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";

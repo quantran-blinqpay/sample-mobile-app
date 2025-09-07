@@ -1,8 +1,10 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 @RoutePage(name: basicInformationRoute)
 class BasicInformationScreen extends StatefulWidget {
@@ -83,9 +85,19 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
               TextFormField(
                 controller: _countryController,
                 readOnly: true,
-                decoration: const InputDecoration(
+                cursorColor: Color(0xff0092FF),
+                decoration: InputDecoration(
                   labelText: "Country of Residence",
-                  suffixIcon: Icon(Icons.arrow_drop_down),
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: SvgPicture.asset(icQwidArrowDown, width: 24, height: 24, color: Color(0xFF92939E)),
+                  ),
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                  ),
+                  focusedBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
+                  ),
                 ),
               ),
               const SizedBox(height: 16),
@@ -93,7 +105,16 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
               // Email
               TextFormField(
                 controller: _emailController,
-                decoration: const InputDecoration(labelText: "Email Address"),
+                cursorColor: Color(0xff0092FF),
+                decoration: const InputDecoration(
+                  labelText: "Email Address",
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                  ),
+                  focusedBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
+                  ),
+                ),
                 keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16),
@@ -102,6 +123,7 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
               TextFormField(
                 controller: _passwordController,
                 obscureText: _obscurePassword,
+                cursorColor: Color(0xff0092FF),
                 decoration: InputDecoration(
                   labelText: "Password",
                   suffixIcon: IconButton(
@@ -109,10 +131,17 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
                       _obscurePassword
                           ? Icons.visibility_off
                           : Icons.visibility,
+                      color: Color(0xFF92939E),
                     ),
                     onPressed: () {
                       setState(() => _obscurePassword = !_obscurePassword);
                     },
+                  ),
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                  ),
+                  focusedBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
                   ),
                 ),
               ),
@@ -149,6 +178,7 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
               TextFormField(
                 controller: _confirmPasswordController,
                 obscureText: _obscureConfirmPassword,
+                cursorColor: Color(0xff0092FF),
                 decoration: InputDecoration(
                   labelText: "Confirm Password",
                   suffixIcon: IconButton(
@@ -156,37 +186,48 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
                       _obscureConfirmPassword
                           ? Icons.visibility_off
                           : Icons.visibility,
+                      color: Color(0xFF92939E),
                     ),
                     onPressed: () {
                       setState(() =>
                       _obscureConfirmPassword = !_obscureConfirmPassword);
                     },
                   ),
+                  enabledBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                  ),
+                  focusedBorder: const UnderlineInputBorder(
+                    borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
+                  ),
                 ),
               ),
               const Spacer(),
 
               // Continue button
-              SizedBox(
-                width: double.infinity,
-                height: 52,
-                child: ElevatedButton(
-                  onPressed: (){
-                    context.router.push(AccountVerificationScreenRoute());
-                  }, // Disabled until form valid
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFF4F4F4),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+              SafeArea(
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 52,
+                  child: ElevatedButton(
+                    onPressed: (){
+                      context.router.push(AccountVerificationScreenRoute());
+                    }, // Disabled until form valid
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0, // remove shadow
+                      shadowColor: Colors.transparent, // optional, ensures no shadow color
+                      backgroundColor: const Color(0xFFF4F4F4),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
                     ),
-                  ),
-                  child: const Text(
-                    "Continue",
-                    style: TextStyle(
-                      fontFamily: "Creato Display",
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Color(0xFFA3A3A3),
+                    child: const Text(
+                      "Continue",
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFFA3A3A3),
+                      ),
                     ),
                   ),
                 ),
