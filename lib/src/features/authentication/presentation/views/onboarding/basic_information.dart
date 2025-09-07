@@ -147,8 +147,8 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
               ),
               const SizedBox(height: 8),
               Row(
-                children: const [
-                  Icon(Icons.info_outline, size: 14, color: Color(0xFFAEAFC0)),
+                children: [
+                  SvgPicture.asset(icQwidInformation, width: 14, height: 14, color: Color(0xFFAEAFC0)),
                   SizedBox(width: 4),
                   Text(
                     "Password must be at least 8 characters",
@@ -160,8 +160,8 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
                 ],
               ),
               Row(
-                children: const [
-                  Icon(Icons.info_outline, size: 14, color: Color(0xFFAEAFC0)),
+                children: [
+                  SvgPicture.asset(icQwidInformation, width: 14, height: 14, color: Color(0xFFAEAFC0)),
                   SizedBox(width: 4),
                   Text(
                     "Password must contain a special character",

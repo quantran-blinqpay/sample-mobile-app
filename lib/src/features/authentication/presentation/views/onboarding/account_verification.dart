@@ -52,7 +52,7 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
               "We sent a verification code to dan***oji@blinqpay.io.\nPlease enter the code below.",
               style: const TextStyle(
                 fontFamily: "Arial",
-                fontSize: 14,
+                fontSize: 13,
                 fontWeight: FontWeight.w400,
                 color: Color(0xFF92939E),
               ),
