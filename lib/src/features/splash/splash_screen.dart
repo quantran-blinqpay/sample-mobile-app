@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
 import 'package:designerwardrobe/src/features/helper/cubit/helper_cubit.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
@@ -23,7 +24,10 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this);
+    // Wait 1 second before navigating
+    Future.delayed(const Duration(seconds: 1), () {
+      _onNavigated();
+    });
   }
 
   Future<void> _fetchingHelper() async {
@@ -33,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
   void _onNavigated() {
     if (!mounted || _navigated) return;
     _navigated = true;
-    context.router.replace(HomeWrapperScreenRoute());
+    context.router.replace(OnboardingOneScreenRoute());
   }
 
   Future<void> _startAfterLoaded(LottieComposition comp) async {
@@ -58,7 +62,12 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       backgroundColor: const Color(0xFFF2E9DC),
       body: Center(
-        child: Lottie.asset(
+        child: Image.asset(
+          qwidBg,
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.fill,
+        )/*Lottie.asset(
           'assets/animations/Splash_Screen.json',
           width: double.infinity,
           height: double.infinity,
@@ -69,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen>
             _started = true;
             _startAfterLoaded(composition);
           },
-        ),
+        )*/,
       ),
     );
   }

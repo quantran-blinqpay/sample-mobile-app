@@ -51,3 +51,4 @@ const String icPaymentAmex = "$pngPath/ic_payment_amex.png";
 const String icWindcave = "$pngPath/ic_windcave.png";
 const String icCheckbox = "$pngPath/ic_checkbox.png";
 const String icCheckboxSelected = "$pngPath/ic_checkbox_selected.png";
+const String qwidBg = "$pngPath/qwid_bg.png";

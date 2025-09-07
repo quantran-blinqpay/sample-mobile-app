@@ -134,6 +134,9 @@ class $AssetsPngsGen {
   AssetGenImage get icWindcave =>
       const AssetGenImage('assets/pngs/ic_windcave.png');
 
+  /// File path: assets/pngs/qwid_bg.png
+  AssetGenImage get qwidBg => const AssetGenImage('assets/pngs/qwid_bg.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         icCheckbox,
@@ -146,7 +149,8 @@ class $AssetsPngsGen {
         icPaymentZip,
         icPlaceholder,
         icPlaceholderLarge,
-        icWindcave
+        icWindcave,
+        qwidBg
       ];
 }
 
