@@ -34,17 +34,17 @@ android {
     productFlavors {
         create("dev") {
             dimension = "flavors"
-            resValue("string", "app_name", "DesignerWardrobe Dev")
+            resValue("string", "app_name", "Qwid Dev")
             applicationIdSuffix = ".dev"
         }
         create("staging") {
             dimension = "flavors"
-            resValue("string", "app_name", "DesignerWardrobe Staging")
+            resValue("string", "app_name", "Qwid Staging")
             applicationIdSuffix = ".staging"
         }
         create("prod") {
             dimension = "flavors"
-            resValue("string", "app_name", "DesignerWardrobe")
+            resValue("string", "app_name", "Qwid")
         }
     }
 

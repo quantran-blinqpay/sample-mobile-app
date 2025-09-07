@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     // Wait 1 second before navigating
-    Future.delayed(const Duration(seconds: 1), () {
+    _startAfterLoaded().then((value) {
       _onNavigated();
     });
   }
@@ -40,14 +40,10 @@ class _SplashScreenState extends State<SplashScreen>
     context.router.replace(OnboardingOneScreenRoute());
   }
 
-  Future<void> _startAfterLoaded(LottieComposition comp) async {
-    _controller.duration = comp.duration;
-
-    // kick off both AFTER lottie is loaded
-    final animFuture = _controller.forward(from: 0).orCancel;
+  Future<void> _startAfterLoaded() async {
     final apiFuture = _fetchingHelper();
 
-    await Future.wait([animFuture, apiFuture]);
+    await Future.wait([apiFuture]);
     _onNavigated();
   }
 
