@@ -29,17 +29,34 @@ class _SetupPinScreenState extends State<SetupPinScreen> {
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
           onPressed: () => Navigator.pop(context),
         ),
-        actions: const [
+        actions: [
           Padding(
             padding: EdgeInsets.only(right: 16.0),
             child: Center(
-              child: Text(
-                "Step 3 of 4",
-                style: TextStyle(
-                  fontFamily: "Creato Display",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text:
+                      'Step 3 ',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'of 4',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff92939E),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -95,33 +112,37 @@ class _SetupPinScreenState extends State<SetupPinScreen> {
             const Spacer(),
 
             // Next button
-            SizedBox(
-              width: double.infinity,
-              height: 52,
-              child: ElevatedButton(
-                onPressed: (){
-                  context.router.push(ConfirmPinScreenRoute());
-                }/*_isPinComplete
-                    ? () {
-                  // TODO: proceed to next step
-                }
-                    : null*/,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: _isPinComplete
-                      ? const Color(0xFF0092FF)
-                      : const Color(0xFFF4F4F4),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+            SafeArea(
+              child: SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: ElevatedButton(
+                  onPressed: (){
+                    context.router.popAndPush(ConfirmPinScreenRoute());
+                  }/*_isPinComplete
+                      ? () {
+                    // TODO: proceed to next step
+                  }
+                      : null*/,
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0, // remove shadow
+                    shadowColor: Colors.transparent, // optional, ensures no shadow color
+                    backgroundColor: _isPinComplete
+                        ? const Color(0xFF0092FF)
+                        : const Color(0xFFF4F4F4),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                   ),
-                ),
-                child: Text(
-                  "Next",
-                  style: TextStyle(
-                    fontFamily: "Creato Display",
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color:
-                    _isPinComplete ? Colors.white : const Color(0xFFA3A3A3),
+                  child: Text(
+                    "Next",
+                    style: TextStyle(
+                      fontFamily: "Creato Display",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color:
+                      _isPinComplete ? Colors.white : const Color(0xFFA3A3A3),
+                    ),
                   ),
                 ),
               ),

@@ -96,33 +96,37 @@ class _ConfirmPinScreenState extends State<ConfirmPinScreen> {
             const Spacer(),
 
             // Set PIN button
-            SizedBox(
-              width: double.infinity,
-              height: 52,
-              child: ElevatedButton(
-                onPressed: (){
-                  context.router.push(SecurityQuestionsScreenRoute());
-                }/*_isPinComplete
-                    ? () {
-                  // TODO: confirm PIN action
-                }
-                    : null*/,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: _isPinComplete
-                      ? const Color(0xFF0092FF)
-                      : const Color(0xFFF4F4F4),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+            SafeArea(
+              child: SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: ElevatedButton(
+                  onPressed: (){
+                    context.router.pop();
+                  }/*_isPinComplete
+                      ? () {
+                    // TODO: confirm PIN action
+                  }
+                      : null*/,
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0, // remove shadow
+                    shadowColor: Colors.transparent, // optional, ensures no shadow color
+                    backgroundColor: _isPinComplete
+                        ? const Color(0xFF0092FF)
+                        : const Color(0xFFF4F4F4),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                   ),
-                ),
-                child: Text(
-                  "Set PIN",
-                  style: TextStyle(
-                    fontFamily: "Creato Display",
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color:
-                    _isPinComplete ? Colors.white : const Color(0xFFA3A3A3),
+                  child: Text(
+                    "Set PIN",
+                    style: TextStyle(
+                      fontFamily: "Creato Display",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color:
+                      _isPinComplete ? Colors.white : const Color(0xFFA3A3A3),
+                    ),
                   ),
                 ),
               ),

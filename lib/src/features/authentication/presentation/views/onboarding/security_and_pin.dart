@@ -1,8 +1,10 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 @RoutePage(name: securityAndPinRoute)
 class SecurityAndPinScreen extends StatefulWidget {
@@ -29,17 +31,34 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
           onPressed: () => Navigator.pop(context),
         ),
-        actions: const [
+        actions: [
           Padding(
             padding: EdgeInsets.only(right: 16.0),
             child: Center(
-              child: Text(
-                "Step 3 of 4",
-                style: TextStyle(
-                  fontFamily: "Creato Display",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text:
+                      'Step 4 ',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'of 4',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff92939E),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -75,56 +94,62 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
 
             // Set up PIN
             _securityItem(
-              icon: Icons.vpn_key_outlined,
+              icon: icQwidKey,
               title: "Set up PIN",
               subtitle: "Set up a transaction PIN to secure your account",
               linkText: "Set up transaction PIN",
               onTap: () {
                 setState(() => _pinSetup = true);
+                context.router.push(SetupPinScreenRoute());
               },
             ),
             const SizedBox(height: 12),
 
             // Security Questions
             _securityItem(
-              icon: Icons.shield_outlined,
+              icon: icQwidSecurity,
               title: "Security Questions",
               subtitle:
               "Access your account when you can’t use your password or two-step verification",
               linkText: "Set up security question",
               onTap: () {
                 setState(() => _securityQuestionSetup = true);
+                context.router.push(SecurityQuestionsScreenRoute());
               },
             ),
             const Spacer(),
 
             // Continue button
-            SizedBox(
-              width: double.infinity,
-              height: 52,
-              child: ElevatedButton(
-                onPressed: (){
-                  context.router.push(SetupPinScreenRoute());
-                }/*isFormValid
-                    ? () {
-                  // TODO: navigate to Step 4
-                }
-                    : null*/,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                  isFormValid ? const Color(0xFF0092FF) : const Color(0xFFF4F4F4),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+            SafeArea(
+              child: SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: ElevatedButton(
+                  onPressed: (){
+                    context.router.push(SetupPinScreenRoute());
+                  }/*isFormValid
+                      ? () {
+                    // TODO: navigate to Step 4
+                  }
+                      : null*/,
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0, // remove shadow
+                    shadowColor: Colors.transparent, // optional, ensures no shadow color
+                    backgroundColor:
+                    isFormValid ? const Color(0xFF0092FF) : const Color(0xFFF4F4F4),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                   ),
-                ),
-                child: Text(
-                  "Continue",
-                  style: TextStyle(
-                    fontFamily: "Creato Display",
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color:
-                    isFormValid ? Colors.white : const Color(0xFFA3A3A3),
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(
+                      fontFamily: "Creato Display",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color:
+                      isFormValid ? Colors.white : const Color(0xFFA3A3A3),
+                    ),
                   ),
                 ),
               ),
@@ -137,7 +162,7 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
   }
 
   Widget _securityItem({
-    required IconData icon,
+    required String icon,
     required String title,
     required String subtitle,
     required String linkText,
@@ -145,17 +170,12 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
   }) {
     return InkWell(
       onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 12.0),
-        decoration: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(color: Color(0xFFF3F5F7)),
-          ),
-        ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Icon(icon, size: 24, color: Color(0xFF92939E)),
+            SvgPicture.asset(icon, width: 24, height: 24),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -175,7 +195,7 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
                     subtitle,
                     style: const TextStyle(
                       fontFamily: "Creato Display",
-                      fontSize: 12,
+                      fontSize: 13,
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF92939E),
                     ),
@@ -185,7 +205,7 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
                     linkText,
                     style: const TextStyle(
                       fontFamily: "Creato Display",
-                      fontSize: 12,
+                      fontSize: 13,
                       fontWeight: FontWeight.w400,
                       color: Color(0xFF0092FF),
                     ),
@@ -193,8 +213,6 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
                 ],
               ),
             ),
-            const Icon(Icons.arrow_forward_ios,
-                size: 16, color: Color(0xFF94A3B8)),
           ],
         ),
       ),
