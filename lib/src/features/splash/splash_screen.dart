@@ -16,7 +16,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
+  // late final AnimationController _controller;
   // guard against double-calls
   bool _started = false;
   bool _navigated = false;
@@ -25,8 +25,10 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     // Wait 1 second before navigating
-    _startAfterLoaded().then((value) {
-      _onNavigated();
+    Future.wait([Future.delayed(const Duration(seconds: 3))]).then((value) {
+      _startAfterLoaded().then((value) {
+        _onNavigated();
+      });
     });
   }
 
@@ -49,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
-    _controller.dispose();
+    // _controller.dispose();
     super.dispose();
   }
 
