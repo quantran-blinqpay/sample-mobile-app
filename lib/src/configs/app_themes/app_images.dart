@@ -56,6 +56,8 @@ const String icQwidCoin = "$svgPath/ic_qwid_coin.svg";
 const String icQwidGift = "$svgPath/ic_qwid_gift.svg";
 const String icQwidHome = "$svgPath/ic_qwid_home.svg";
 const String icQwidKey = "$svgPath/ic_qwid_key.svg";
+const String icQwidArrowUp = "$svgPath/ic_qwid_arrow_up.svg";
+const String icQwidCheck = "$svgPath/ic_qwid_check.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";

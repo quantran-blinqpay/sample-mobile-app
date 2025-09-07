@@ -41,7 +41,7 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
                   children: [
                     TextSpan(
                       text:
-                      'Step 4 ',
+                      'Step 3 ',
                       style: TextStyle(
                         fontFamily: "Creato Display",
                         fontSize: 14,

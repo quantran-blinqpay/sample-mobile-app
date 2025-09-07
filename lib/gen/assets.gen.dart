@@ -262,6 +262,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_arrow_down.svg
   String get icQwidArrowDown => 'assets/svgs/ic_qwid_arrow_down.svg';
 
+  /// File path: assets/svgs/ic_qwid_arrow_up.svg
+  String get icQwidArrowUp => 'assets/svgs/ic_qwid_arrow_up.svg';
+
   /// File path: assets/svgs/ic_qwid_beneficiares.svg
   String get icQwidBeneficiares => 'assets/svgs/ic_qwid_beneficiares.svg';
 
@@ -270,6 +273,9 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/ic_qwid_calendar.svg
   String get icQwidCalendar => 'assets/svgs/ic_qwid_calendar.svg';
+
+  /// File path: assets/svgs/ic_qwid_check.svg
+  String get icQwidCheck => 'assets/svgs/ic_qwid_check.svg';
 
   /// File path: assets/svgs/ic_qwid_coin.svg
   String get icQwidCoin => 'assets/svgs/ic_qwid_coin.svg';
@@ -432,9 +438,11 @@ class $AssetsSvgsGen {
         icProtection,
         icQuestion,
         icQwidArrowDown,
+        icQwidArrowUp,
         icQwidBeneficiares,
         icQwidBuilding,
         icQwidCalendar,
+        icQwidCheck,
         icQwidCoin,
         icQwidError,
         icQwidEyeOff,
