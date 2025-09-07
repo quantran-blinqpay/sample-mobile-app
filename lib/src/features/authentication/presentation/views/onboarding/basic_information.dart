@@ -358,6 +358,7 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
     );
 
     if (selected != null) {
+      _countryController.text = selected;
       print("Selected country: $selected");
     }
   }
