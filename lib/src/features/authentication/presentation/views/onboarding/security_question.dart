@@ -133,7 +133,7 @@ class _SecurityQuestionsScreenState extends State<SecurityQuestionsScreen> {
                 value: item,
                 child: Text(
                     item,
-                    style: const TextStyle(fontFamily: "Creato Display", fontSize: 16)))).toList(),
+                    style: const TextStyle(fontFamily: "Creato Display", fontSize: 16, fontWeight: FontWeight.w400)))).toList(),
             value: _question1,
             onChanged: (value) {
               if(value != null){
@@ -234,7 +234,7 @@ class _SecurityQuestionsScreenState extends State<SecurityQuestionsScreen> {
                 value: item,
                 child: Text(
                     item,
-                    style: const TextStyle(fontFamily: "Creato Display", fontSize: 16)))).toList(),
+                    style: const TextStyle(fontFamily: "Creato Display", fontSize: 16, fontWeight: FontWeight.w400)))).toList(),
             value: _question2,
             onChanged: (value) {
               if(value != null){
