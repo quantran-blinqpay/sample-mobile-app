@@ -1,7 +1,12 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
+import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/select_country_code_bottom_sheet.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 @RoutePage(name: personalInformationRoute)
 class PersonalInformationScreen extends StatefulWidget {
@@ -18,6 +23,8 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
   final _mobileController = TextEditingController();
   final _dobController = TextEditingController();
   final _referralController = TextEditingController();
+  String _countryCode = '+93';
+  String _flag = '🇦🇫';
 
   DateTime? _selectedDate;
 
@@ -37,17 +44,34 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
           icon: const Icon(Icons.arrow_back_ios, color: Colors.black, size: 18),
           onPressed: () => Navigator.pop(context),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 16.0),
+            padding: const EdgeInsets.only(right: 16.0),
             child: Center(
-              child: Text(
-                "Step 2 of 4",
-                style: TextStyle(
-                  fontFamily: "Creato Display",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black,
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text:
+                      'Step 2 ',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'of 4',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff92939E),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -84,7 +108,16 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
             // First Name
             TextField(
               controller: _firstNameController,
-              decoration: const InputDecoration(labelText: "First Name"),
+              cursorColor: Color(0xff0092FF),
+              decoration: const InputDecoration(
+                labelText: "First Name",
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
+                ),
+              ),
               onChanged: (_) => setState(() {}),
             ),
             const SizedBox(height: 16),
@@ -92,36 +125,94 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
             // Last Name
             TextField(
               controller: _lastNameController,
-              decoration: const InputDecoration(labelText: "Last Name (Surname)"),
+              cursorColor: Color(0xff0092FF),
+              decoration: const InputDecoration(
+                labelText: "Last Name (Surname)",
+                enabledBorder: const UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                ),
+                focusedBorder: const UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
+                ),
+              ),
               onChanged: (_) => setState(() {}),
             ),
             const SizedBox(height: 16),
 
             // Mobile with country code
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
-                  padding:
-                  const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: const Color(0xFFE1E5EA)),
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: const Text(
-                    "+234",
-                    style: TextStyle(
-                      fontFamily: "Creato Display",
-                      fontSize: 16,
-                      color: Color(0xFF92939E),
+                Expanded(
+                  flex: 2,
+                  child: GestureDetector(
+                    onTap: () {
+                      _openCountrySelector(context);
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 10, 12, 7),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              RichText(
+                                textAlign: TextAlign.center,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text:
+                                      "$_flag ",
+                                      style: TextStyle(
+                                        fontFamily: "Creato Display",
+                                        fontSize: 24,
+                                        color: Color(0xFF92939E),
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: _countryCode,
+                                      style: TextStyle(
+                                        fontFamily: "Creato Display",
+                                        fontSize: 16,
+                                        color: Color(0xFF92939E),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(width: 1),
+                              SvgPicture.asset(
+                                  icQwidArrowDown,
+                                  width: 24,
+                                  height: 24,
+                                  color: Color(0xFF92939E),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 6),
+                        Container(width: double.infinity, height: 0.5, color: Color(0xffF3F5F7))
+                      ],
                     ),
                   ),
                 ),
-                const SizedBox(width: 12),
                 Expanded(
+                  flex: 5,
                   child: TextField(
                     controller: _mobileController,
                     keyboardType: TextInputType.phone,
-                    decoration: const InputDecoration(labelText: "Mobile"),
+                    cursorColor: Color(0xff0092FF),
+                    decoration: const InputDecoration(
+                      labelText: "Mobile",
+                      enabledBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                      ),
+                      focusedBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
+                      ),
+                    ),
                     onChanged: (_) => setState(() {}),
                   ),
                 ),
@@ -136,9 +227,19 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
               decoration: InputDecoration(
                 labelText: "Date of Birth",
                 suffixIcon: IconButton(
-                  icon: const Icon(Icons.calendar_today_outlined,
-                      color: Color(0xFFAEAFC0)),
+                  icon: SvgPicture.asset(
+                    icQwidCalendar,
+                    width: 24,
+                    height: 24,
+                    color: Color(0xFF92939E),
+                  ),
                   onPressed: _pickDate,
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
                 ),
               ),
               onTap: _pickDate,
@@ -149,37 +250,49 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
             TextField(
               controller: _referralController,
               decoration:
-              const InputDecoration(labelText: "Referral Code (optional)"),
+              const InputDecoration(
+                labelText: "Referral Code (optional)",
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xffF3F5F7), width: 0.5), // custom color & thickness
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xff0092FF), width: 1),
+                ),
+              ),
             ),
             const Spacer(),
 
             // Continue button
-            SizedBox(
-              width: double.infinity,
-              height: 52,
-              child: ElevatedButton(
-                onPressed: () {
-                  context.router.push(ContactInformationScreenRoute());
-                }/*isFormValid
-                    ? () {
+            SafeArea(
+              child: SizedBox(
+                width: double.infinity,
+                height: 52,
+                child: ElevatedButton(
+                  onPressed: () {
+                    context.router.push(AccountVerificationByPhoneScreenRoute());
+                  }/*isFormValid
+                      ? () {
 
-                    }
-                    : null*/,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                  isFormValid ? const Color(0xFF0092FF) : const Color(0xFFF4F4F4),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
+                      }
+                      : null*/,
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0, // remove shadow
+                    shadowColor: Colors.transparent, // optional, ensures no shadow color
+                    backgroundColor:
+                    isFormValid ? const Color(0xFF0092FF) : const Color(0xFFF4F4F4),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
                   ),
-                ),
-                child: Text(
-                  "Continue",
-                  style: TextStyle(
-                    fontFamily: "Creato Display",
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color:
-                    isFormValid ? Colors.white : const Color(0xFFA3A3A3),
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(
+                      fontFamily: "Creato Display",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color:
+                      isFormValid ? Colors.white : const Color(0xFFA3A3A3),
+                    ),
                   ),
                 ),
               ),
@@ -192,18 +305,81 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
   }
 
   Future<void> _pickDate() async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: _selectedDate ?? DateTime(2000),
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
+    final DateTime? picked = await showCupertinoDatePicker(
+      context,
+      initialDate: _selectedDate,
     );
+
     if (picked != null) {
       setState(() {
         _selectedDate = picked;
-        _dobController.text =
-        "${picked.year}-${picked.month.toString().padLeft(2, '0')}-${picked.day.toString().padLeft(2, '0')}";
+        _dobController.text = withOrdinal(picked);
       });
     }
+  }
+
+  void _openCountrySelector(BuildContext context) async {
+    final selected = await showModalBottomSheet<String>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => const SelectCountryCodeBottomSheet(),
+    );
+
+    if (selected != null) {
+      setState(() {
+        _countryCode = selected.split(' ')[1];
+        _flag = selected.split(' ')[0];
+      });
+    }
+  }
+
+  Future<DateTime?> showCupertinoDatePicker(BuildContext context,
+      {DateTime? initialDate}) async {
+    DateTime? picked;
+    await showCupertinoModalPopup(
+      context: context,
+      builder: (popupContext) {
+        return Container(
+          height: 250,
+          color: Colors.white,
+          child: Column(
+            children: [
+              // Done button row
+              Container(
+                alignment: Alignment.centerRight,
+                child: CupertinoButton(
+                  child: const Text("Done"),
+                  onPressed: () {
+                    Navigator.pop(popupContext);
+                  },
+                ),
+              ),
+              Expanded(
+                child: CupertinoDatePicker(
+                  mode: CupertinoDatePickerMode.date,
+                  initialDateTime: initialDate ?? DateTime(2000),
+                  minimumDate: DateTime(1900),
+                  maximumDate: DateTime.now(),
+                  onDateTimeChanged: (DateTime value) {
+                    picked = value;
+                  },
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+    return picked;
+  }
+
+  String withOrdinal(DateTime d) {
+    final day = d.day;
+    final suffix = (day >= 11 && day <= 13)
+        ? 'th'
+        : {1: 'st', 2: 'nd', 3: 'rd'}[day % 10] ?? 'th';
+    final monthYear = DateFormat('MMMM y', 'en_US').format(d); // "July 1990"
+    return '$day$suffix $monthYear'; // "19th July 1990"
   }
 }

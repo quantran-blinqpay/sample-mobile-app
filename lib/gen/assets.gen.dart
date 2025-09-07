@@ -262,8 +262,17 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_arrow_down.svg
   String get icQwidArrowDown => 'assets/svgs/ic_qwid_arrow_down.svg';
 
+  /// File path: assets/svgs/ic_qwid_beneficiares.svg
+  String get icQwidBeneficiares => 'assets/svgs/ic_qwid_beneficiares.svg';
+
   /// File path: assets/svgs/ic_qwid_building.svg
   String get icQwidBuilding => 'assets/svgs/ic_qwid_building.svg';
+
+  /// File path: assets/svgs/ic_qwid_calendar.svg
+  String get icQwidCalendar => 'assets/svgs/ic_qwid_calendar.svg';
+
+  /// File path: assets/svgs/ic_qwid_coin.svg
+  String get icQwidCoin => 'assets/svgs/ic_qwid_coin.svg';
 
   /// File path: assets/svgs/ic_qwid_error.svg
   String get icQwidError => 'assets/svgs/ic_qwid_error.svg';
@@ -274,14 +283,23 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_eye_on.svg
   String get icQwidEyeOn => 'assets/svgs/ic_qwid_eye_on.svg';
 
+  /// File path: assets/svgs/ic_qwid_gift.svg
+  String get icQwidGift => 'assets/svgs/ic_qwid_gift.svg';
+
   /// File path: assets/svgs/ic_qwid_global.svg
   String get icQwidGlobal => 'assets/svgs/ic_qwid_global.svg';
+
+  /// File path: assets/svgs/ic_qwid_home.svg
+  String get icQwidHome => 'assets/svgs/ic_qwid_home.svg';
 
   /// File path: assets/svgs/ic_qwid_identification.svg
   String get icQwidIdentification => 'assets/svgs/ic_qwid_identification.svg';
 
   /// File path: assets/svgs/ic_qwid_information.svg
   String get icQwidInformation => 'assets/svgs/ic_qwid_information.svg';
+
+  /// File path: assets/svgs/ic_qwid_key.svg
+  String get icQwidKey => 'assets/svgs/ic_qwid_key.svg';
 
   /// File path: assets/svgs/ic_qwid_profile.svg
   String get icQwidProfile => 'assets/svgs/ic_qwid_profile.svg';
@@ -414,13 +432,19 @@ class $AssetsSvgsGen {
         icProtection,
         icQuestion,
         icQwidArrowDown,
+        icQwidBeneficiares,
         icQwidBuilding,
+        icQwidCalendar,
+        icQwidCoin,
         icQwidError,
         icQwidEyeOff,
         icQwidEyeOn,
+        icQwidGift,
         icQwidGlobal,
+        icQwidHome,
         icQwidIdentification,
         icQwidInformation,
+        icQwidKey,
         icQwidProfile,
         icQwidSearch,
         icQwidSecurity,

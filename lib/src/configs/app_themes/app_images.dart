@@ -50,6 +50,12 @@ const String icQwidError = "$svgPath/ic_qwid_error.svg";
 const String icQwidEyeOff = "$svgPath/ic_qwid_eye_off.svg";
 const String icQwidEyeOn = "$svgPath/ic_qwid_eye_on.svg";
 const String icQwidSuccess = "$svgPath/ic_qwid_success.svg";
+const String icQwidBeneficiares = "$svgPath/ic_qwid_beneficiares.svg";
+const String icQwidCalendar = "$svgPath/ic_qwid_calendar.svg";
+const String icQwidCoin = "$svgPath/ic_qwid_coin.svg";
+const String icQwidGift = "$svgPath/ic_qwid_gift.svg";
+const String icQwidHome = "$svgPath/ic_qwid_home.svg";
+const String icQwidKey = "$svgPath/ic_qwid_key.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";

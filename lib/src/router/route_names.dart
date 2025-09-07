@@ -40,6 +40,7 @@ const String accountTypeRoute = 'AccountTypeScreenRoute';
 const String createPersonalAccountRoute = 'CreatePersonalAccountScreenRoute';
 const String basicInformationRoute = 'BasicInformationScreenRoute';
 const String accountVerificationRoute = 'AccountVerificationScreenRoute';
+const String accountVerificationByPhoneRoute = 'AccountVerificationByPhoneScreenRoute';
 const String personalInformationRoute = 'PersonalInformationScreenRoute';
 const String contactInformationRoute = 'ContactInformationScreenRoute';
 const String securityAndPinRoute = 'SecurityAndPinScreenRoute';

@@ -4,16 +4,16 @@ import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
 
-@RoutePage(name: accountVerificationRoute)
-class AccountVerificationScreen extends StatefulWidget {
-  const AccountVerificationScreen({super.key});
+@RoutePage(name: accountVerificationByPhoneRoute)
+class AccountVerificationByPhoneScreen extends StatefulWidget {
+  const AccountVerificationByPhoneScreen({super.key});
 
   @override
-  State<AccountVerificationScreen> createState() =>
+  State<AccountVerificationByPhoneScreen> createState() =>
       _AccountVerificationScreenState();
 }
 
-class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
+class _AccountVerificationScreenState extends State<AccountVerificationByPhoneScreen> {
   final List<TextEditingController> _controllers =
   List.generate(6, (_) => TextEditingController());
 
@@ -63,7 +63,7 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
                     ),
                   ),
                   TextSpan(
-                    text: 'dan***oji@blinqpay.io.',
+                    text: '+234 908 437 3860. ',
                     style: const TextStyle(
                       fontFamily: "Arial",
                       fontSize: 13,
@@ -147,7 +147,7 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
               height: 52,
               child: ElevatedButton(
                 onPressed: () {
-                  context.router.push(PersonalInformationScreenRoute());
+                  context.router.push(ContactInformationScreenRoute());
                 }/*_isCodeComplete
                     ? () {
                       context.router.push(PersonalInformationScreenRoute());
@@ -186,7 +186,7 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
                     // TODO: change email flow
                   },
                   child: const Text(
-                    "Change Email Address",
+                    "Update mobile number",
                     style: TextStyle(
                       fontFamily: "Creato Display",
                       fontSize: 14,
