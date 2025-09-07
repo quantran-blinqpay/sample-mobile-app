@@ -48,13 +48,40 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
               ),
             ),
             const SizedBox(height: 8),
-            Text(
-              "We sent a verification code to dan***oji@blinqpay.io.\nPlease enter the code below.",
-              style: const TextStyle(
-                fontFamily: "Arial",
-                fontSize: 13,
-                fontWeight: FontWeight.w400,
-                color: Color(0xFF92939E),
+            RichText(
+              textAlign: TextAlign.start,
+              text: const TextSpan(
+                children: [
+                  TextSpan(
+                    text:
+                    'We sent a verification code to ',
+                    style: const TextStyle(
+                      fontFamily: "Arial",
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF92939E),
+                    ),
+                  ),
+                  TextSpan(
+                    text: 'dan***oji@blinqpay.io.',
+                    style: const TextStyle(
+                      fontFamily: "Arial",
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                  ),
+                  TextSpan(
+                    text:
+                    '\nPlease enter the code below.',
+                    style: const TextStyle(
+                      fontFamily: "Arial",
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF92939E),
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(height: 24),
@@ -73,7 +100,6 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
 
             // OTP boxes
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(
                 6,
                     (index) => _buildOtpBox(index),
@@ -86,13 +112,30 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
               onTap: () {
                 // TODO: resend code
               },
-              child: const Text(
-                "Didn’t get a code? Resend code",
-                style: TextStyle(
-                  fontFamily: "Creato Display",
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFF0092FF),
+              child: RichText(
+                textAlign: TextAlign.center,
+                text: const TextSpan(
+                  children: [
+                    TextSpan(
+                      text:
+                      'Didn’t get a code? ',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xff92939E),
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Resend code',
+                      style: TextStyle(
+                        fontFamily: "Creato Display",
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF0092FF),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -117,6 +160,8 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
+                  elevation: 0, // remove shadow
+                  shadowColor: Colors.transparent, // optional, ensures no shadow color
                 ),
                 child: Text(
                   "Verify",
@@ -134,18 +179,20 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
             const SizedBox(height: 16),
 
             // Change Email
-            Center(
-              child: GestureDetector(
-                onTap: () {
-                  // TODO: change email flow
-                },
-                child: const Text(
-                  "Change Email Address",
-                  style: TextStyle(
-                    fontFamily: "Creato Display",
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xFF0092FF),
+            SafeArea(
+              child: Center(
+                child: GestureDetector(
+                  onTap: () {
+                    // TODO: change email flow
+                  },
+                  child: const Text(
+                    "Change Email Address",
+                    style: TextStyle(
+                      fontFamily: "Creato Display",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF0092FF),
+                    ),
                   ),
                 ),
               ),
@@ -158,34 +205,37 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
   }
 
   Widget _buildOtpBox(int index) {
-    return SizedBox(
-      width: 52,
-      height: 56,
-      child: TextField(
-        controller: _controllers[index],
-        maxLength: 1,
-        textAlign: TextAlign.center,
-        keyboardType: TextInputType.number,
-        decoration: InputDecoration(
-          counterText: "",
-          filled: true,
-          fillColor: Colors.white,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(
-              color: Color(0xFFE1E5EA),
-              width: 1,
+    return Padding(
+      padding: const EdgeInsets.only(right: 8.0),
+      child: SizedBox(
+        width: 52,
+        height: 56,
+        child: TextField(
+          controller: _controllers[index],
+          maxLength: 1,
+          textAlign: TextAlign.center,
+          keyboardType: TextInputType.number,
+          decoration: InputDecoration(
+            counterText: "",
+            filled: true,
+            fillColor: Colors.white,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Color(0xFFE1E5EA),
+                width: 1,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Color(0xFF0092FF),
+                width: 1.5,
+              ),
             ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-            borderSide: const BorderSide(
-              color: Color(0xFF0092FF),
-              width: 1.5,
-            ),
-          ),
+          onChanged: (_) => setState(() {}),
         ),
-        onChanged: (_) => setState(() {}),
       ),
     );
   }
