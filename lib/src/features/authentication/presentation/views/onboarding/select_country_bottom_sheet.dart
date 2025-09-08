@@ -2,6 +2,8 @@ import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'models/countries.dart';
+
 class SelectCountryBottomSheet extends StatefulWidget {
   const SelectCountryBottomSheet({super.key});
 
@@ -12,18 +14,6 @@ class SelectCountryBottomSheet extends StatefulWidget {
 
 class _SelectCountryBottomSheetState extends State<SelectCountryBottomSheet> {
   final TextEditingController _searchController = TextEditingController();
-  final List<Map<String, String>> countries = [
-    {"name": "Afghanistan", "flag": "🇦🇫"},
-    {"name": "Albania", "flag": "🇦🇱"},
-    {"name": "Algeria", "flag": "🇩🇿"},
-    {"name": "Andorra", "flag": "🇦🇩"},
-    {"name": "Angola", "flag": "🇦🇴"},
-    {"name": "Antigua and Barbuda", "flag": "🇦🇬"},
-    {"name": "Argentina", "flag": "🇦🇷"},
-    {"name": "Armenia", "flag": "🇦🇲"},
-    {"name": "Australia", "flag": "🇦🇺"},
-    {"name": "Austria", "flag": "🇦🇹"},
-  ];
 
   String _query = "";
 

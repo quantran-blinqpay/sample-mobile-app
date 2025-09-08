@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:designerwardrobe/src/components/text_field/otp_field.dart';
+import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/loading_bottom_sheet.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
@@ -150,7 +151,7 @@ class _AccountVerificationScreenState extends State<AccountVerificationByPhoneSc
               child: ElevatedButton(
                 onPressed: _otp?.length == 6
                     ? () {
-                      context.router.push(ContactInformationScreenRoute());
+                      _openCountrySelector(context);
                     }
                     : null,
                 style: ElevatedButton.styleFrom(
@@ -202,6 +203,19 @@ class _AccountVerificationScreenState extends State<AccountVerificationByPhoneSc
         ),
       ),
     );
+  }
+
+  void _openCountrySelector(BuildContext context) async {
+    final selected = await showModalBottomSheet<String>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => const LoadingBottomSheet(title: 'We are verifying your account'),
+    );
+
+    if (selected != null) {
+      context.router.push(ContactInformationScreenRoute());
+    }
   }
 
 }

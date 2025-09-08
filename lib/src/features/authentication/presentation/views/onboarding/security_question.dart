@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
+import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/loading_bottom_sheet.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
@@ -322,7 +323,7 @@ class _SecurityQuestionsScreenState extends State<SecurityQuestionsScreen> {
               child: ElevatedButton(
                 onPressed: _isFormValid
                     ? () {
-                  Navigator.of(context).pop();
+                  _openCountrySelector(context);
                 }
                     : null,
                 style: ElevatedButton.styleFrom(
@@ -379,4 +380,16 @@ class _SecurityQuestionsScreenState extends State<SecurityQuestionsScreen> {
   }
 
   String selectedQuestion1 = 'Question 1';
+  void _openCountrySelector(BuildContext context) async {
+    final selected = await showModalBottomSheet<String>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => const LoadingBottomSheet(title: 'We are setting up your account'),
+    );
+
+    if (selected != null) {
+      Navigator.of(context).pop();
+    }
+  }
 }
