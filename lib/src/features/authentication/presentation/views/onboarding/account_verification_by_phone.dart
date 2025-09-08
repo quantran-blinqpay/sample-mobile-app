@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:designerwardrobe/src/components/text_field/otp_field.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
@@ -99,11 +100,12 @@ class _AccountVerificationScreenState extends State<AccountVerificationByPhoneSc
             const SizedBox(height: 12),
 
             // OTP boxes
-            Row(
-              children: List.generate(
-                6,
-                    (index) => _buildOtpBox(index),
-              ),
+            OTPInputField(
+              length: 6,
+              onChange: (val) {},
+              onCompleted: (val) {
+                debugPrint(val);
+              },
             ),
             const SizedBox(height: 16),
 
@@ -204,39 +206,4 @@ class _AccountVerificationScreenState extends State<AccountVerificationByPhoneSc
     );
   }
 
-  Widget _buildOtpBox(int index) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 8.0),
-      child: SizedBox(
-        width: 52,
-        height: 56,
-        child: TextField(
-          controller: _controllers[index],
-          maxLength: 1,
-          textAlign: TextAlign.center,
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            counterText: "",
-            filled: true,
-            fillColor: Colors.white,
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: Color(0xFFE1E5EA),
-                width: 1,
-              ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: Color(0xFF0092FF),
-                width: 1.5,
-              ),
-            ),
-          ),
-          onChanged: (_) => setState(() {}),
-        ),
-      ),
-    );
-  }
 }
