@@ -126,9 +126,7 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
                 height: 52,
                 child: ElevatedButton(
                   onPressed: (){
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Sign up complete!')),
-                    );
+                    context.router.push(QwidHomeScreenRoute());
                   }/*isFormValid
                       ? () {
                     // TODO: navigate to Step 4

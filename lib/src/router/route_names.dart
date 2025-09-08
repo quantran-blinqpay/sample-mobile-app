@@ -47,3 +47,4 @@ const String securityAndPinRoute = 'SecurityAndPinScreenRoute';
 const String setupPinRoute = 'SetupPinScreenRoute';
 const String confirmPinRoute = 'ConfirmPinScreenRoute';
 const String securityQuestionsRoute = 'SecurityQuestionsScreenRoute';
+const String qwidHomeRoute = 'QwidHomeScreenRoute';
