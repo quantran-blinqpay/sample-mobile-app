@@ -28,6 +28,13 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
 
   DateTime? _selectedDate;
 
+  // bool get isFormValid {
+  //   return _selectedDate != null
+  //       && _firstNameController.text.isNotEmpty
+  //       && _lastNameController.text.isNotEmpty
+  //       && _mobileController.text.isNotEmpty;
+  // }
+
   @override
   Widget build(BuildContext context) {
     final bool isFormValid = _firstNameController.text.isNotEmpty &&
@@ -268,13 +275,11 @@ class _PersonalInformationScreenState extends State<PersonalInformationScreen> {
                 width: double.infinity,
                 height: 52,
                 child: ElevatedButton(
-                  onPressed: () {
-                    context.router.push(AccountVerificationByPhoneScreenRoute());
-                  }/*isFormValid
+                  onPressed: isFormValid
                       ? () {
-
+                        context.router.push(AccountVerificationByPhoneScreenRoute());
                       }
-                      : null*/,
+                      : null,
                   style: ElevatedButton.styleFrom(
                     elevation: 0, // remove shadow
                     shadowColor: Colors.transparent, // optional, ensures no shadow color

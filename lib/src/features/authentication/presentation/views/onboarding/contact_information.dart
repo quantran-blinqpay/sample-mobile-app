@@ -31,8 +31,8 @@ class _ContactInformationScreenState extends State<ContactInformationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isFormValid = _selectedState != null &&
-        _selectedCity != null &&
+    final bool isFormValid = _stateController.text.isNotEmpty &&
+        _cityController.text.isNotEmpty &&
         _postalCodeController.text.isNotEmpty &&
         _addressController.text.isNotEmpty;
 
@@ -193,13 +193,11 @@ class _ContactInformationScreenState extends State<ContactInformationScreen> {
                 width: double.infinity,
                 height: 52,
                 child: ElevatedButton(
-                  onPressed: (){
-                    context.router.push(SecurityAndPinScreenRoute());
-                  }/*isFormValid
+                  onPressed: isFormValid
                       ? () {
-                    // TODO: Submit contact info
+                    context.router.push(SecurityAndPinScreenRoute());
                   }
-                      : null*/,
+                      : null,
                   style: ElevatedButton.styleFrom(
                     elevation: 0, // remove shadow
                     shadowColor: Colors.transparent, // optional, ensures no shadow color

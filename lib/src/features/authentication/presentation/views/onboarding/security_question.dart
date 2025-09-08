@@ -322,7 +322,7 @@ class _SecurityQuestionsScreenState extends State<SecurityQuestionsScreen> {
               child: ElevatedButton(
                 onPressed: _isFormValid
                     ? () {
-                  // TODO: save security questions
+                  Navigator.of(context).pop();
                 }
                     : null,
                 style: ElevatedButton.styleFrom(

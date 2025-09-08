@@ -126,7 +126,9 @@ class _SecurityAndPinScreenState extends State<SecurityAndPinScreen> {
                 height: 52,
                 child: ElevatedButton(
                   onPressed: (){
-                    context.router.push(SetupPinScreenRoute());
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Sign up complete!')),
+                    );
                   }/*isFormValid
                       ? () {
                     // TODO: navigate to Step 4

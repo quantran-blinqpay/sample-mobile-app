@@ -34,6 +34,24 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
 
   bool _obscurePassword = true;
   bool _obscureConfirmPassword = true;
+  bool _isCountryEmpty = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _countryController.addListener(() {
+      setState(() {
+        _isCountryEmpty = _countryController.text.isEmpty;
+      });
+    });
+  }
+
+  bool get isFormValid {
+    return !_isCountryEmpty
+        && (_errorText?.isEmpty ?? true && _emailController.text.isNotEmpty)
+        && (_lengthStatus == TextFieldStatus.valid && _specialCharacterStatus == TextFieldStatus.valid)
+        && (_errorConfirmText?.isEmpty ?? true && _confirmPasswordController.text.isNotEmpty);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -318,24 +336,26 @@ class _BasicInformationScreenState extends State<BasicInformationScreen> {
                   width: double.infinity,
                   height: 52,
                   child: ElevatedButton(
-                    onPressed: (){
+                    onPressed: isFormValid ? (){
                       context.router.push(AccountVerificationScreenRoute());
-                    }, // Disabled until form valid
+                    } : null, // Disabled until form valid
                     style: ElevatedButton.styleFrom(
                       elevation: 0, // remove shadow
                       shadowColor: Colors.transparent, // optional, ensures no shadow color
-                      backgroundColor: const Color(0xFFF4F4F4),
+                      backgroundColor: isFormValid
+                          ? const Color(0xFF0092FF)
+                          : const Color(0xFFF4F4F4),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       "Continue",
                       style: TextStyle(
                         fontFamily: "Creato Display",
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: Color(0xFFA3A3A3),
+                        color: isFormValid ? Colors.white : Color(0xFFA3A3A3),
                       ),
                     ),
                   ),

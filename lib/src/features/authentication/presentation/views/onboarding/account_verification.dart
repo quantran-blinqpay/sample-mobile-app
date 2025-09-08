@@ -15,11 +15,7 @@ class AccountVerificationScreen extends StatefulWidget {
 }
 
 class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
-  final List<TextEditingController> _controllers =
-  List.generate(6, (_) => TextEditingController());
-
-  bool get _isCodeComplete =>
-      _controllers.every((c) => c.text.isNotEmpty && c.text.length == 1);
+  String? _otp;
 
   @override
   Widget build(BuildContext context) {
@@ -102,9 +98,12 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
             // OTP boxes
             OTPInputField(
               length: 6,
-              onChange: (val) {},
+              onChange: (val) {
+                setState(() {
+                  _otp = val;
+                });
+              },
               onCompleted: (val) {
-                debugPrint(val);
               },
             ),
             const SizedBox(height: 16),
@@ -148,15 +147,13 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
               width: double.infinity,
               height: 52,
               child: ElevatedButton(
-                onPressed: () {
-                  context.router.push(PersonalInformationScreenRoute());
-                }/*_isCodeComplete
+                onPressed: _otp?.length == 6
                     ? () {
                       context.router.push(PersonalInformationScreenRoute());
                     }
-                    : null*/,
+                    : null,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: _isCodeComplete
+                  backgroundColor: _otp?.length == 6
                       ? const Color(0xFF0092FF)
                       : const Color(0xFFF4F4F4),
                   shape: RoundedRectangleBorder(
@@ -171,7 +168,7 @@ class _AccountVerificationScreenState extends State<AccountVerificationScreen> {
                     fontFamily: "Creato Display",
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: _isCodeComplete
+                    color: _otp?.length == 6
                         ? Colors.white
                         : const Color(0xFFA3A3A3),
                   ),

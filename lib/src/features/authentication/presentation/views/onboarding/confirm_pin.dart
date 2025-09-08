@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:designerwardrobe/src/components/text_field/otp_field.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
 import 'package:flutter/material.dart';
@@ -13,11 +14,7 @@ class ConfirmPinScreen extends StatefulWidget {
 }
 
 class _ConfirmPinScreenState extends State<ConfirmPinScreen> {
-  final List<TextEditingController> _controllers =
-  List.generate(4, (_) => TextEditingController());
-
-  bool get _isPinComplete =>
-      _controllers.every((c) => c.text.isNotEmpty && c.text.length == 1);
+  String? _otp;
 
   @override
   Widget build(BuildContext context) {
@@ -87,11 +84,15 @@ class _ConfirmPinScreenState extends State<ConfirmPinScreen> {
             const SizedBox(height: 12),
 
             // PIN input boxes
-            Row(
-              children: List.generate(
-                4,
-                    (index) => _buildPinBox(index),
-              ),
+            OTPInputField(
+              length: 4,
+              onChange: (val) {
+                setState(() {
+                  _otp = val;
+                });
+              },
+              onCompleted: (val) {
+              },
             ),
             const Spacer(),
 
@@ -111,7 +112,7 @@ class _ConfirmPinScreenState extends State<ConfirmPinScreen> {
                   style: ElevatedButton.styleFrom(
                     elevation: 0, // remove shadow
                     shadowColor: Colors.transparent, // optional, ensures no shadow color
-                    backgroundColor: _isPinComplete
+                    backgroundColor: _otp?.length == 4
                         ? const Color(0xFF0092FF)
                         : const Color(0xFFF4F4F4),
                     shape: RoundedRectangleBorder(
@@ -125,7 +126,7 @@ class _ConfirmPinScreenState extends State<ConfirmPinScreen> {
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
                       color:
-                      _isPinComplete ? Colors.white : const Color(0xFFA3A3A3),
+                      _otp?.length == 4 ? Colors.white : const Color(0xFFA3A3A3),
                     ),
                   ),
                 ),
@@ -138,39 +139,4 @@ class _ConfirmPinScreenState extends State<ConfirmPinScreen> {
     );
   }
 
-  Widget _buildPinBox(int index) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 8.0),
-      child: SizedBox(
-        width: 52,
-        height: 56,
-        child: TextField(
-          controller: _controllers[index],
-          maxLength: 1,
-          textAlign: TextAlign.center,
-          keyboardType: TextInputType.number,
-          decoration: InputDecoration(
-            counterText: "",
-            filled: true,
-            fillColor: Colors.white,
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: Color(0xFFE1E5EA),
-                width: 1,
-              ),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(
-                color: Color(0xFF0092FF),
-                width: 1.5,
-              ),
-            ),
-          ),
-          onChanged: (_) => setState(() {}),
-        ),
-      ),
-    );
-  }
 }
