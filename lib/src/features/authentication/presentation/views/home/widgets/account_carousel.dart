@@ -206,10 +206,10 @@ final List<Map<String, String>> wallets = [
   },
   {
     "bank": "GBP",
-    "country": "UK",
+    "country": "GB",
     "account": "Barclays Bank • 00123-045-1234567",
     "balance": "40,060.13",
     "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/landscape-of-city-vancouver-in-canada-deejpilot.jpg",
-    "currency": "CA\$",
+    "currency": "GBP",
   },
 ];
