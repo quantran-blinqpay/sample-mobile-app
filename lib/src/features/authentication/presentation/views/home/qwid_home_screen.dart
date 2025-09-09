@@ -22,7 +22,7 @@ class _HomeScreenState extends State<QwidHomeScreen> {
       "country": "NG",
       "account": "Access Bank • 0123456789",
       "balance": "1,827,630.41",
-      "image": "https://picsum.photos/400/200?random=1",
+      "image": "https://t4.ftcdn.net/jpg/03/79/96/25/360_F_379962515_j4dQNtf6gp1WyS4Jo2LTZ8KXe85ncZWC.jpg",
       "currency": "₦",
     },
     {
@@ -30,7 +30,7 @@ class _HomeScreenState extends State<QwidHomeScreen> {
       "country": "US",
       "account": "Access Bank • 9876543210",
       "balance": "60,040.31",
-      "image": "https://picsum.photos/400/200?random=2",
+      "image": "https://images.squarespace-cdn.com/content/v1/62015f66f840ef671da14ae7/1aa35437-4cd2-4e39-aabc-2df68baac830/NYC-skyline-033.JPG",
       "currency": "\$",
     },
     {
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<QwidHomeScreen> {
       "country": "CA",
       "account": "Access Bank • 00123-045-1234567",
       "balance": "40,060.13",
-      "image": "https://picsum.photos/400/200?random=3",
+      "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/landscape-of-city-vancouver-in-canada-deejpilot.jpg",
       "currency": "CA\$",
     },
   ];
