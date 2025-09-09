@@ -104,7 +104,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.router.push(QwidHomeScreenRoute());
+                  },
                   child: const Text(
                     "Already a member? Log in",
                     style: TextStyle(

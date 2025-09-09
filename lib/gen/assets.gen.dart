@@ -265,6 +265,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_arrow_up.svg
   String get icQwidArrowUp => 'assets/svgs/ic_qwid_arrow_up.svg';
 
+  /// File path: assets/svgs/ic_qwid_bank.svg
+  String get icQwidBank => 'assets/svgs/ic_qwid_bank.svg';
+
   /// File path: assets/svgs/ic_qwid_beneficiares.svg
   String get icQwidBeneficiares => 'assets/svgs/ic_qwid_beneficiares.svg';
 
@@ -277,11 +280,17 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_check.svg
   String get icQwidCheck => 'assets/svgs/ic_qwid_check.svg';
 
+  /// File path: assets/svgs/ic_qwid_cloud.svg
+  String get icQwidCloud => 'assets/svgs/ic_qwid_cloud.svg';
+
   /// File path: assets/svgs/ic_qwid_coin.svg
   String get icQwidCoin => 'assets/svgs/ic_qwid_coin.svg';
 
   /// File path: assets/svgs/ic_qwid_error.svg
   String get icQwidError => 'assets/svgs/ic_qwid_error.svg';
+
+  /// File path: assets/svgs/ic_qwid_exchange.svg
+  String get icQwidExchange => 'assets/svgs/ic_qwid_exchange.svg';
 
   /// File path: assets/svgs/ic_qwid_eye_off.svg
   String get icQwidEyeOff => 'assets/svgs/ic_qwid_eye_off.svg';
@@ -306,6 +315,15 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/ic_qwid_key.svg
   String get icQwidKey => 'assets/svgs/ic_qwid_key.svg';
+
+  /// File path: assets/svgs/ic_qwid_logo.svg
+  String get icQwidLogo => 'assets/svgs/ic_qwid_logo.svg';
+
+  /// File path: assets/svgs/ic_qwid_menu.svg
+  String get icQwidMenu => 'assets/svgs/ic_qwid_menu.svg';
+
+  /// File path: assets/svgs/ic_qwid_notification.svg
+  String get icQwidNotification => 'assets/svgs/ic_qwid_notification.svg';
 
   /// File path: assets/svgs/ic_qwid_profile.svg
   String get icQwidProfile => 'assets/svgs/ic_qwid_profile.svg';
@@ -439,12 +457,15 @@ class $AssetsSvgsGen {
         icQuestion,
         icQwidArrowDown,
         icQwidArrowUp,
+        icQwidBank,
         icQwidBeneficiares,
         icQwidBuilding,
         icQwidCalendar,
         icQwidCheck,
+        icQwidCloud,
         icQwidCoin,
         icQwidError,
+        icQwidExchange,
         icQwidEyeOff,
         icQwidEyeOn,
         icQwidGift,
@@ -453,6 +474,9 @@ class $AssetsSvgsGen {
         icQwidIdentification,
         icQwidInformation,
         icQwidKey,
+        icQwidLogo,
+        icQwidMenu,
+        icQwidNotification,
         icQwidProfile,
         icQwidSearch,
         icQwidSecurity,

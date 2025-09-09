@@ -1,6 +1,8 @@
 import 'package:auto_route/annotations.dart';
 import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
+import 'package:designerwardrobe/src/features/authentication/presentation/views/home/widgets/card_carousel.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -13,27 +15,30 @@ class QwidHomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<QwidHomeScreen> {
-  final PageController _pageController = PageController();
-  int _currentPage = 0;
-
   final List<Map<String, String>> wallets = [
     {
-      "bank": "Access Bank",
-      "account": "0123456789",
-      "balance": "₦1,827,630.41",
-      "image": "https://picsum.photos/400/200?random=1"
+      "bank": "NGN Wallet",
+      "country": "NG",
+      "account": "Access Bank • 0123456789",
+      "balance": "1,827,630.41",
+      "image": "https://picsum.photos/400/200?random=1",
+      "currency": "₦",
     },
     {
       "bank": "First American Bank",
-      "account": "9876543210",
-      "balance": "\$60,040.31",
-      "image": "https://picsum.photos/400/200?random=2"
+      "country": "US",
+      "account": "Access Bank • 9876543210",
+      "balance": "60,040.31",
+      "image": "https://picsum.photos/400/200?random=2",
+      "currency": "\$",
     },
     {
       "bank": "CIBC",
-      "account": "00123-045-1234567",
-      "balance": "CA\$40,060.13",
-      "image": "https://picsum.photos/400/200?random=3"
+      "country": "CA",
+      "account": "Access Bank • 00123-045-1234567",
+      "balance": "40,060.13",
+      "image": "https://picsum.photos/400/200?random=3",
+      "currency": "CA\$",
     },
   ];
 
@@ -41,55 +46,34 @@ class _HomeScreenState extends State<QwidHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(52),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SvgPicture.asset(icQwidLogo, width: 100, height: 24),
+                Row(
+                  children: [
+                    SvgPicture.asset(icQwidGift, width: 24, height: 24, color: Colors.black),
+                    SizedBox(width: 12),
+                    SvgPicture.asset(icQwidNotification, width: 24, height: 24),
+                    SizedBox(width: 12),
+                    SvgPicture.asset(icQwidCloud, width: 24, height: 24),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Top Nav Bar
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "qwid",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff0092FF),
-                    ),
-                  ),
-                  Row(
-                    children: const [
-                      Icon(Icons.card_giftcard, size: 24, color: Colors.black),
-                      SizedBox(width: 12),
-                      Icon(Icons.notifications_none,
-                          size: 24, color: Colors.black),
-                      SizedBox(width: 12),
-                      Stack(
-                        alignment: Alignment.topRight,
-                        children: [
-                          Icon(Icons.chat_bubble_outline,
-                              size: 24, color: Colors.black),
-                          CircleAvatar(
-                            radius: 7,
-                            backgroundColor: Colors.red,
-                            child: Text(
-                              "2",
-                              style: TextStyle(
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
-
+            SizedBox(height: 16),
             // Wallets Section
             Expanded(
               child: SingleChildScrollView(
@@ -103,6 +87,7 @@ class _HomeScreenState extends State<QwidHomeScreen> {
                           Text(
                             "My Wallets",
                             style: TextStyle(
+                                fontFamily: 'Creato Display',
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black),
@@ -114,81 +99,7 @@ class _HomeScreenState extends State<QwidHomeScreen> {
                     const SizedBox(height: 8),
 
                     // Wallet PageView
-                    SizedBox(
-                      height: 200,
-                      child: PageView.builder(
-                        controller: _pageController,
-                        itemCount: wallets.length,
-                        onPageChanged: (i) => setState(() => _currentPage = i),
-                        itemBuilder: (context, index) {
-                          final wallet = wallets[index];
-                          return Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 12),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              image: DecorationImage(
-                                image: NetworkImage(wallet["image"]!),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            child: Container(
-                              padding: const EdgeInsets.all(16),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                gradient: LinearGradient(
-                                  colors: [
-                                    Colors.black.withOpacity(0.6),
-                                    Colors.transparent
-                                  ],
-                                  begin: Alignment.bottomCenter,
-                                  end: Alignment.topCenter,
-                                ),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(wallet["bank"]!,
-                                      style: const TextStyle(
-                                          fontSize: 14, color: Colors.white)),
-                                  Text(wallet["account"]!,
-                                      style: const TextStyle(
-                                          fontSize: 12, color: Colors.white70)),
-                                  const Spacer(),
-                                  const Text("Wallet Balance",
-                                      style: TextStyle(
-                                          fontSize: 12, color: Colors.white70)),
-                                  Text(wallet["balance"]!,
-                                      style: const TextStyle(
-                                          fontSize: 26,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white)),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-
-                    // Indicators
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(wallets.length, (index) {
-                        return AnimatedContainer(
-                          duration: const Duration(milliseconds: 300),
-                          margin: const EdgeInsets.symmetric(horizontal: 4),
-                          width: _currentPage == index ? 8 : 6,
-                          height: _currentPage == index ? 8 : 6,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: _currentPage == index
-                                ? const Color(0xff0092FF)
-                                : const Color(0xffE1E5EA),
-                          ),
-                        );
-                      }),
-                    ),
+                    WalletCarousel(wallets: wallets),
 
                     const SizedBox(height: 16),
 

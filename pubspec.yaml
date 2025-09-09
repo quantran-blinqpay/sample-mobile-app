@@ -73,6 +73,8 @@ dependencies:
   flutter_braintree:
     git:
       url: https://gitlab.com/quanth.aic/flutter-braintree.git
+  expandable_page_view: ^1.0.17
+  country_flags: ^3.3.0
 
 dev_dependencies:
   flutter_test:
@@ -111,6 +113,9 @@ flutter:
     - assets/cfg/
     - assets/gifs/
   fonts:
+    - family: Helonik
+      fonts:
+        - asset: assets/fonts/Helonik-Regular.otf
     - family: CreatoDisplay
       fonts:
         - asset: assets/fonts/CreatoDisplay-Regular.otf

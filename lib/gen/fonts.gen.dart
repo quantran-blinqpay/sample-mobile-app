@@ -17,6 +17,9 @@ class FontFamily {
   /// Font family: FeatureDeckCondensed
   static const String featureDeckCondensed = 'FeatureDeckCondensed';
 
+  /// Font family: Helonik
+  static const String helonik = 'Helonik';
+
   /// Font family: Inter
   static const String inter = 'Inter';
 
