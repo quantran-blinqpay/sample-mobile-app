@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/home/widgets/card_carousel.dart';
+import 'package:designerwardrobe/src/features/authentication/presentation/views/home/widgets/exchange_card.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +103,8 @@ class _HomeScreenState extends State<QwidHomeScreen> {
                     WalletCarousel(wallets: wallets),
 
                     const SizedBox(height: 16),
-
+                    Container(width: double.infinity, height: 8, color: Color(0xffF3F5F7)),
+                    const SizedBox(height: 16),
                     // Currency Converter
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -116,33 +118,11 @@ class _HomeScreenState extends State<QwidHomeScreen> {
                         ],
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.all(16),
-                      padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: Colors.grey.shade300)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text("Amount", style: TextStyle(color: Colors.grey)),
-                          SizedBox(height: 4),
-                          Text("₦0", style: TextStyle(fontSize: 24)),
-                          Divider(),
-                          Text("You get", style: TextStyle(color: Colors.grey)),
-                          SizedBox(height: 4),
-                          Text("\$0", style: TextStyle(fontSize: 24)),
-                          Divider(),
-                          Text("Exchange rate: \$1 = ₦0.000624",
-                              style: TextStyle(color: Colors.grey)),
-                        ],
-                      ),
-                    ),
-
+                    ExchangeCard(),
+                    Container(width: double.infinity, height: 8, color: Color(0xffF3F5F7)),
                     // Transaction History
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
