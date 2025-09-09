@@ -7,6 +7,7 @@ import 'package:designerwardrobe/src/features/authentication/presentation/views/
 import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/confirm_pin.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/contact_information.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/create_personal_account_screen.dart';
+import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/login.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/onboarding.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/personal_information.dart';
 import 'package:designerwardrobe/src/features/authentication/presentation/views/home/qwid_home_screen.dart';

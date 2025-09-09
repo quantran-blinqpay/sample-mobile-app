@@ -22,6 +22,7 @@ final _authRoutes = [
   AutoRoute(path: 'security_questions', page: SecurityQuestionsScreenRoute.page),
   AutoRoute(path: 'verification_by_phone', page: AccountVerificationByPhoneScreenRoute.page),
   AutoRoute(path: 'qwid_home', page: QwidHomeScreenRoute.page),
+  AutoRoute(path: 'sign_in', page: LoginScreenRoute.page),
 ];
 
 @RoutePage(name: 'AuthWrapperPageRoute')

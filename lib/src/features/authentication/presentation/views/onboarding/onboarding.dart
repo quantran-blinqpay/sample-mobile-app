@@ -105,7 +105,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                   onPressed: () {
-                    context.router.push(QwidHomeScreenRoute());
+                    context.router.push(LoginScreenRoute());
                   },
                   child: const Text(
                     "Already a member? Log in",

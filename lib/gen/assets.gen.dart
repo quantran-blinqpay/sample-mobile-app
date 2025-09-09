@@ -130,6 +130,10 @@ class $AssetsPngsGen {
   AssetGenImage get icPlaceholderLarge =>
       const AssetGenImage('assets/pngs/ic_placeholder_large.png');
 
+  /// File path: assets/pngs/ic_qwid_book.png
+  AssetGenImage get icQwidBook =>
+      const AssetGenImage('assets/pngs/ic_qwid_book.png');
+
   /// File path: assets/pngs/ic_windcave.png
   AssetGenImage get icWindcave =>
       const AssetGenImage('assets/pngs/ic_windcave.png');
@@ -149,6 +153,7 @@ class $AssetsPngsGen {
         icPaymentZip,
         icPlaceholder,
         icPlaceholderLarge,
+        icQwidBook,
         icWindcave,
         qwidBg
       ];

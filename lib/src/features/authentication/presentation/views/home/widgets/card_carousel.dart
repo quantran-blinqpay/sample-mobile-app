@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class WalletCarousel extends StatefulWidget {
-  const WalletCarousel({super.key, required this.wallets});
-  final List<Map<String, String>> wallets;
+  const WalletCarousel({super.key});
   @override
   State<WalletCarousel> createState() => _WalletCarouselState();
 }
@@ -39,13 +38,13 @@ class _WalletCarouselState extends State<WalletCarousel> {
           child: PageView.builder(
             controller: _controller,
             padEnds: true, // 👈 first/last show only one side
-            itemCount: widget.wallets.length,
+            itemCount: wallets.length,
             itemBuilder: (context, index) {
-              final wallet = widget.wallets[index];
+              final wallet = wallets[index];
 
               // Equal side gaps for middle pages; only inner gap for edges.
               final left = index == 0 ? 0.0 : gap / 2;
-              final right = index == widget.wallets.length - 1 ? 0.0 : gap / 2;
+              final right = index == wallets.length - 1 ? 0.0 : gap / 2;
 
               return Padding(
                 padding: EdgeInsets.only(left: left, right: right),
@@ -164,7 +163,7 @@ class _WalletCarouselState extends State<WalletCarousel> {
         // Indicators
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(widget.wallets.length, (index) {
+          children: List.generate(wallets.length, (index) {
             return AnimatedContainer(
               duration: const Duration(milliseconds: 300),
               margin: const EdgeInsets.symmetric(horizontal: 4),
@@ -183,3 +182,30 @@ class _WalletCarouselState extends State<WalletCarousel> {
     );
   }
 }
+
+final List<Map<String, String>> wallets = [
+  {
+    "bank": "NGN Wallet",
+    "country": "NG",
+    "account": "Access Bank • 0123456789",
+    "balance": "1,827,630.41",
+    "image": "https://t4.ftcdn.net/jpg/03/79/96/25/360_F_379962515_j4dQNtf6gp1WyS4Jo2LTZ8KXe85ncZWC.jpg",
+    "currency": "₦",
+  },
+  {
+    "bank": "First American Bank",
+    "country": "US",
+    "account": "Access Bank • 9876543210",
+    "balance": "60,040.31",
+    "image": "https://images.squarespace-cdn.com/content/v1/62015f66f840ef671da14ae7/1aa35437-4cd2-4e39-aabc-2df68baac830/NYC-skyline-033.JPG",
+    "currency": "\$",
+  },
+  {
+    "bank": "CIBC",
+    "country": "CA",
+    "account": "Access Bank • 00123-045-1234567",
+    "balance": "40,060.13",
+    "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/landscape-of-city-vancouver-in-canada-deejpilot.jpg",
+    "currency": "CA\$",
+  },
+];
