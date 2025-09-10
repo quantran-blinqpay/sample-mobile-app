@@ -74,6 +74,8 @@ const String icQwidLock = "$svgPath/ic_qwid_lock.svg";
 const String icQwidArrowRight = "$svgPath/ic_qwid_arrow_right.svg";
 const String icQwidNotiNoBadge = "$svgPath/ic_qwid_noti_no_badge.svg";
 const String icQwidPending = "$svgPath/ic_qwid_pending.svg";
+const String icQwidCheckmark = "$svgPath/ic_qwid_checkmark.svg";
+const String icQwidUncheckmark = "$svgPath/ic_qwid_uncheckmark.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";
@@ -90,3 +92,5 @@ const String icCheckboxSelected = "$pngPath/ic_checkbox_selected.png";
 const String qwidBg = "$pngPath/qwid_bg.png";
 const String icQwidBook = "$pngPath/ic_qwid_book.png";
 const String icQwidCup = "$pngPath/ic_qwid_cup.png";
+const String icQwidWarning = "$pngPath/ic_qwid_warning.png";
+const String icQwidPaymentSuccess = "$pngPath/ic_qwid_check.png";

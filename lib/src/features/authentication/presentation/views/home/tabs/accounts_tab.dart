@@ -4,6 +4,7 @@ import 'package:qwid/src/features/authentication/presentation/views/home/widgets
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:qwid/src/features/authentication/presentation/views/home/widgets/inform_update_account.dart';
 
 // If you already have these in your app, import your constants instead.
 const _blue = Color(0xFF0092FF);
@@ -19,6 +20,19 @@ class AccountsTab extends StatefulWidget {
 
 class _AccountsTabState extends State<AccountsTab> {
   final _page = PageController(viewportFraction: 0.74);
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 3)).then((value) {
+      if (mounted) {
+        showDialog(
+          context: context,
+          builder: (_) => InformUpdateAccount(),
+        );
+      }
+    });
+  }
 
   @override
   void dispose() {
