@@ -345,6 +345,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_notebook.svg
   String get icQwidNotebook => 'assets/svgs/ic_qwid_notebook.svg';
 
+  /// File path: assets/svgs/ic_qwid_noti_no_badge.svg
+  String get icQwidNotiNoBadge => 'assets/svgs/ic_qwid_noti_no_badge.svg';
+
   /// File path: assets/svgs/ic_qwid_notification.svg
   String get icQwidNotification => 'assets/svgs/ic_qwid_notification.svg';
 
@@ -512,6 +515,7 @@ class $AssetsSvgsGen {
         icQwidLogo,
         icQwidMenu,
         icQwidNotebook,
+        icQwidNotiNoBadge,
         icQwidNotification,
         icQwidProfile,
         icQwidSearch,

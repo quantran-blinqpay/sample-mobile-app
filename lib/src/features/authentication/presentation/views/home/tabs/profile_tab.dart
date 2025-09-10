@@ -148,7 +148,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   title: 'Support',
                   children: [
                     _tile(
-                      icon: icQwidNotification,
+                      icon: icQwidNotiNoBadge,
                       title: 'Notifications',
                       subtitle: 'Choose how you want to receive updates',
                       trailing: SvgPicture.asset(icQwidArrowRight, width: 24, height: 24),
