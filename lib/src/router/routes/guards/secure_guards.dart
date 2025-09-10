@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/access_token_storage.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/shared_prefs/access_token_storage.dart';
+import 'package:qwid/src/router/router.dart';
 
 class AuthGuard extends AutoRouteGuard {
 

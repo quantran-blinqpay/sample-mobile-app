@@ -1,18 +1,18 @@
-import 'package:designerwardrobe/src/core/constants/app_constants.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/country_storage.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/profile_storage.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/username_storage.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/parameter/code_verification_parameter.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/parameter/user_creation_parameter.dart';
-import 'package:designerwardrobe/src/features/filter/data/remote/dtos/filter_hits_response.dart';
-import 'package:designerwardrobe/src/features/profile/domain/repositories/profile_repository.dart';
+import 'package:qwid/src/core/constants/app_constants.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/core/shared_prefs/country_storage.dart';
+import 'package:qwid/src/core/shared_prefs/profile_storage.dart';
+import 'package:qwid/src/core/shared_prefs/username_storage.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/parameter/code_verification_parameter.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/parameter/user_creation_parameter.dart';
+import 'package:qwid/src/features/filter/data/remote/dtos/filter_hits_response.dart';
+import 'package:qwid/src/features/profile/domain/repositories/profile_repository.dart';
 import 'package:equatable/equatable.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/access_token_storage.dart';
+import 'package:qwid/src/core/failures/failure.dart';
+import 'package:qwid/src/core/shared_prefs/access_token_storage.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/repositories/auth_repository.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
+import 'package:qwid/src/core/di/injections.dart';
 
 part 'auth_state.dart';
 

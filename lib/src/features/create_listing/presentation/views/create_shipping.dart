@@ -2,16 +2,16 @@
 
 import 'dart:async';
 
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/switch/app_switch.dart';
-import 'package:designerwardrobe/src/components/switch/custom_switch.dart';
-import 'package:designerwardrobe/src/components/text_field/app_text_form_field.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/core/input_formatters/strict_decimal_inputf.dart';
-import 'package:designerwardrobe/src/core/utils/text_utils.dart';
-import 'package:designerwardrobe/src/features/authentication/presentation/cubit/auth_cubit.dart';
-import 'package:designerwardrobe/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
-import 'package:designerwardrobe/src/features/helper/cubit/helper_cubit.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/switch/app_switch.dart';
+import 'package:qwid/src/components/switch/custom_switch.dart';
+import 'package:qwid/src/components/text_field/app_text_form_field.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/core/input_formatters/strict_decimal_inputf.dart';
+import 'package:qwid/src/core/utils/text_utils.dart';
+import 'package:qwid/src/features/authentication/presentation/cubit/auth_cubit.dart';
+import 'package:qwid/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
+import 'package:qwid/src/features/helper/cubit/helper_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';

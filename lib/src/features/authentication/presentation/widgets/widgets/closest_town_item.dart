@@ -1,7 +1,7 @@
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/country/closest_town.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/country/closest_town.dart';
 import 'package:flutter/material.dart';
 
 class ClosestTownItem extends StatefulWidget {

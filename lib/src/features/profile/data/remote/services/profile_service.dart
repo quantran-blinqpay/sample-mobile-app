@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:designerwardrobe/src/features/profile/domain/model/user_data.dart';
+import 'package:qwid/src/features/profile/domain/model/user_data.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:designerwardrobe/src/core/network/response/object_response.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/profile_dto.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/profile_dto.dart'
+import 'package:qwid/src/core/network/response/object_response.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/profile_dto.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/profile_dto.dart'
     as dto;
 
 part 'profile_service.g.dart';

@@ -1,15 +1,15 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/features/authentication/presentation/cubit/auth_cubit.dart';
-import 'package:designerwardrobe/src/features/home/presentation/cubit/main_tab_cubit.dart';
-import 'package:designerwardrobe/src/features/home/presentation/home_screen.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/features/authentication/presentation/cubit/auth_cubit.dart';
+import 'package:qwid/src/features/home/presentation/cubit/main_tab_cubit.dart';
+import 'package:qwid/src/features/home/presentation/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/features/home/domain/models/movie.dart';
-import 'package:designerwardrobe/src/features/home/presentation/cubit/movie_data_cubit.dart';
-import 'package:designerwardrobe/src/features/home/presentation/cubit/movie_selector_cubit.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:qwid/src/features/home/domain/models/movie.dart';
+import 'package:qwid/src/features/home/presentation/cubit/movie_data_cubit.dart';
+import 'package:qwid/src/features/home/presentation/cubit/movie_selector_cubit.dart';
+import 'package:qwid/src/router/route_names.dart';
 
 import 'cubit/home_cubit.dart';
 

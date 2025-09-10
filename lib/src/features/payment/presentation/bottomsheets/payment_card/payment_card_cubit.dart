@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/core/utils/card_util.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/parameters/submit_credit_card_parameter.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/parameters/windcave_session_parameter.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/windcave_card_response.dart';
-import 'package:designerwardrobe/src/features/payment/domain/repositories/payment_repository.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/core/utils/card_util.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/parameters/submit_credit_card_parameter.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/parameters/windcave_session_parameter.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/windcave_card_response.dart';
+import 'package:qwid/src/features/payment/domain/repositories/payment_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_braintree/flutter_braintree.dart';

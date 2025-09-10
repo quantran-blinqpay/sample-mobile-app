@@ -4,7 +4,7 @@
 
 library;
 
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

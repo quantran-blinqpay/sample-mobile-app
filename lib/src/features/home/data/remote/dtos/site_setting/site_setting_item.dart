@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/helper/dtos/site_setting_data.dart';
+import 'package:qwid/src/features/helper/dtos/site_setting_data.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'site_setting_item.g.dart';

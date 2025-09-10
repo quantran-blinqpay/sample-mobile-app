@@ -1,5 +1,5 @@
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/home_setting.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/site_homepage_slides.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/home_setting.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/site_homepage_slides.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../../home/data/remote/dtos/site_setting/global_setting.dart';

@@ -1,8 +1,8 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/delivery_method/payment_method/payment_method.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/delivery_method/ship_to/ship_to.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/delivery_method/shipping_method/shipping_method.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/delivery_method/payment_method/payment_method.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/delivery_method/ship_to/ship_to.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/delivery_method/shipping_method/shipping_method.dart';
 import 'package:flutter/material.dart';
 
 class DeliveryMethod extends StatelessWidget {

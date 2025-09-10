@@ -1,7 +1,7 @@
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/country/local_country.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/country/local_country.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

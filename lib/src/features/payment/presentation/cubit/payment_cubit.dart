@@ -1,20 +1,20 @@
 import 'dart:convert';
 
-import 'package:designerwardrobe/src/core/failures/failure.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/country/local_country.dart';
-import 'package:designerwardrobe/src/features/helper/dtos/currency_rate_response.dart';
-import 'package:designerwardrobe/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/parameters/complete_purchase_parameter.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/my_address_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/payment_info_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/windcave_card_response.dart';
-import 'package:designerwardrobe/src/features/payment/domain/repositories/payment_repository.dart';
-import 'package:designerwardrobe/src/features/profile/domain/repositories/profile_repository.dart';
+import 'package:qwid/src/core/failures/failure.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/country/local_country.dart';
+import 'package:qwid/src/features/helper/dtos/currency_rate_response.dart';
+import 'package:qwid/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/parameters/complete_purchase_parameter.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/my_address_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/payment_info_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/windcave_card_response.dart';
+import 'package:qwid/src/features/payment/domain/repositories/payment_repository.dart';
+import 'package:qwid/src/features/profile/domain/repositories/profile_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:designerwardrobe/src/features/profile/domain/model/user_data.dart'
+import 'package:qwid/src/features/profile/domain/model/user_data.dart'
     as profile;
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -2,7 +2,7 @@
 //
 //     final getDraftsResponse = getDraftsResponseFromJson(jsonString);
 
-import 'package:designerwardrobe/src/features/profile/domain/model/user_data.dart';
+import 'package:qwid/src/features/profile/domain/model/user_data.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'dart:convert';
 

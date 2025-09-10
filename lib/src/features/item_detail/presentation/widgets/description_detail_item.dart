@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/core/utils/color_utils.dart';
-import 'package:designerwardrobe/src/core/utils/datetime.dart';
-import 'package:designerwardrobe/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/core/utils/color_utils.dart';
+import 'package:qwid/src/core/utils/datetime.dart';
+import 'package:qwid/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 

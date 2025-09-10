@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:designerwardrobe/src/core/network/response/error/error_entity.dart';
+import 'package:qwid/src/core/network/response/error/error_entity.dart';
 
 part 'object_response.g.dart';
 

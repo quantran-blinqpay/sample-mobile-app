@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/configs/app_configs/app_config.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/features/banner/domain/models/banner.dart';
-import 'package:designerwardrobe/src/features/banner/domain/repositories/banner_repository.dart';
+import 'package:qwid/src/configs/app_configs/app_config.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/features/banner/domain/models/banner.dart';
+import 'package:qwid/src/features/banner/domain/repositories/banner_repository.dart';
 
 part 'banner_state.dart';
 

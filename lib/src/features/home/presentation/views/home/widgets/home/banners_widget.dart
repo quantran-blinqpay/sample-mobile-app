@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/carousel.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/site_homepage_slides.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/carousel.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/site_homepage_slides.dart';
 import 'package:flutter/material.dart';
 
 class BannersWidget extends StatelessWidget {

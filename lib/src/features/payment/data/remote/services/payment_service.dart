@@ -1,16 +1,16 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/complete_purchase_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/create_address_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/get_client_token_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/lookup_address_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/my_address_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/payment_info_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/submit_credit_card_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/verify_stock_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/windcave_card_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/windcave_session_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/complete_purchase_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/create_address_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/get_client_token_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/lookup_address_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/my_address_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/payment_info_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/submit_credit_card_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/verify_stock_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/windcave_card_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/windcave_session_response.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 

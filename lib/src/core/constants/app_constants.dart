@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/core/constants/filter_class.dart';
+import 'package:qwid/src/core/constants/filter_class.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 const kAustralia = 'australia';

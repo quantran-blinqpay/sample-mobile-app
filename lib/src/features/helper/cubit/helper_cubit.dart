@@ -1,7 +1,7 @@
-import 'package:designerwardrobe/src/features/helper/dtos/currency_rate_response.dart';
-import 'package:designerwardrobe/src/features/helper/dtos/get_startup_response.dart';
-import 'package:designerwardrobe/src/features/helper/respositories/helper_repository.dart';
-import 'package:designerwardrobe/src/features/helper/dtos/site_setting_data.dart';
+import 'package:qwid/src/features/helper/dtos/currency_rate_response.dart';
+import 'package:qwid/src/features/helper/dtos/get_startup_response.dart';
+import 'package:qwid/src/features/helper/respositories/helper_repository.dart';
+import 'package:qwid/src/features/helper/dtos/site_setting_data.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

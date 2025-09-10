@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/watchlist/watchlist_amount.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/watchlist/watchlist_amount.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'watchlist_price_pattern.g.dart';

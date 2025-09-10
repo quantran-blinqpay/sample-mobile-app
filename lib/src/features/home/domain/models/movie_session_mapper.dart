@@ -1,5 +1,5 @@
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/movie_session_dto.dart';
-import 'package:designerwardrobe/src/features/home/domain/models/session_mapper.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/movie_session_dto.dart';
+import 'package:qwid/src/features/home/domain/models/session_mapper.dart';
 
 import 'movie_session.dart';
 

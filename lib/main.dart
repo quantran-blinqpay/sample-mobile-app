@@ -1,13 +1,13 @@
-import 'package:designerwardrobe/src/features/helper/cubit/helper_cubit.dart';
+import 'package:qwid/src/features/helper/cubit/helper_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/global/global_event.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/theme_mode_storage.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/global/global_event.dart';
+import 'package:qwid/src/core/shared_prefs/theme_mode_storage.dart';
+import 'package:qwid/src/router/router.dart';
 
 import 'src/configs/app_themes/app_themes.dart';
 

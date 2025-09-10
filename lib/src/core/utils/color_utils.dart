@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/core/constants/app_constants.dart';
+import 'package:qwid/src/core/constants/app_constants.dart';
 
 class ColorUtils {
   static String? hexKeyFromLabelString(String input, {String delimiter = ','}) {

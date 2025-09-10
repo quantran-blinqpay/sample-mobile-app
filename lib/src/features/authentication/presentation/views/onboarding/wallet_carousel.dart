@@ -1,5 +1,5 @@
 import 'package:auto_route/annotations.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:qwid/src/router/route_names.dart';
 import 'package:flutter/material.dart';
 
 class WalletCarouselScreen extends StatefulWidget {

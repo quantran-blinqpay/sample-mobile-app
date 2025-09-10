@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
 
 class SettingPresenter {
   SettingPresenter({

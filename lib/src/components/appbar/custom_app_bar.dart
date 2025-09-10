@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/divider/custom_divider.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/divider/custom_divider.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/components/loading_indicator/app_modal_loader.dart';
+import 'package:qwid/src/components/loading_indicator/app_modal_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_overlay/loading_overlay.dart';
 

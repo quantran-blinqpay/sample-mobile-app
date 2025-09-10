@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/brands_by_category.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/brands_by_category.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'complete_purchase_parameter.g.dart';

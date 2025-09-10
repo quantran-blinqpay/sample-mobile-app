@@ -1,5 +1,5 @@
-import 'package:designerwardrobe/src/core/constants/filter_class.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/brand_item.dart';
+import 'package:qwid/src/core/constants/filter_class.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/brand_item.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'brands_by_category.g.dart';

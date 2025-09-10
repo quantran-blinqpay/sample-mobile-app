@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/components/switch/custom_switch.dart';
+import 'package:qwid/src/components/switch/custom_switch.dart';
 import 'package:flutter/material.dart';
 
 class AppSwitch extends StatefulWidget {

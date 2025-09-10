@@ -1,5 +1,5 @@
-import 'package:designerwardrobe/src/features/home/domain/models/genre.dart';
-import 'package:designerwardrobe/src/features/home/domain/models/movie_session.dart';
+import 'package:qwid/src/features/home/domain/models/genre.dart';
+import 'package:qwid/src/features/home/domain/models/movie_session.dart';
 import 'type.dart';
 
 class MovieModel {

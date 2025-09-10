@@ -1,9 +1,9 @@
-import 'package:designerwardrobe/src/components/loading_indicator/app_shimmer.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/loading/widgets/list_order_loading.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/loading/widgets/promo_code_input_loading.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/loading/widgets/total_to_pay_loading.dart';
+import 'package:qwid/src/components/loading_indicator/app_shimmer.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/loading/widgets/list_order_loading.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/loading/widgets/promo_code_input_loading.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/loading/widgets/total_to_pay_loading.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

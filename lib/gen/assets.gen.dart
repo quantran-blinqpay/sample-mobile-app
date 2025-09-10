@@ -267,6 +267,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_arrow_down.svg
   String get icQwidArrowDown => 'assets/svgs/ic_qwid_arrow_down.svg';
 
+  /// File path: assets/svgs/ic_qwid_arrow_right.svg
+  String get icQwidArrowRight => 'assets/svgs/ic_qwid_arrow_right.svg';
+
   /// File path: assets/svgs/ic_qwid_arrow_up.svg
   String get icQwidArrowUp => 'assets/svgs/ic_qwid_arrow_up.svg';
 
@@ -291,6 +294,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_coin.svg
   String get icQwidCoin => 'assets/svgs/ic_qwid_coin.svg';
 
+  /// File path: assets/svgs/ic_qwid_edit.svg
+  String get icQwidEdit => 'assets/svgs/ic_qwid_edit.svg';
+
   /// File path: assets/svgs/ic_qwid_error.svg
   String get icQwidError => 'assets/svgs/ic_qwid_error.svg';
 
@@ -303,11 +309,17 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_eye_on.svg
   String get icQwidEyeOn => 'assets/svgs/ic_qwid_eye_on.svg';
 
+  /// File path: assets/svgs/ic_qwid_fingerprint.svg
+  String get icQwidFingerprint => 'assets/svgs/ic_qwid_fingerprint.svg';
+
   /// File path: assets/svgs/ic_qwid_gift.svg
   String get icQwidGift => 'assets/svgs/ic_qwid_gift.svg';
 
   /// File path: assets/svgs/ic_qwid_global.svg
   String get icQwidGlobal => 'assets/svgs/ic_qwid_global.svg';
+
+  /// File path: assets/svgs/ic_qwid_help.svg
+  String get icQwidHelp => 'assets/svgs/ic_qwid_help.svg';
 
   /// File path: assets/svgs/ic_qwid_home.svg
   String get icQwidHome => 'assets/svgs/ic_qwid_home.svg';
@@ -321,11 +333,20 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_key.svg
   String get icQwidKey => 'assets/svgs/ic_qwid_key.svg';
 
+  /// File path: assets/svgs/ic_qwid_lock.svg
+  String get icQwidLock => 'assets/svgs/ic_qwid_lock.svg';
+
   /// File path: assets/svgs/ic_qwid_logo.svg
   String get icQwidLogo => 'assets/svgs/ic_qwid_logo.svg';
 
   /// File path: assets/svgs/ic_qwid_menu.svg
   String get icQwidMenu => 'assets/svgs/ic_qwid_menu.svg';
+
+  /// File path: assets/svgs/ic_qwid_notebook.svg
+  String get icQwidNotebook => 'assets/svgs/ic_qwid_notebook.svg';
+
+  /// File path: assets/svgs/ic_qwid_noti_no_badge.svg
+  String get icQwidNotiNoBadge => 'assets/svgs/ic_qwid_noti_no_badge.svg';
 
   /// File path: assets/svgs/ic_qwid_notification.svg
   String get icQwidNotification => 'assets/svgs/ic_qwid_notification.svg';
@@ -341,6 +362,13 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/ic_qwid_success.svg
   String get icQwidSuccess => 'assets/svgs/ic_qwid_success.svg';
+
+  /// File path: assets/svgs/ic_qwid_uncompleted_tier.svg
+  String get icQwidUncompletedTier =>
+      'assets/svgs/ic_qwid_uncompleted_tier.svg';
+
+  /// File path: assets/svgs/ic_qwid_verification.svg
+  String get icQwidVerification => 'assets/svgs/ic_qwid_verification.svg';
 
   /// File path: assets/svgs/ic_radio.svg
   String get icRadio => 'assets/svgs/ic_radio.svg';
@@ -461,6 +489,7 @@ class $AssetsSvgsGen {
         icProtection,
         icQuestion,
         icQwidArrowDown,
+        icQwidArrowRight,
         icQwidArrowUp,
         icQwidBank,
         icQwidBeneficiares,
@@ -469,23 +498,31 @@ class $AssetsSvgsGen {
         icQwidCheck,
         icQwidCloud,
         icQwidCoin,
+        icQwidEdit,
         icQwidError,
         icQwidExchange,
         icQwidEyeOff,
         icQwidEyeOn,
+        icQwidFingerprint,
         icQwidGift,
         icQwidGlobal,
+        icQwidHelp,
         icQwidHome,
         icQwidIdentification,
         icQwidInformation,
         icQwidKey,
+        icQwidLock,
         icQwidLogo,
         icQwidMenu,
+        icQwidNotebook,
+        icQwidNotiNoBadge,
         icQwidNotification,
         icQwidProfile,
         icQwidSearch,
         icQwidSecurity,
         icQwidSuccess,
+        icQwidUncompletedTier,
+        icQwidVerification,
         icRadio,
         icRadioFillSelected,
         icRadioSelected,

@@ -1,9 +1,9 @@
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
-import 'package:designerwardrobe/src/features/profile/domain/model/get_drafts_response.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
+import 'package:qwid/src/features/profile/domain/model/get_drafts_response.dart';
 import 'package:equatable/equatable.dart';
-import 'package:designerwardrobe/src/features/profile/domain/model/user_data.dart';
-import 'package:designerwardrobe/src/features/profile/domain/repositories/profile_repository.dart';
+import 'package:qwid/src/features/profile/domain/model/user_data.dart';
+import 'package:qwid/src/features/profile/domain/repositories/profile_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'profile_state.dart';

@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:designerwardrobe/src/components/loading_indicator/app_loader.dart';
-import 'package:designerwardrobe/src/components/scaffold/swipe_back_listener.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/components/loading_indicator/app_loader.dart';
+import 'package:qwid/src/components/scaffold/swipe_back_listener.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/services.dart';

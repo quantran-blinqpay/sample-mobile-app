@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:designerwardrobe/src/components/image/app_image.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/cubit/item_detail_cubit.dart';
+import 'package:qwid/src/components/image/app_image.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
+import 'package:qwid/src/features/item_detail/presentation/cubit/item_detail_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

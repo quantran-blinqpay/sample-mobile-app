@@ -1,16 +1,16 @@
 import 'dart:convert';
 
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/network/client/client_provider.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/profile_storage.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/username_storage.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/services/auth_service.dart';
-import 'package:designerwardrobe/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
-import 'package:designerwardrobe/src/features/profile/domain/model/get_drafts_response.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/network/client/client_provider.dart';
+import 'package:qwid/src/core/shared_prefs/profile_storage.dart';
+import 'package:qwid/src/core/shared_prefs/username_storage.dart';
+import 'package:qwid/src/features/authentication/data/remote/services/auth_service.dart';
+import 'package:qwid/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
+import 'package:qwid/src/features/profile/domain/model/get_drafts_response.dart';
 import 'package:dio/dio.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
+import 'package:qwid/src/core/failures/failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:designerwardrobe/src/features/profile/domain/model/user_data.dart';
+import 'package:qwid/src/features/profile/domain/model/user_data.dart';
 import '../../data/remote/services/profile_service.dart';
 
 abstract class ProfileRepository {

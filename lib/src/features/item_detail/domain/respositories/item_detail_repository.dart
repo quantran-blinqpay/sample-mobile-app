@@ -1,18 +1,18 @@
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
-import 'package:designerwardrobe/src/core/network/client/client_provider.dart';
-import 'package:designerwardrobe/src/core/network/response/default_response.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/category/brand_following_response.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/parameter/brand_following_parameter.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/services/auth_service.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/services/no_token_service.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/failures/failure.dart';
+import 'package:qwid/src/core/network/client/client_provider.dart';
+import 'package:qwid/src/core/network/response/default_response.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/category/brand_following_response.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/parameter/brand_following_parameter.dart';
+import 'package:qwid/src/features/authentication/data/remote/services/auth_service.dart';
+import 'package:qwid/src/features/authentication/data/remote/services/no_token_service.dart';
 import 'package:dartz/dartz.dart';
-import 'package:designerwardrobe/src/features/filter/data/remote/dtos/filter_search_response.dart'
+import 'package:qwid/src/features/filter/data/remote/dtos/filter_search_response.dart'
     show FilterSearchResponse;
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/recommended_item.dart';
-import 'package:designerwardrobe/src/features/item_detail/data/remote/dtos/all_question_response.dart';
-import 'package:designerwardrobe/src/features/item_detail/data/remote/dtos/ask_question_response.dart';
-import 'package:designerwardrobe/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/recommended_item.dart';
+import 'package:qwid/src/features/item_detail/data/remote/dtos/all_question_response.dart';
+import 'package:qwid/src/features/item_detail/data/remote/dtos/ask_question_response.dart';
+import 'package:qwid/src/features/item_detail/data/remote/dtos/listing_detail_response.dart';
 
 abstract class ItemDetailRepository {
   Future<Either<Failure, ListingDetailResponse?>> getListingDetail(int id);

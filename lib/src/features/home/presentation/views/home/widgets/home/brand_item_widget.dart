@@ -1,11 +1,12 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/components/image/app_image.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/core/extensions/amount.dart';
-import 'package:designerwardrobe/src/features/home/presentation/dialogs/counter_offer.dart';
-import 'package:designerwardrobe/src/features/home/presentation/dialogs/make_offer.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/src/components/image/app_image.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/core/extensions/amount.dart';
+import 'package:qwid/src/features/home/presentation/dialogs/counter_offer.dart';
+import 'package:qwid/src/features/home/presentation/dialogs/make_offer.dart';
+import 'package:qwid/src/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

@@ -1,15 +1,15 @@
-import 'package:designerwardrobe/src/core/network/client/client_provider.dart';
-import 'package:designerwardrobe/src/core/network/client/interceptors/api_version_interceptor.dart';
-import 'package:designerwardrobe/src/core/network/client/interceptors/custom_dio_logger.dart';
-import 'package:designerwardrobe/src/core/network/client/interceptors/recombee_interceptor.dart';
-import 'package:designerwardrobe/src/core/network/client/interceptors/user_agent_interceptor.dart';
+import 'package:qwid/src/core/network/client/client_provider.dart';
+import 'package:qwid/src/core/network/client/interceptors/api_version_interceptor.dart';
+import 'package:qwid/src/core/network/client/interceptors/custom_dio_logger.dart';
+import 'package:qwid/src/core/network/client/interceptors/recombee_interceptor.dart';
+import 'package:qwid/src/core/network/client/interceptors/user_agent_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:fresh_dio/fresh_dio.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/network/client/interceptors/authorization_interceptor.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/access_token_storage.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/services/auth_service.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/network/client/interceptors/authorization_interceptor.dart';
+import 'package:qwid/src/core/shared_prefs/access_token_storage.dart';
+import 'package:qwid/src/features/authentication/data/remote/services/auth_service.dart';
 
 export 'authorization_interceptor.dart';
 

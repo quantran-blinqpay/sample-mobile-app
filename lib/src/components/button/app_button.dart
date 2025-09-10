@@ -1,11 +1,11 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:designerwardrobe/src/components/loading_indicator/loading_indicator_widget.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/components/loading_indicator/loading_indicator_widget.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
 
 enum ShapeAppButton { circle, rectangle }
 

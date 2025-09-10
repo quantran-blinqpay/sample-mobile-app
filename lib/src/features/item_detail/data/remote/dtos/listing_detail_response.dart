@@ -2,7 +2,7 @@
 //
 //     final listingDetailResponse = listingDetailResponseFromJson(jsonString);
 
-import 'package:designerwardrobe/src/features/filter/data/remote/dtos/filter_hits_response.dart';
+import 'package:qwid/src/features/filter/data/remote/dtos/filter_hits_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'dart:convert';
 

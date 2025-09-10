@@ -1,10 +1,10 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/cubit/payment_cubit.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/order_summary/gift_card_input.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/order_summary/list_order/list_order.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/order_summary/promo_code_input.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/order_summary/total_to_pay.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/payment/presentation/cubit/payment_cubit.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/order_summary/gift_card_input.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/order_summary/list_order/list_order.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/order_summary/promo_code_input.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/order_summary/total_to_pay.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

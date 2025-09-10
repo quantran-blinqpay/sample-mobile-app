@@ -3,15 +3,15 @@
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/components/dialog/custom_dialog.dart';
-import 'package:designerwardrobe/src/components/image/app_image.dart';
-import 'package:designerwardrobe/src/components/loading_indicator/app_modal_loader.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/core/utils/image_utils.dart';
-import 'package:designerwardrobe/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/components/dialog/custom_dialog.dart';
+import 'package:qwid/src/components/image/app_image.dart';
+import 'package:qwid/src/components/loading_indicator/app_modal_loader.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/core/utils/image_utils.dart';
+import 'package:qwid/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
+import 'package:qwid/src/router/router.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';

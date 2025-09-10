@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/offer/parameters/make_offer_parameter.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/product_tile.dart';
-import 'package:designerwardrobe/src/features/helper/dtos/site_setting_data.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/watchlist/watchlist_item.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/offer/parameters/make_offer_parameter.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/product_tile.dart';
+import 'package:qwid/src/features/helper/dtos/site_setting_data.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/watchlist/watchlist_item.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

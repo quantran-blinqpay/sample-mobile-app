@@ -1,8 +1,8 @@
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/category_entity.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/recommended_brand_au_setting.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/recommended_brand_nz_setting.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/shop_by_price.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/top_brand.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/category_entity.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/recommended_brand_au_setting.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/recommended_brand_nz_setting.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/shop_by_price.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/top_brand.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'carousel.dart';
 

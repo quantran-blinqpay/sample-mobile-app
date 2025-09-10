@@ -1,10 +1,12 @@
 import 'package:country_flags/country_flags.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:qwid/src/features/authentication/presentation/views/home/widgets/account_detail_bottom_sheet.dart';
 
 class AccountCarousel extends StatefulWidget {
-  const AccountCarousel({super.key});
+  const AccountCarousel({super.key, required this.onPageChanged});
+  final Function(int) onPageChanged;
   @override
   State<AccountCarousel> createState() => _AccountCarouselState();
 }
@@ -51,115 +53,16 @@ class _AccountCarouselState extends State<AccountCarousel> {
                 height: 200,
                 child: Padding(
                   padding: EdgeInsets.only(left: left, right: right),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Stack(
-                      fit: StackFit.expand,
-                      children: [
-                        Image.network(wallet["image"]!, fit: BoxFit.cover),
-                        Container(
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.bottomCenter,
-                              end: Alignment.topCenter,
-                              colors: [
-                                Colors.black.withOpacity(0.6),
-                                Colors.transparent,
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            CountryFlag.fromCountryCode(
-                                              wallet["country"]!,
-                                              width: 20,
-                                              height: 14,
-                                            ),
-                                            Text(' ${wallet["bank"]!}',
-                                                style: const TextStyle(
-                                                  fontFamily: 'Creato Display',
-                                                  fontSize: 16, color: Colors.white,
-                                                )),
-                                          ],
-                                        ),
-                                        SizedBox(height: 4),
-                                        Text(wallet["account"]!,
-                                            style: const TextStyle(
-                                                fontFamily: 'Creato Display',
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 12, color: Colors.white)),
-                                      ],
-                                    ),
-                                  ),
-                                  SvgPicture.asset(icQwidMenu, width: 24, height: 24),
-                                ],
-                              ),
-                              const Spacer(),
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  SvgPicture.asset(icQwidBank, width: 16, height: 16),
-                                  const Text("Balance",
-                                      style: TextStyle(
-                                          fontFamily: 'Creato Display',
-                                          fontWeight: FontWeight.w500,
-                                          fontSize: 12, color: Colors.white)),
-                                ],
-                              ),
-                              RichText(
-                                text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text: wallet["currency"],
-                                      style: const TextStyle(
-                                          fontFamily: 'Helonik',
-                                          fontSize: 36,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.white),
-                                    ),
-                                    TextSpan(
-                                      text: wallet["balance"]!.split('.')[0],
-                                      style: const TextStyle(
-                                          fontFamily: 'Helonik',
-                                          fontSize: 36,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.white),
-                                    ),
-                                    TextSpan(
-                                      text: '.${wallet["balance"]!.split('.')[1]}',
-                                      style: const TextStyle(
-                                          fontFamily: 'Helonik',
-                                          fontSize: 36,
-                                          fontWeight: FontWeight.w400,
-                                          color: Colors.white70),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                  child: index == 1
+                      ? _buildPendingCard(wallet)
+                      : _buildNormalCard(wallet),
                 ),
               );
             },
-            onPageChanged: (i) => setState(() => _currentPage = i)
+            onPageChanged: (i) {
+              widget.onPageChanged.call(i);
+              setState(() => _currentPage = i);
+            }
           ),
         ),
         const SizedBox(height: 16),
@@ -185,6 +88,231 @@ class _AccountCarouselState extends State<AccountCarousel> {
       ],
     );
   }
+
+  Widget _buildNormalCard(Map<String, String> wallet){
+    return GestureDetector(
+      onTap: () => _openAccountDetail(context),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            // Image.network(wallet["image"]!, fit: BoxFit.cover),
+            DecoratedBox(decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(1),
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xff4D4D4D),
+                  Colors.black,
+                ],
+              ),
+            ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: [
+                    Colors.black.withOpacity(0.6),
+                    Colors.transparent,
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                CountryFlag.fromCountryCode(
+                                  wallet["country"]!,
+                                  width: 20,
+                                  height: 14,
+                                ),
+                                Text(' ${wallet["bank"]!}',
+                                    style: const TextStyle(
+                                      fontFamily: 'Creato Display',
+                                      fontSize: 16, color: Colors.white,
+                                    )),
+                              ],
+                            ),
+                            SizedBox(height: 4),
+                            Text(wallet["account"]!,
+                                style: const TextStyle(
+                                    fontFamily: 'Creato Display',
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 12, color: Colors.white)),
+                          ],
+                        ),
+                      ),
+                      SvgPicture.asset(icQwidMenu, width: 24, height: 24),
+                    ],
+                  ),
+                  const Spacer(),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      SvgPicture.asset(icQwidBank, width: 16, height: 16),
+                      const Text("Balance",
+                          style: TextStyle(
+                              fontFamily: 'Creato Display',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12, color: Colors.white)),
+                    ],
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: wallet["currency"],
+                          style: const TextStyle(
+                              fontFamily: 'Helonik',
+                              fontSize: 36,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
+                        TextSpan(
+                          text: wallet["balance"]!.split('.')[0],
+                          style: const TextStyle(
+                              fontFamily: 'Helonik',
+                              fontSize: 36,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
+                        TextSpan(
+                          text: '.${wallet["balance"]!.split('.')[1]}',
+                          style: const TextStyle(
+                              fontFamily: 'Helonik',
+                              fontSize: 36,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white70),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPendingCard(Map<String, String> wallet){
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          // Image.network(wallet["image"]!, fit: BoxFit.cover),
+          DecoratedBox(decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(1),
+            gradient: LinearGradient(
+              colors: [
+                Color(0xff4D4D4D),
+                Colors.black,
+              ],
+            ),
+          ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [
+                  Colors.black.withOpacity(0.6),
+                  Colors.transparent,
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              CountryFlag.fromCountryCode(
+                                wallet["country"]!,
+                                width: 20,
+                                height: 14,
+                              ),
+                              Text(' ${wallet["bank"]!}',
+                                  style: const TextStyle(
+                                    fontFamily: 'Creato Display',
+                                    fontSize: 16, color: Colors.white,
+                                  )),
+                            ],
+                          ),
+                          SizedBox(height: 4),
+                          Text(wallet["account"]!,
+                              style: const TextStyle(
+                                  fontFamily: 'Creato Display',
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 12, color: Colors.white)),
+                        ],
+                      ),
+                    ),
+                    SvgPicture.asset(icQwidMenu, width: 24, height: 24),
+                  ],
+                ),
+                const Spacer(),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SvgPicture.asset(icQwidPending, width: 20, height: 20),
+                    SizedBox(width: 8),
+                    const Text("Your request is pending",
+                        style: TextStyle(
+                            fontFamily: 'Creato Display',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 14, color: Colors.white)),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _openAccountDetail(BuildContext context) async {
+    final selected = await showModalBottomSheet<String>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => const AccountDetailBottomSheet(),
+    );
+
+    if (selected != null) {
+      // _countryController.text = selected;
+      // context.router.push(PersonalInformationScreenRoute());
+    }
+  }
+
 }
 
 final List<Map<String, String>> wallets = [

@@ -1,21 +1,21 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/product_tile.dart';
-import 'package:designerwardrobe/src/features/home/presentation/cubit/home_cubit.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/home/recommended_for_you_widget.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/loadings/home_loading_widget.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/profile/auth_banner_widget.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/profile/buying_widget.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/profile/logout_widget.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/profile/notification_center_widget.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/profile/referral_banner_widget.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/profile/selling_widget.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/profile/settings_widget.dart';
-import 'package:designerwardrobe/src/components/scaffold/app_scaffold.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/features/authentication/presentation/cubit/auth_cubit.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/product_tile.dart';
+import 'package:qwid/src/features/home/presentation/cubit/home_cubit.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/home/recommended_for_you_widget.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/loadings/home_loading_widget.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/profile/auth_banner_widget.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/profile/buying_widget.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/profile/logout_widget.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/profile/notification_center_widget.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/profile/referral_banner_widget.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/profile/selling_widget.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/profile/settings_widget.dart';
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/features/authentication/presentation/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart' as refresh;

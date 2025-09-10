@@ -1,7 +1,7 @@
-import 'package:designerwardrobe/src/core/network/response/object_response.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/login_response.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register_dto.dart';
-import 'package:designerwardrobe/src/features/authentication/domain/model/auth_mapper.dart';
+import 'package:qwid/src/core/network/response/object_response.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/login_response.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register_dto.dart';
+import 'package:qwid/src/features/authentication/domain/model/auth_mapper.dart';
 import '../model/register.dart';
 
 class RegisterMapper {

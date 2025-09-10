@@ -1,8 +1,8 @@
-import 'package:designerwardrobe/src/core/network/client/interceptors/api_version_interceptor.dart';
+import 'package:qwid/src/core/network/client/interceptors/api_version_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:fresh_dio/fresh_dio.dart';
-import 'package:designerwardrobe/src/configs/app_configs/app_config.dart';
-import 'package:designerwardrobe/src/core/network/client/interceptors/interceptors.dart';
+import 'package:qwid/src/configs/app_configs/app_config.dart';
+import 'package:qwid/src/core/network/client/interceptors/interceptors.dart';
 
 class AppDio {
   AppConfig appConfig;

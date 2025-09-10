@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
-import 'package:designerwardrobe/src/core/network/client/client_provider.dart';
-import 'package:designerwardrobe/src/features/banner/data/remote/services/banner_service.dart';
-import 'package:designerwardrobe/src/features/banner/domain/models/banner.dart';
-import 'package:designerwardrobe/src/features/banner/domain/repositories/banner_repository_mapper.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/failures/failure.dart';
+import 'package:qwid/src/core/network/client/client_provider.dart';
+import 'package:qwid/src/features/banner/data/remote/services/banner_service.dart';
+import 'package:qwid/src/features/banner/domain/models/banner.dart';
+import 'package:qwid/src/features/banner/domain/repositories/banner_repository_mapper.dart';
 
 abstract class BannerRepository {
   Future<Either<Failure, List<BannerModel>>> getBanner();

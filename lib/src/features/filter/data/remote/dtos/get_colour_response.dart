@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/core/constants/filter_class.dart';
+import 'package:qwid/src/core/constants/filter_class.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_colour_response.g.dart';

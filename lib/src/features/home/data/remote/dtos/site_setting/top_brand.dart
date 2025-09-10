@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/product_tile.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/product_tile.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'top_brand.g.dart';

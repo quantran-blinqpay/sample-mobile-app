@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/my_address_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/my_address_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_address_response.g.dart';

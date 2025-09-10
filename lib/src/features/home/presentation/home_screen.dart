@@ -1,18 +1,18 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/components/dialog/signin_dialog.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
-import 'package:designerwardrobe/src/features/authentication/presentation/cubit/auth_cubit.dart';
-import 'package:designerwardrobe/src/features/home/presentation/cubit/main_tab_cubit.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/favourites_view.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/home_view.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/list_view.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/profile_view.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/search_view.dart';
-import 'package:designerwardrobe/src/features/home/presentation/widgets/custom_nav_bar.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/src/components/dialog/signin_dialog.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/features/authentication/presentation/cubit/auth_cubit.dart';
+import 'package:qwid/src/features/home/presentation/cubit/main_tab_cubit.dart';
+import 'package:qwid/src/features/home/presentation/views/favourites_view.dart';
+import 'package:qwid/src/features/home/presentation/views/home/home_view.dart';
+import 'package:qwid/src/features/home/presentation/views/list_view.dart';
+import 'package:qwid/src/features/home/presentation/views/profile_view.dart';
+import 'package:qwid/src/features/home/presentation/views/search_view.dart';
+import 'package:qwid/src/features/home/presentation/widgets/custom_nav_bar.dart';
+import 'package:qwid/src/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:qwid/src/router/route_names.dart';
 
 final List<String> moviesList = [
   'https://www.cgv.vn/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/7/0/700x1000_2_.jpg',

@@ -2,9 +2,9 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/features/setting/presentation/views/widgets/language/item/language_item.dart';
-import 'package:designerwardrobe/src/features/setting/presentation/views/widgets/theme/cubit/theme_cubit.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/features/setting/presentation/views/widgets/language/item/language_item.dart';
+import 'package:qwid/src/features/setting/presentation/views/widgets/theme/cubit/theme_cubit.dart';
 
 class ThemeController extends ChangeNotifier {
   ThemeController({bool? initTheme}) {
