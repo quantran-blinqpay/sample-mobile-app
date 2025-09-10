@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
 import 'package:designerwardrobe/src/features/helper/cubit/helper_cubit.dart';
 import 'package:designerwardrobe/src/router/route_names.dart';
 import 'package:designerwardrobe/src/router/router.dart';
@@ -15,7 +16,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
+  // late final AnimationController _controller;
   // guard against double-calls
   bool _started = false;
   bool _navigated = false;
@@ -23,7 +24,12 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this);
+    // Wait 1 second before navigating
+    Future.wait([Future.delayed(const Duration(seconds: 3))]).then((value) {
+      _startAfterLoaded().then((value) {
+        _onNavigated();
+      });
+    });
   }
 
   Future<void> _fetchingHelper() async {
@@ -33,23 +39,19 @@ class _SplashScreenState extends State<SplashScreen>
   void _onNavigated() {
     if (!mounted || _navigated) return;
     _navigated = true;
-    context.router.replace(HomeWrapperScreenRoute());
+    context.router.replace(OnboardingScreenRoute());
   }
 
-  Future<void> _startAfterLoaded(LottieComposition comp) async {
-    _controller.duration = comp.duration;
-
-    // kick off both AFTER lottie is loaded
-    final animFuture = _controller.forward(from: 0).orCancel;
+  Future<void> _startAfterLoaded() async {
     final apiFuture = _fetchingHelper();
 
-    await Future.wait([animFuture, apiFuture]);
+    await Future.wait([apiFuture]);
     _onNavigated();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    // _controller.dispose();
     super.dispose();
   }
 
@@ -58,7 +60,12 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       backgroundColor: const Color(0xFFF2E9DC),
       body: Center(
-        child: Lottie.asset(
+        child: Image.asset(
+          qwidBg,
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.fill,
+        )/*Lottie.asset(
           'assets/animations/Splash_Screen.json',
           width: double.infinity,
           height: double.infinity,
@@ -69,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen>
             _started = true;
             _startAfterLoaded(composition);
           },
-        ),
+        )*/,
       ),
     );
   }

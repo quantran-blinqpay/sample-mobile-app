@@ -92,7 +92,7 @@ ThemeData getThemeDefault() {
         forgotPasswordLinkColor: Color(0xFF195777),
         forgotPasswordFocusColor: Color(0xFFAD2F34),
       ),
-      const AppFonts(mainFont: 'Poppins', subFont: 'Inter')
+      const AppFonts(mainFont: 'CreatoDisplay', subFont: 'Inter')
     ],
     appBarTheme: const AppBarTheme(
       systemOverlayStyle: SystemUiOverlayStyle(
@@ -193,7 +193,7 @@ ThemeData getDarkDefault() {
         forgotPasswordLinkColor: Color(0xFF195777),
         forgotPasswordFocusColor: Color(0xFF00AFA5),
       ),
-      const AppFonts(mainFont: 'Poppins', subFont: 'Inter')
+      const AppFonts(mainFont: 'CreatoDisplay', subFont: 'Inter')
     ],
   );
 }
