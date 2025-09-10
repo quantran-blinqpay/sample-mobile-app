@@ -11,8 +11,14 @@
 class FontFamily {
   FontFamily._();
 
+  /// Font family: CreatoDisplay
+  static const String creatoDisplay = 'CreatoDisplay';
+
   /// Font family: FeatureDeckCondensed
   static const String featureDeckCondensed = 'FeatureDeckCondensed';
+
+  /// Font family: Helonik
+  static const String helonik = 'Helonik';
 
   /// Font family: Inter
   static const String inter = 'Inter';

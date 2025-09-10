@@ -34,3 +34,18 @@ const String selectConditionScreenName = 'SelectConditionScreenRoute';
 
 const String paymentWrapperScreenName = 'PaymentWrapperScreenRoute';
 const String paymentWebViewScreenName = 'PaymentWebViewScreenRoute';
+
+const String onboardingRoute = 'OnboardingScreenRoute';
+const String accountTypeRoute = 'AccountTypeScreenRoute';
+const String createPersonalAccountRoute = 'CreatePersonalAccountScreenRoute';
+const String basicInformationRoute = 'BasicInformationScreenRoute';
+const String accountVerificationRoute = 'AccountVerificationScreenRoute';
+const String accountVerificationByPhoneRoute = 'AccountVerificationByPhoneScreenRoute';
+const String personalInformationRoute = 'PersonalInformationScreenRoute';
+const String contactInformationRoute = 'ContactInformationScreenRoute';
+const String securityAndPinRoute = 'SecurityAndPinScreenRoute';
+const String setupPinRoute = 'SetupPinScreenRoute';
+const String confirmPinRoute = 'ConfirmPinScreenRoute';
+const String securityQuestionsRoute = 'SecurityQuestionsScreenRoute';
+const String qwidHomeRoute = 'QwidHomeScreenRoute';
+const String loginRoute = 'LoginScreenRoute';

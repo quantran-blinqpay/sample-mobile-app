@@ -118,13 +118,18 @@ class HomeView extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "Recommended for you",
-                              style: TextStyle(
-                                fontFamily: 'FeatureDeckCondensed',
-                                fontSize: 20,
-                                color: appColors.black,
-                                fontWeight: FontWeight.w400,
+                            GestureDetector(
+                              onTap: () {
+                                context.router.push(OnboardingScreenRoute());
+                              },
+                              child: Text(
+                                "Recommended for you",
+                                style: TextStyle(
+                                  fontFamily: 'FeatureDeckCondensed',
+                                  fontSize: 20,
+                                  color: appColors.black,
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
                             ),
                             Text(
