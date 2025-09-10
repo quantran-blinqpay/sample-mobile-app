@@ -1,15 +1,15 @@
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/network/client/client_provider.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/parameter/code_verification_parameter.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/parameter/user_creation_parameter.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/response/code_verification_response.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/response/username_creation_response.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/services/no_token_service.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/network/client/client_provider.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/parameter/code_verification_parameter.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/parameter/user_creation_parameter.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/response/code_verification_response.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/response/username_creation_response.dart';
+import 'package:qwid/src/features/authentication/data/remote/services/no_token_service.dart';
 import 'package:dio/dio.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
+import 'package:qwid/src/core/failures/failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:designerwardrobe/src/features/authentication/domain/model/register.dart';
-import 'package:designerwardrobe/src/features/authentication/domain/repositories/auth_repository_mapper.dart';
+import 'package:qwid/src/features/authentication/domain/model/register.dart';
+import 'package:qwid/src/features/authentication/domain/repositories/auth_repository_mapper.dart';
 import 'dart:io' show HttpStatus;
 
 import '../../data/remote/services/auth_service.dart';

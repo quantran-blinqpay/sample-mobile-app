@@ -1,16 +1,16 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/appbar/custom_app_bar.dart';
-import 'package:designerwardrobe/src/components/text_field/custom_text_field.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/features/filter/presentation/cubit/filter_sort_cubit.dart';
-import 'package:designerwardrobe/src/features/filter/presentation/widgets/multi_checkbox_brand.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/appbar/custom_app_bar.dart';
+import 'package:qwid/src/components/text_field/custom_text_field.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/features/filter/presentation/cubit/filter_sort_cubit.dart';
+import 'package:qwid/src/features/filter/presentation/widgets/multi_checkbox_brand.dart';
+import 'package:qwid/src/router/route_names.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:designerwardrobe/src/components/button/app_button.dart';
+import 'package:qwid/src/components/button/app_button.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 

@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/country/local_country.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/parameters/create_address_parameter.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/parameters/lookup_address_parameter.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/create_address_response.dart';
-import 'package:designerwardrobe/src/features/payment/data/remote/dtos/response/lookup_address_response.dart';
-import 'package:designerwardrobe/src/features/payment/domain/repositories/payment_repository.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/country/local_country.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/parameters/create_address_parameter.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/parameters/lookup_address_parameter.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/create_address_response.dart';
+import 'package:qwid/src/features/payment/data/remote/dtos/response/lookup_address_response.dart';
+import 'package:qwid/src/features/payment/domain/repositories/payment_repository.dart';
 import 'package:equatable/equatable.dart';
 
 part 'payment_address_state.dart';

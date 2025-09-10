@@ -1,7 +1,7 @@
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/movie_dto.dart';
-import 'package:designerwardrobe/src/features/home/domain/models/genre_mapper.dart';
-import 'package:designerwardrobe/src/features/home/domain/models/movie_session_mapper.dart';
-import 'package:designerwardrobe/src/features/home/domain/models/type_mapper.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/movie_dto.dart';
+import 'package:qwid/src/features/home/domain/models/genre_mapper.dart';
+import 'package:qwid/src/features/home/domain/models/movie_session_mapper.dart';
+import 'package:qwid/src/features/home/domain/models/type_mapper.dart';
 
 import 'movie.dart';
 

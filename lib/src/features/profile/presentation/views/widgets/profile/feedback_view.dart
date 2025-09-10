@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class FeedbackView extends StatelessWidget {

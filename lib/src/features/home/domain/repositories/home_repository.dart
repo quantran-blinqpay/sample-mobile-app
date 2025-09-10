@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
-import 'package:designerwardrobe/src/core/network/client/client_provider.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/services/auth_service.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/services/no_token_service.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/offer/parameters/counter_offer_parameter.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/offer/parameters/make_offer_parameter.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/offer/response/make_offer_response.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/recommended_item.dart';
-import 'package:designerwardrobe/src/features/helper/dtos/site_setting_data.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/watchlist/watchlist_item.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/failures/failure.dart';
+import 'package:qwid/src/core/network/client/client_provider.dart';
+import 'package:qwid/src/features/authentication/data/remote/services/auth_service.dart';
+import 'package:qwid/src/features/authentication/data/remote/services/no_token_service.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/offer/parameters/counter_offer_parameter.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/offer/parameters/make_offer_parameter.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/offer/response/make_offer_response.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/recommended_item.dart';
+import 'package:qwid/src/features/helper/dtos/site_setting_data.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/watchlist/watchlist_item.dart';
 import 'package:dio/dio.dart';
 
 abstract class HomeRepository {

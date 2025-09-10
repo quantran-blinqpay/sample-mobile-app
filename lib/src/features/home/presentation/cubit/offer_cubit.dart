@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/offer/parameters/counter_offer_parameter.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/offer/parameters/make_offer_parameter.dart';
-import 'package:designerwardrobe/src/features/home/presentation/dialogs/make_offer.dart';
+import 'package:qwid/src/core/failures/failure.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/offer/parameters/counter_offer_parameter.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/offer/parameters/make_offer_parameter.dart';
+import 'package:qwid/src/features/home/presentation/dialogs/make_offer.dart';
 import 'package:equatable/equatable.dart';
 import '../../domain/repositories/home_repository.dart';
 

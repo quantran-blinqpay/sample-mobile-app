@@ -1,8 +1,8 @@
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/components/text_field/custom_text_field.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/cubit/payment_cubit.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/components/text_field/custom_text_field.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/payment/presentation/cubit/payment_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

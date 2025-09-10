@@ -1,7 +1,7 @@
-import 'package:designerwardrobe/src/components/loading_indicator/app_shimmer.dart';
-import 'package:designerwardrobe/src/components/text_field/custom_text_field.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/components/loading_indicator/app_shimmer.dart';
+import 'package:qwid/src/components/text_field/custom_text_field.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class PromoCodeInputLoading extends StatelessWidget {

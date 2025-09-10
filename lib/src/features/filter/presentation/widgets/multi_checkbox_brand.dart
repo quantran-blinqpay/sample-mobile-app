@@ -1,9 +1,9 @@
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/components/checkbox/custom_checkbox.dart';
-import 'package:designerwardrobe/src/components/divider/custom_divider.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/core/constants/filter_class.dart';
-import 'package:designerwardrobe/src/features/filter/presentation/cubit/filter_sort_cubit.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/components/checkbox/custom_checkbox.dart';
+import 'package:qwid/src/components/divider/custom_divider.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/core/constants/filter_class.dart';
+import 'package:qwid/src/features/filter/presentation/cubit/filter_sort_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

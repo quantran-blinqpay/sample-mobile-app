@@ -1,9 +1,9 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/presenters/setting_presenter.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/profile/new_badge_widget.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/profile/setting_item_widget.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/home/presentation/views/home/presenters/setting_presenter.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/profile/new_badge_widget.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/profile/setting_item_widget.dart';
 import 'package:flutter/material.dart';
 
 class NotificationCenterWidget extends StatelessWidget {

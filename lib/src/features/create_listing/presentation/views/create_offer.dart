@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/checkbox/custom_checkbox.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/checkbox/custom_checkbox.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';

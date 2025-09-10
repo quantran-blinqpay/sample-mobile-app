@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/components/dialog/custom_dialog.dart';
+import 'package:qwid/src/components/dialog/custom_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart' as permission;

@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
-import 'package:designerwardrobe/src/configs/app_configs/app_config.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/exceptions/app_exceptions.dart';
-import 'package:designerwardrobe/src/core/network/client/client_provider.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/access_token_storage.dart';
+import 'package:qwid/src/configs/app_configs/app_config.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/exceptions/app_exceptions.dart';
+import 'package:qwid/src/core/network/client/client_provider.dart';
+import 'package:qwid/src/core/shared_prefs/access_token_storage.dart';
 
 class AuthorizationInterceptor extends Interceptor {
   AuthorizationInterceptor({required Future<String?> Function() getBearerToken})

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:designerwardrobe/src/core/network/response/array_response.dart';
-import 'package:designerwardrobe/src/features/banner/data/remote/dtos/banner_dto.dart';
+import 'package:qwid/src/core/network/response/array_response.dart';
+import 'package:qwid/src/features/banner/data/remote/dtos/banner_dto.dart';
 
 part 'banner_service.g.dart';
 

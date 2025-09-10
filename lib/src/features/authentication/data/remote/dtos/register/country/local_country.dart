@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/authentication/data/remote/dtos/register/country/closest_town.dart';
+import 'package:qwid/src/features/authentication/data/remote/dtos/register/country/closest_town.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'local_country.g.dart';

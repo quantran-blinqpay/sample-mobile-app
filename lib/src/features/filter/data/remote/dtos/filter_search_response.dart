@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/filter/data/remote/dtos/filter_hits_dto.dart';
+import 'package:qwid/src/features/filter/data/remote/dtos/filter_hits_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'filter_search_response.g.dart';

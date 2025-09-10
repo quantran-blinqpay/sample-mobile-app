@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/session_dto.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/session_dto.dart';
 import 'session.dart';
 
 extension SessionData on SessionDto {

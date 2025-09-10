@@ -1,6 +1,6 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class AddToSavedCard extends StatefulWidget {

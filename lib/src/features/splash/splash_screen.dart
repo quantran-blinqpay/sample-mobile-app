@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
-import 'package:designerwardrobe/src/features/helper/cubit/helper_cubit.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/features/helper/cubit/helper_cubit.dart';
+import 'package:qwid/src/router/route_names.dart';
+import 'package:qwid/src/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';

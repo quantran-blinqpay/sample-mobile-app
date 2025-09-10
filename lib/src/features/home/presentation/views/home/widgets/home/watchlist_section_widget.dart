@@ -1,6 +1,6 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/watchlist/watchlist_data.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/home/brand_item_widget.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/watchlist/watchlist_data.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/home/brand_item_widget.dart';
 import 'package:flutter/material.dart';
 
 class WatchlistSectionWidget extends StatelessWidget {

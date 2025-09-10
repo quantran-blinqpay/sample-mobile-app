@@ -1,10 +1,10 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/components/divider/custom_divider.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/components/divider/custom_divider.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

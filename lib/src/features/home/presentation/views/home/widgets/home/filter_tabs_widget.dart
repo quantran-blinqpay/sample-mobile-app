@@ -1,7 +1,7 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/site_setting/category_entity.dart';
-import 'package:designerwardrobe/src/features/home/presentation/views/home/widgets/home/filter_item_widget.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/site_setting/category_entity.dart';
+import 'package:qwid/src/features/home/presentation/views/home/widgets/home/filter_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_braintree/flutter_braintree.dart';
 

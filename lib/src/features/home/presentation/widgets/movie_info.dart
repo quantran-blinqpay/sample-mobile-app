@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/components/button/text_button.dart';
-import 'package:designerwardrobe/src/core/utils/datetime.dart';
-import 'package:designerwardrobe/src/features/home/domain/models/movie.dart';
-import 'package:designerwardrobe/src/features/home/presentation/cubit/movie_selector_cubit.dart';
+import 'package:qwid/src/components/button/text_button.dart';
+import 'package:qwid/src/core/utils/datetime.dart';
+import 'package:qwid/src/features/home/domain/models/movie.dart';
+import 'package:qwid/src/features/home/presentation/cubit/movie_selector_cubit.dart';
 
 import '../../../../configs/app_themes/app_themes.dart';
 

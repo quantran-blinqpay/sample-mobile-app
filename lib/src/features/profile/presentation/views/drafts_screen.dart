@@ -1,17 +1,17 @@
 // ignore_for_file: must_be_immutable, use_build_context_synchronously
 
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/components/image/app_image.dart';
-import 'package:designerwardrobe/src/components/scaffold/app_scaffold.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/components/image/app_image.dart';
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/features/profile/presentation/cubit/profile_cubit.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/features/profile/presentation/cubit/profile_cubit.dart';
+import 'package:qwid/src/router/route_names.dart';
 import '../../../authentication/presentation/cubit/auth_cubit.dart';
 
 @RoutePage(name: draftsScreenName)

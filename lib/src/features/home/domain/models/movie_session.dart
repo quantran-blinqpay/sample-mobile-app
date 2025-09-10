@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/home/domain/models/session.dart';
+import 'package:qwid/src/features/home/domain/models/session.dart';
 
 class MovieSessionModel {
   final String? cinemaId;

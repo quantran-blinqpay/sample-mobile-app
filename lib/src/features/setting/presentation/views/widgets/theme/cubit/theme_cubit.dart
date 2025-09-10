@@ -1,9 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/global/global_event.dart';
-import 'package:designerwardrobe/src/core/shared_prefs/theme_mode_storage.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/global/global_event.dart';
+import 'package:qwid/src/core/shared_prefs/theme_mode_storage.dart';
 
 part 'theme_state.dart';
 

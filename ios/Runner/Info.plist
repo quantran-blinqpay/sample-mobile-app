@@ -55,10 +55,10 @@
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
             <key>CFBundleURLName</key>
-            <string>nz.co.designerwardrobe.DesignerWardrobe.payments</string>
+            <string>com.qwid.app.payments</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>nz.co.designerwardrobe.DesignerWardrobe.payments</string>
+                <string>com.qwid.app.payments</string>
             </array>
         </dict>
     </array>

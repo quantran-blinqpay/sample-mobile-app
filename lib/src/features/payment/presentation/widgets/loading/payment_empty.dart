@@ -1,7 +1,7 @@
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/scaffold/app_scaffold.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

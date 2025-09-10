@@ -1,11 +1,11 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/cubit/payment_cubit.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/delivery_method/arrow_box.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/delivery_method/payment_method/apply_dw_cash.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/delivery_method/payment_method/credit_debit_cards.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/delivery_method/payment_method/other_payment_method.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/payment/presentation/cubit/payment_cubit.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/delivery_method/arrow_box.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/delivery_method/payment_method/apply_dw_cash.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/delivery_method/payment_method/credit_debit_cards.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/delivery_method/payment_method/other_payment_method.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

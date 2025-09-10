@@ -1,8 +1,8 @@
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/watchlist/watchlist_brand.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/watchlist/watchlist_category.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/watchlist/watchlist_condition.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/watchlist/watchlist_consignor.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/watchlist/watchlist_price_pattern.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/watchlist/watchlist_brand.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/watchlist/watchlist_category.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/watchlist/watchlist_condition.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/watchlist/watchlist_consignor.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/watchlist/watchlist_price_pattern.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'watchlist_data.g.dart';

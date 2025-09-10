@@ -1,6 +1,6 @@
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/delivery_method/arrow_box.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/delivery_method/arrow_box.dart';
 import 'package:flutter/material.dart';
 
 class ShippingMethod extends StatelessWidget {

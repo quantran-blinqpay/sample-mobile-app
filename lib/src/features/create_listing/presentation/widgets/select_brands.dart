@@ -3,15 +3,15 @@
 import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/components/divider/custom_divider.dart';
-import 'package:designerwardrobe/src/components/loading_indicator/app_shimmer.dart';
-import 'package:designerwardrobe/src/components/text_field/custom_text_field.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/components/divider/custom_divider.dart';
+import 'package:qwid/src/components/loading_indicator/app_shimmer.dart';
+import 'package:qwid/src/components/text_field/custom_text_field.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/features/create_listing/presentation/cubit/create_listing_cubit.dart';
+import 'package:qwid/src/router/route_names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';

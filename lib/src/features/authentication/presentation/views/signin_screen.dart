@@ -3,19 +3,19 @@
 import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/components/scaffold/app_scaffold.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_styles.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/checkbox/custom_checkbox.dart';
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/configs/app_themes/app_styles.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/checkbox/custom_checkbox.dart';
 import 'package:flutter/foundation.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/router/router.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../components/appbar/custom_app_bar.dart';
 import '../../../../components/text_field/custom_text_field.dart';

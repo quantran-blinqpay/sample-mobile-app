@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/components/date_picker/custom_cupertino_date_picker.dart';
+import 'package:qwid/src/components/date_picker/custom_cupertino_date_picker.dart';
 import 'package:flutter/material.dart';
 
 class MonthPicker extends StatefulWidget {

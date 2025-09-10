@@ -1,10 +1,10 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_images.dart';
-import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/select_city_bottom_sheet.dart';
-import 'package:designerwardrobe/src/features/authentication/presentation/views/onboarding/select_state_bottom_sheet.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/features/authentication/presentation/views/onboarding/select_city_bottom_sheet.dart';
+import 'package:qwid/src/features/authentication/presentation/views/onboarding/select_state_bottom_sheet.dart';
+import 'package:qwid/src/router/route_names.dart';
+import 'package:qwid/src/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

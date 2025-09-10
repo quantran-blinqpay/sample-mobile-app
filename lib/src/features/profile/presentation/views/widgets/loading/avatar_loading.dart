@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/components/loading_indicator/app_shimmer.dart';
+import 'package:qwid/src/components/loading_indicator/app_shimmer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

@@ -1,5 +1,5 @@
-import 'package:designerwardrobe/src/features/payment/presentation/cubit/payment_cubit.dart';
-import 'package:designerwardrobe/src/features/payment/presentation/widgets/order_summary/list_order/order_item.dart';
+import 'package:qwid/src/features/payment/presentation/cubit/payment_cubit.dart';
+import 'package:qwid/src/features/payment/presentation/widgets/order_summary/list_order/order_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

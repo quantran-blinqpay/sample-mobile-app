@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:designerwardrobe/src/components/button/icon_button.dart';
+import 'package:qwid/src/components/button/icon_button.dart';
 
 import 'my_scaffold.dart';
 

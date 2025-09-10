@@ -3,22 +3,22 @@
 import 'dart:async';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/components/appbar/custom_app_bar.dart';
-import 'package:designerwardrobe/src/components/checkbox/custom_checkbox.dart';
-import 'package:designerwardrobe/src/components/divider/custom_divider.dart';
-import 'package:designerwardrobe/src/components/radio/custom_radio.dart';
-import 'package:designerwardrobe/src/components/text_field/custom_text_field.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/core/constants/filter_class.dart';
-import 'package:designerwardrobe/src/features/filter/presentation/cubit/filter_sort_cubit.dart';
-import 'package:designerwardrobe/src/features/filter/presentation/widgets/filter_category.dart';
-import 'package:designerwardrobe/src/features/filter/presentation/widgets/multi_checkbox_colour.dart';
-import 'package:designerwardrobe/src/features/filter/presentation/widgets/multi_checkbox_condition.dart';
-import 'package:designerwardrobe/src/features/filter/presentation/widgets/filter_size.dart';
+import 'package:qwid/src/components/appbar/custom_app_bar.dart';
+import 'package:qwid/src/components/checkbox/custom_checkbox.dart';
+import 'package:qwid/src/components/divider/custom_divider.dart';
+import 'package:qwid/src/components/radio/custom_radio.dart';
+import 'package:qwid/src/components/text_field/custom_text_field.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/core/constants/filter_class.dart';
+import 'package:qwid/src/features/filter/presentation/cubit/filter_sort_cubit.dart';
+import 'package:qwid/src/features/filter/presentation/widgets/filter_category.dart';
+import 'package:qwid/src/features/filter/presentation/widgets/multi_checkbox_colour.dart';
+import 'package:qwid/src/features/filter/presentation/widgets/multi_checkbox_condition.dart';
+import 'package:qwid/src/features/filter/presentation/widgets/filter_size.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/router/route_names.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

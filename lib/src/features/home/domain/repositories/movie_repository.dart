@@ -1,8 +1,8 @@
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
-import 'package:designerwardrobe/src/core/network/client/client_provider.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/services/no_token_service.dart';
-import 'package:designerwardrobe/src/features/home/domain/models/movie.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/failures/failure.dart';
+import 'package:qwid/src/core/network/client/client_provider.dart';
+import 'package:qwid/src/features/authentication/data/remote/services/no_token_service.dart';
+import 'package:qwid/src/features/home/domain/models/movie.dart';
 import 'movie_repository_mapper.dart';
 import 'package:dartz/dartz.dart';
 

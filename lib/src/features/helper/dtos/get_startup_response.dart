@@ -1,8 +1,8 @@
-import 'package:designerwardrobe/src/core/constants/filter_class.dart';
-import 'package:designerwardrobe/src/features/filter/data/remote/dtos/get_category_response.dart';
-import 'package:designerwardrobe/src/features/filter/data/remote/dtos/get_colour_response.dart';
-import 'package:designerwardrobe/src/features/filter/data/remote/dtos/get_condition_response.dart';
-import 'package:designerwardrobe/src/features/home/data/remote/dtos/brand_catalog.dart';
+import 'package:qwid/src/core/constants/filter_class.dart';
+import 'package:qwid/src/features/filter/data/remote/dtos/get_category_response.dart';
+import 'package:qwid/src/features/filter/data/remote/dtos/get_colour_response.dart';
+import 'package:qwid/src/features/filter/data/remote/dtos/get_condition_response.dart';
+import 'package:qwid/src/features/home/data/remote/dtos/brand_catalog.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_startup_response.g.dart';

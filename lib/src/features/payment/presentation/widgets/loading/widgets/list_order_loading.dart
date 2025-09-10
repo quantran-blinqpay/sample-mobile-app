@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/components/loading_indicator/app_shimmer.dart';
+import 'package:qwid/src/components/loading_indicator/app_shimmer.dart';
 import 'package:flutter/material.dart';
 
 class ListOrderLoading extends StatelessWidget {

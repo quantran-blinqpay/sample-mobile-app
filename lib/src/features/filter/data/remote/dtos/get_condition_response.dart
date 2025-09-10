@@ -1,5 +1,5 @@
-import 'package:designerwardrobe/src/core/constants/filter_class.dart';
-import 'package:designerwardrobe/src/features/filter/data/remote/dtos/filter_item_response.dart';
+import 'package:qwid/src/core/constants/filter_class.dart';
+import 'package:qwid/src/features/filter/data/remote/dtos/filter_item_response.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'get_condition_response.g.dart';

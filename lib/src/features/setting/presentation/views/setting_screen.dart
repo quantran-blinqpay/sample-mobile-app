@@ -3,14 +3,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/components/appbar/custom_app_bar.dart';
-import 'package:designerwardrobe/src/components/button/app_button.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_colors.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/features/setting/presentation/cubit/setting_cubit.dart';
-import 'package:designerwardrobe/src/features/setting/presentation/views/widgets/language/language_widget.dart';
-import 'package:designerwardrobe/src/features/setting/presentation/views/widgets/theme/theme_widget.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:qwid/src/components/appbar/custom_app_bar.dart';
+import 'package:qwid/src/components/button/app_button.dart';
+import 'package:qwid/src/configs/app_themes/app_colors.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/features/setting/presentation/cubit/setting_cubit.dart';
+import 'package:qwid/src/features/setting/presentation/views/widgets/language/language_widget.dart';
+import 'package:qwid/src/features/setting/presentation/views/widgets/theme/theme_widget.dart';
+import 'package:qwid/src/router/route_names.dart';
 
 @RoutePage(name: settingScreenName)
 class SettingScreen extends StatelessWidget implements AutoRouteWrapper{

@@ -1,22 +1,22 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:designerwardrobe/src/core/di/injections.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
-import 'package:designerwardrobe/src/core/network/client/client_provider.dart';
-import 'package:designerwardrobe/src/core/network/response/default_response.dart';
-import 'package:designerwardrobe/src/features/authentication/data/remote/services/auth_service.dart';
-import 'package:designerwardrobe/src/features/create_listing/data/remote/dtos/build_desc_by_ai_response.dart';
-import 'package:designerwardrobe/src/features/create_listing/data/remote/dtos/create_listing_response.dart';
-import 'package:designerwardrobe/src/features/create_listing/data/remote/dtos/get_commission_response.dart';
-import 'package:designerwardrobe/src/features/create_listing/data/remote/dtos/get_dwpost_freight_response.dart';
-import 'package:designerwardrobe/src/features/create_listing/data/remote/dtos/get_free_bump_response.dart';
-import 'package:designerwardrobe/src/features/create_listing/data/remote/dtos/get_price_recommend_response.dart';
-import 'package:designerwardrobe/src/features/create_listing/data/remote/dtos/search_brands_response.dart';
-import 'package:designerwardrobe/src/features/create_listing/data/remote/dtos/upload_image_response.dart';
-import 'package:designerwardrobe/src/features/create_listing/domain/models/create_listing_model.dart';
-import 'package:designerwardrobe/src/features/create_listing/domain/models/save_draft_model.dart';
-import 'package:designerwardrobe/src/features/filter/data/remote/dtos/get_condition_response.dart';
+import 'package:qwid/src/core/di/injections.dart';
+import 'package:qwid/src/core/failures/failure.dart';
+import 'package:qwid/src/core/network/client/client_provider.dart';
+import 'package:qwid/src/core/network/response/default_response.dart';
+import 'package:qwid/src/features/authentication/data/remote/services/auth_service.dart';
+import 'package:qwid/src/features/create_listing/data/remote/dtos/build_desc_by_ai_response.dart';
+import 'package:qwid/src/features/create_listing/data/remote/dtos/create_listing_response.dart';
+import 'package:qwid/src/features/create_listing/data/remote/dtos/get_commission_response.dart';
+import 'package:qwid/src/features/create_listing/data/remote/dtos/get_dwpost_freight_response.dart';
+import 'package:qwid/src/features/create_listing/data/remote/dtos/get_free_bump_response.dart';
+import 'package:qwid/src/features/create_listing/data/remote/dtos/get_price_recommend_response.dart';
+import 'package:qwid/src/features/create_listing/data/remote/dtos/search_brands_response.dart';
+import 'package:qwid/src/features/create_listing/data/remote/dtos/upload_image_response.dart';
+import 'package:qwid/src/features/create_listing/domain/models/create_listing_model.dart';
+import 'package:qwid/src/features/create_listing/domain/models/save_draft_model.dart';
+import 'package:qwid/src/features/filter/data/remote/dtos/get_condition_response.dart';
 
 abstract class CreateListingRepository {
   Future<Either<Failure, UploadImageResponse>> uploadImage(File file);

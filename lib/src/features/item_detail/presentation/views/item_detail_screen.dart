@@ -1,25 +1,25 @@
 // ignore_for_file: must_be_immutable, use_build_context_synchronously
 
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/gen/assets.gen.dart';
-import 'package:designerwardrobe/src/components/dialog/custom_dialog.dart';
-import 'package:designerwardrobe/src/components/divider/custom_divider.dart';
-import 'package:designerwardrobe/src/components/loading_indicator/app_shimmer.dart';
-import 'package:designerwardrobe/src/components/scaffold/app_scaffold.dart';
-import 'package:designerwardrobe/src/configs/app_themes/app_themes.dart';
-import 'package:designerwardrobe/src/core/network/response/enum/progress_status.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/cubit/item_detail_cubit.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/views/item_detail_wrapper_screen.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/widgets/carousel_image_detail_item.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/widgets/description_detail_item.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/widgets/header_detail_item.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/widgets/question_detail_item.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/widgets/seller_detail_item.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/widgets/share_report_detail_item.dart';
-import 'package:designerwardrobe/src/features/item_detail/presentation/widgets/similar_detail_item.dart';
+import 'package:qwid/gen/assets.gen.dart';
+import 'package:qwid/src/components/dialog/custom_dialog.dart';
+import 'package:qwid/src/components/divider/custom_divider.dart';
+import 'package:qwid/src/components/loading_indicator/app_shimmer.dart';
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
+import 'package:qwid/src/configs/app_themes/app_themes.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
+import 'package:qwid/src/features/item_detail/presentation/cubit/item_detail_cubit.dart';
+import 'package:qwid/src/features/item_detail/presentation/views/item_detail_wrapper_screen.dart';
+import 'package:qwid/src/features/item_detail/presentation/widgets/carousel_image_detail_item.dart';
+import 'package:qwid/src/features/item_detail/presentation/widgets/description_detail_item.dart';
+import 'package:qwid/src/features/item_detail/presentation/widgets/header_detail_item.dart';
+import 'package:qwid/src/features/item_detail/presentation/widgets/question_detail_item.dart';
+import 'package:qwid/src/features/item_detail/presentation/widgets/seller_detail_item.dart';
+import 'package:qwid/src/features/item_detail/presentation/widgets/share_report_detail_item.dart';
+import 'package:qwid/src/features/item_detail/presentation/widgets/similar_detail_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
+import 'package:qwid/src/router/route_names.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 

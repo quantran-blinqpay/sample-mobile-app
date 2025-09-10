@@ -4,8 +4,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:designerwardrobe/src/features/banner/domain/models/banner.dart';
-import 'package:designerwardrobe/src/features/banner/presentation/cubit/banner_cubit.dart';
+import 'package:qwid/src/features/banner/domain/models/banner.dart';
+import 'package:qwid/src/features/banner/presentation/cubit/banner_cubit.dart';
 
 class BannerSlider extends StatefulWidget {
   const BannerSlider({

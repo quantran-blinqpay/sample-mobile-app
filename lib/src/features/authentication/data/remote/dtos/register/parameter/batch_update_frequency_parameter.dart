@@ -1,4 +1,4 @@
-import 'package:designerwardrobe/src/features/authentication/presentation/views/register/register_screen.dart';
+import 'package:qwid/src/features/authentication/presentation/views/register/register_screen.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'batch_update_frequency_parameter.g.dart';

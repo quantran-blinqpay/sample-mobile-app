@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:designerwardrobe/src/core/failures/failure.dart';
-import 'package:designerwardrobe/src/features/profile/domain/repositories/profile_repository.dart';
+import 'package:qwid/src/core/failures/failure.dart';
+import 'package:qwid/src/features/profile/domain/repositories/profile_repository.dart';
 
 import '../../../domain/model/user_data.dart';
 

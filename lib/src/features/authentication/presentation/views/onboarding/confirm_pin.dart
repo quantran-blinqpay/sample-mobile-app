@@ -1,8 +1,8 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:designerwardrobe/src/components/text_field/otp_field.dart';
-import 'package:designerwardrobe/src/router/route_names.dart';
-import 'package:designerwardrobe/src/router/router.dart';
+import 'package:qwid/src/components/text_field/otp_field.dart';
+import 'package:qwid/src/router/route_names.dart';
+import 'package:qwid/src/router/router.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage(name: confirmPinRoute)
