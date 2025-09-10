@@ -64,6 +64,14 @@ const String icQwidExchange = "$svgPath/ic_qwid_exchange.svg";
 const String icQwidNotification = "$svgPath/ic_qwid_notification.svg";
 const String icQwidBank = "$svgPath/ic_qwid_bank.svg";
 const String icQwidMenu = "$svgPath/ic_qwid_menu.svg";
+const String icQwidEdit = "$svgPath/ic_qwid_edit.svg";
+const String icQwidFingerprint = "$svgPath/ic_qwid_fingerprint.svg";
+const String icQwidHelp = "$svgPath/ic_qwid_help.svg";
+const String icQwidNotebook = "$svgPath/ic_qwid_notebook.svg";
+const String icQwidUncompletedTier = "$svgPath/ic_qwid_uncompleted_tier.svg";
+const String icQwidVerification = "$svgPath/ic_qwid_verification.svg";
+const String icQwidLock = "$svgPath/ic_qwid_lock.svg";
+const String icQwidArrowRight = "$svgPath/ic_qwid_arrow_right.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";
