@@ -19,7 +19,6 @@ class AccountsTab extends StatefulWidget {
 
 class _AccountsTabState extends State<AccountsTab> {
   final _page = PageController(viewportFraction: 0.74);
-  int _index = 0;
 
   @override
   void dispose() {
@@ -85,83 +84,138 @@ class _AccountsTabState extends State<AccountsTab> {
 
             // ---- Cards carousel
             // Wallet PageView
-            AccountCarousel(),
-
-            const SizedBox(height: 12),
-            Container(height: 8, color: _divider),
-            const SizedBox(height: 12),
-
-            // ---- Bank details title row
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                children: [
-                  CountryFlag.fromCountryCode("NG", width: 20, height: 14),
-                  Text(
-                    " Your NG bank account details",
-                    style: TextStyle(
-                      fontFamily: 'Creato Display',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
+            AccountCarousel(
+              onPageChanged: (index){
+                setState(() {
+                  _currentPage = index;
+                });
+              },
             ),
-            const SizedBox(height: 12),
-
-            // ---- Details list with Copy buttons
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                children: [
-                  _DetailRow(label: "Name", value: "Peter Parker"),
-                  _DetailRow(label: "Account number", value: "200116634584"),
-                  _DetailRow(label: "Sort code", value: "23-14-70"),
-                  _DetailRow(
-                    label: "IBAN",
-                    value: "GB58 TRWI 2314 7093 4833 92",
-                  ),
-                  _DetailRow(label: "Swift/BIC", value: "TRWIGB2LXXX"),
-                  _DetailRow(label: "Bank name", value: "Clear Junction Limited"),
-                  _DetailRow(
-                    label: "Bank address",
-                    value:
-                    "4th Floor Imperial House, 15 Kingsway,\nLondon, United Kingdom, WC2B 6UN",
-                  ),
-
-                  const SizedBox(height: 16),
-
-                  // ---- Info card (arrivals & fees)
-                  _InfoCard(
-                    sections: const [
-                      _InfoSection(
-                        title: "When will the money arrive?",
-                        rows: [
-                          ["From the UK (Local)", "Usually 1 working day"],
-                          [
-                            "From outside the UK (Swift)",
-                            "Sometimes up to 5 working days"
-                          ],
-                        ],
-                      ),
-                      _InfoSection(
-                        title: "Transaction fee?",
-                        rows: [
-                          ["From the UK (Local)", "No fee"],
-                          ["From outside the UK (Swift)", "No fee"],
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 16 + 8), // space above bottom bar
-                ],
-              ),
-            ),
+            _currentPage == 1 ? _buildPendingContent() : _buildNormalContent(),
           ],
         ),
       ),
+    );
+  }
+
+  int _currentPage = 0;
+
+  Widget _buildPendingContent(){
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SizedBox(height: 12),
+        Container(height: 8, color: _divider),
+        SizedBox(height: 120),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              Image.asset(icQwidCup, width: 91, height: 64),
+              SizedBox(height: 16),
+              Text('Your account is still processing',
+                style: TextStyle(
+                  fontFamily: 'Creato Display',
+                  fontSize: 20,
+                  color: Color(0xff0A0A0C),
+                  fontWeight: FontWeight.w400,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 4),
+              Text("We're still working on your USD account. Please be \npatient, you'll get an email once there's an update or if we need more information.",
+                style: TextStyle(
+                  fontFamily: 'Creato Display',
+                  fontSize: 14,
+                  color: Color(0xff92939E),
+                  fontWeight: FontWeight.w400,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildNormalContent(){
+    return Column(
+      children: [
+        const SizedBox(height: 12),
+        Container(height: 8, color: _divider),
+        const SizedBox(height: 12),
+
+        // ---- Bank details title row
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            children: [
+              CountryFlag.fromCountryCode("NG", width: 20, height: 14),
+              Text(
+                " Your NG bank account details",
+                style: TextStyle(
+                  fontFamily: 'Creato Display',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
+
+        // ---- Details list with Copy buttons
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              _DetailRow(label: "Name", value: "Peter Parker"),
+              _DetailRow(label: "Account number", value: "200116634584"),
+              _DetailRow(label: "Sort code", value: "23-14-70"),
+              _DetailRow(
+                label: "IBAN",
+                value: "GB58 TRWI 2314 7093 4833 92",
+              ),
+              _DetailRow(label: "Swift/BIC", value: "TRWIGB2LXXX"),
+              _DetailRow(label: "Bank name", value: "Clear Junction Limited"),
+              _DetailRow(
+                label: "Bank address",
+                value:
+                "4th Floor Imperial House, 15 Kingsway,\nLondon, United Kingdom, WC2B 6UN",
+              ),
+
+              const SizedBox(height: 16),
+
+              // ---- Info card (arrivals & fees)
+              _InfoCard(
+                sections: const [
+                  _InfoSection(
+                    title: "When will the money arrive?",
+                    rows: [
+                      ["From the UK (Local)", "Usually 1 working day"],
+                      [
+                        "From outside the UK (Swift)",
+                        "Sometimes up to 5 working days"
+                      ],
+                    ],
+                  ),
+                  _InfoSection(
+                    title: "Transaction fee?",
+                    rows: [
+                      ["From the UK (Local)", "No fee"],
+                      ["From outside the UK (Swift)", "No fee"],
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16 + 8), // space above bottom bar
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
