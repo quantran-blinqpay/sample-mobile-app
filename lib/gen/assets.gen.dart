@@ -300,6 +300,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_calendar.svg
   String get icQwidCalendar => 'assets/svgs/ic_qwid_calendar.svg';
 
+  /// File path: assets/svgs/ic_qwid_camera.svg
+  String get icQwidCamera => 'assets/svgs/ic_qwid_camera.svg';
+
   /// File path: assets/svgs/ic_qwid_check.svg
   String get icQwidCheck => 'assets/svgs/ic_qwid_check.svg';
 
@@ -383,6 +386,12 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/ic_qwid_success.svg
   String get icQwidSuccess => 'assets/svgs/ic_qwid_success.svg';
+
+  /// File path: assets/svgs/ic_qwid_tier_badge.svg
+  String get icQwidTierBadge => 'assets/svgs/ic_qwid_tier_badge.svg';
+
+  /// File path: assets/svgs/ic_qwid_tier_identify.svg
+  String get icQwidTierIdentify => 'assets/svgs/ic_qwid_tier_identify.svg';
 
   /// File path: assets/svgs/ic_qwid_uncheckmark.svg
   String get icQwidUncheckmark => 'assets/svgs/ic_qwid_uncheckmark.svg';
@@ -519,6 +528,7 @@ class $AssetsSvgsGen {
         icQwidBeneficiares,
         icQwidBuilding,
         icQwidCalendar,
+        icQwidCamera,
         icQwidCheck,
         icQwidCheckmark,
         icQwidCloud,
@@ -547,6 +557,8 @@ class $AssetsSvgsGen {
         icQwidSearch,
         icQwidSecurity,
         icQwidSuccess,
+        icQwidTierBadge,
+        icQwidTierIdentify,
         icQwidUncheckmark,
         icQwidUncompletedTier,
         icQwidVerification,

@@ -76,6 +76,9 @@ const String icQwidNotiNoBadge = "$svgPath/ic_qwid_noti_no_badge.svg";
 const String icQwidPending = "$svgPath/ic_qwid_pending.svg";
 const String icQwidCheckmark = "$svgPath/ic_qwid_checkmark.svg";
 const String icQwidUncheckmark = "$svgPath/ic_qwid_uncheckmark.svg";
+const String icQwidCamera = "$svgPath/ic_qwid_camera.svg";
+const String icQwidTierBadge = "$svgPath/ic_qwid_tier_badge.svg";
+const String icQwidTierIdentify = "$svgPath/ic_qwid_tier_identify.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";

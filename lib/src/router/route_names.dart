@@ -51,3 +51,4 @@ const String qwidHomeRoute = 'QwidHomeScreenRoute';
 const String loginRoute = 'LoginScreenRoute';
 
 const String accountDetailRoute = 'AccountDetailScreenRoute';
+const String kycRoute = 'KycScreenRoute';

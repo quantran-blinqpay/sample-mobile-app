@@ -46,6 +46,7 @@ import 'package:qwid/src/features/qwid_demo/onboarding/security_and_pin.dart';
 import 'package:qwid/src/features/qwid_demo/onboarding/security_question.dart';
 import 'package:qwid/src/features/qwid_demo/onboarding/setup_pin.dart';
 import 'package:qwid/src/features/qwid_demo/profile/account_detail.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/kyc_screen.dart';
 import 'package:qwid/src/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

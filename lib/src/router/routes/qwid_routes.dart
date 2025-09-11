@@ -16,4 +16,5 @@ final _qwidRoutes = [
   AutoRoute(path: 'qwid_home', page: QwidHomeScreenRoute.page),
   AutoRoute(path: 'sign_in', page: LoginScreenRoute.page),
   AutoRoute(path: 'account_detail', page: AccountDetailScreenRoute.page),
+  AutoRoute(path: 'kyc', page: KycScreenRoute.page),
 ];

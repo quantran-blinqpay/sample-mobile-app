@@ -90,7 +90,7 @@ class _ProfileTabState extends State<ProfileTab> {
                 _SectionCard(
                   title: 'Account',
                   children: [
-                    InkWell(
+                    GestureDetector(
                       onTap: () {
                         context.router.push(AccountDetailScreenRoute());
                       },
@@ -101,12 +101,17 @@ class _ProfileTabState extends State<ProfileTab> {
                         trailing: SvgPicture.asset(icQwidArrowRight, width: 24, height: 24),
                       ),
                     ),
-                    _tile(
-                      icon: icQwidIdentification,
-                      title: 'Account Verification',
-                      subtitle:
-                      'Verify account to unlock more features and higher transaction limits',
-                      trailing: SvgPicture.asset(icQwidUncompletedTier, width: 24, height: 24),
+                    GestureDetector(
+                      onTap: () {
+                        context.router.push(KycScreenRoute());
+                      },
+                      child: _tile(
+                        icon: icQwidIdentification,
+                        title: 'Account Verification',
+                        subtitle:
+                        'Verify account to unlock more features and higher transaction limits',
+                        trailing: SvgPicture.asset(icQwidUncompletedTier, width: 24, height: 24),
+                      ),
                     ),
                   ],
                 ),
