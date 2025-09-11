@@ -46,6 +46,7 @@ import 'package:qwid/src/features/qwid_demo/onboarding/security_and_pin.dart';
 import 'package:qwid/src/features/qwid_demo/onboarding/security_question.dart';
 import 'package:qwid/src/features/qwid_demo/onboarding/setup_pin.dart';
 import 'package:qwid/src/features/qwid_demo/profile/account_detail.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/identity_verification_screen.dart';
 import 'package:qwid/src/features/qwid_demo/profile/kyc/kyc_screen.dart';
 import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1_verification_screen.dart';
 import 'package:qwid/src/features/qwid_demo/profile/kyc/user_information_screen.dart';

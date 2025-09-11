@@ -1,10 +1,12 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:country_flags/country_flags.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:qwid/src/router/route_names.dart';
+import 'package:qwid/src/router/router.dart';
 
 @RoutePage(name: userInformation)
 class UserInformationScreen extends StatefulWidget {
@@ -325,7 +327,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                 child: ElevatedButton(
                   onPressed: _isFormValid
                       ? () {
-                    // _openCountrySelector(context);
+                    context.router.push(IdentityVerificationScreenRoute());
                   }
                       : null,
                   style: ElevatedButton.styleFrom(

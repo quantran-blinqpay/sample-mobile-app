@@ -54,3 +54,4 @@ const String accountDetailRoute = 'AccountDetailScreenRoute';
 const String kycRoute = 'KycScreenRoute';
 const String tier1Verification = 'Tier1VerificationScreenRoute';
 const String userInformation = 'UserInformationScreenRoute';
+const String identityVerification = 'IdentityVerificationScreenRoute';

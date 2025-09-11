@@ -80,6 +80,7 @@ const String icQwidCamera = "$svgPath/ic_qwid_camera.svg";
 const String icQwidTierBadge = "$svgPath/ic_qwid_tier_badge.svg";
 const String icQwidTierIdentify = "$svgPath/ic_qwid_tier_identify.svg";
 const String icQwidTierCompleted = "$svgPath/ic_qwid_tier_completed.svg";
+const String icQwidIdentification2 = "$svgPath/ic_qwid_identification2.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";
