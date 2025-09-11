@@ -100,8 +100,16 @@ class _NationIdentificationScreenState extends State<NationIdentificationScreen>
                     color: sub,
                   ),
                 ),
-                const SizedBox(height: 24),
-
+                const SizedBox(height: 32),
+                Text(
+                  "Enter 11-digit number",
+                  style: TextStyle(
+                    fontFamily: 'Creato Display',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xff92939E),
+                  ),
+                ),
                 // Input field
                 TextField(
                   onChanged: (_) => _validate11Digits(),
