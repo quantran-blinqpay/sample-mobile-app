@@ -101,17 +101,8 @@ class _NationIdentificationScreenState extends State<NationIdentificationScreen>
                   ),
                 ),
                 const SizedBox(height: 32),
-                Text(
-                  "Enter 11-digit number",
-                  style: TextStyle(
-                    fontFamily: 'Creato Display',
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400,
-                    color: const Color(0xff92939E),
-                  ),
-                ),
                 // Input field
-                TextField(
+                TextFormField(
                   onChanged: (_) => _validate11Digits(),
                   controller: _controller,
                   keyboardType: TextInputType.number,
@@ -131,7 +122,13 @@ class _NationIdentificationScreenState extends State<NationIdentificationScreen>
                       fontWeight: FontWeight.w400,
                       color: sub,
                     ),
+                    labelStyle: TextStyle(
+                      fontFamily: 'Creato Display',
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF92939E),
+                    ),
                     counterText: "",
+                    labelText: "Enter 11-digit number",
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: divider, width: 1),
                     ),
