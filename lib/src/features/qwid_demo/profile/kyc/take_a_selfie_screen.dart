@@ -1,9 +1,13 @@
+import 'dart:io';
+
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/features/qwid_demo/onboarding/loading_bottom_sheet.dart';
 import 'package:qwid/src/router/route_names.dart';
 
 @RoutePage(name: takeASelfie)
@@ -17,6 +21,7 @@ class TakeASelfieScreen extends StatefulWidget {
 class _TakeASelfieScreenState extends State<TakeASelfieScreen> {
   CameraController? _controller;
   bool _isReady = false;
+  String? _imagePath;
 
   @override
   void initState() {
@@ -71,6 +76,7 @@ class _TakeASelfieScreenState extends State<TakeASelfieScreen> {
   Future<void> _takePicture() async {
     if (_controller == null || !_controller!.value.isInitialized) return;
     final picture = await _controller!.takePicture();
+    setState(() => _imagePath = picture.path);
     // TODO: upload or save picture.path
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text("Captured: ${picture.path}")),
@@ -111,7 +117,7 @@ class _TakeASelfieScreenState extends State<TakeASelfieScreen> {
                   child: Stack(
                     alignment: Alignment.center,
                     children: [
-                      _buildCameraPreview(context),
+                      _imagePath?.isNotEmpty ?? false ? _buildPicturePreview(context) : _buildCameraPreview(context),
                       SizedBox(
                         width: 300,
                         height: 300,
@@ -161,19 +167,8 @@ class _TakeASelfieScreenState extends State<TakeASelfieScreen> {
                         child: SafeArea(
                           child: Align(
                             alignment: Alignment.bottomCenter,
-                            child:
-                                Column(mainAxisSize: MainAxisSize.min, children: [
-                              // Capture button
-                              GestureDetector(
-                                onTap: _takePicture,
-                                child: SvgPicture.asset(icQwidCaptureButton, width: 90, height: 90),
-                              ),
-                              const SizedBox(height: 12),
+                            child: _imagePath?.isNotEmpty ?? false ? _buildActionButton() : _buildBottomButton()
 
-                              // Powered by Sumsub
-                              Image.asset(icQwidPoweredBySumsub, width: 1410, height: 20),
-                              const SizedBox(height: 24),
-                            ]),
                           ),
                         ),
                       ),
@@ -183,5 +178,89 @@ class _TakeASelfieScreenState extends State<TakeASelfieScreen> {
               ],
             ),
     );
+  }
+
+  Widget _buildPicturePreview(BuildContext context) {
+    return SizedBox(
+        width: double.infinity,
+        height: double.infinity,
+        child: Image.file(
+          File(_imagePath!),
+          alignment: Alignment.center,
+          fit: BoxFit.cover,));
+  }
+
+  Widget _buildBottomButton() {
+    return Column(mainAxisSize: MainAxisSize.min, children: [
+      // Capture button
+      GestureDetector(
+        onTap: _takePicture,
+        child: SvgPicture.asset(icQwidCaptureButton, width: 90, height: 90),
+      ),
+      const SizedBox(height: 12),
+
+      // Powered by Sumsub
+      Image.asset(icQwidPoweredBySumsub, width: 1410, height: 20),
+      const SizedBox(height: 24),
+    ]);
+  }
+
+  Widget _buildActionButton() {
+    return SafeArea(
+      child: Row(mainAxisSize: MainAxisSize.min, children: [
+        const SizedBox(width: 16),
+        // Capture button
+        Expanded(child: _buildButton('Retake Photos', const Color(0xFF92939E), () {
+          setState(() => _imagePath = null);
+        })),
+        const SizedBox(width: 16),
+        Expanded(child: _buildButton('Use Photo', const Color(0xFF0092FF), () {
+          _usePhoto(context);
+        })),
+        const SizedBox(width: 16),
+      ]),
+    );
+  }
+
+  Widget _buildButton(String text, Color color, Function()? onPressed) {
+    return SizedBox(
+      width: double.infinity,
+      height: 48,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: color,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
+          elevation: 0,
+        ),
+        onPressed: () {
+          onPressed?.call();
+        },
+        child: Text(
+          text,
+          style: TextStyle(
+            fontFamily: 'Creato Display',
+            fontSize: 14,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _usePhoto(BuildContext context) async {
+    final selected = await showModalBottomSheet<String>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => const LoadingBottomSheet(title: 'Verifying Your ID'),
+    );
+
+    if (selected != null) {
+      // _countryController.text = selected;
+      context.router.popUntilRouteWithName(kycRoute);
+    }
   }
 }
