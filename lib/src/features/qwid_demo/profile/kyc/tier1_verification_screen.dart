@@ -1,8 +1,10 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:qwid/src/router/route_names.dart';
+import 'package:qwid/src/router/router.dart';
 
 @RoutePage(name: tier1Verification)
 class Tier1VerificationScreen extends StatelessWidget {
@@ -43,7 +45,7 @@ class Tier1VerificationScreen extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: 'of 4',
+                      text: 'of 3',
                       style: TextStyle(
                         fontFamily: "Creato Display",
                         fontSize: 14,
@@ -134,7 +136,7 @@ class Tier1VerificationScreen extends StatelessWidget {
                         elevation: 0,
                       ),
                       onPressed: () {
-                        // Continue action
+                        context.router.push(UserInformationScreenRoute());
                       },
                       child: const Text(
                         "Continue",

@@ -390,6 +390,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_tier_badge.svg
   String get icQwidTierBadge => 'assets/svgs/ic_qwid_tier_badge.svg';
 
+  /// File path: assets/svgs/ic_qwid_tier_completed.svg
+  String get icQwidTierCompleted => 'assets/svgs/ic_qwid_tier_completed.svg';
+
   /// File path: assets/svgs/ic_qwid_tier_identify.svg
   String get icQwidTierIdentify => 'assets/svgs/ic_qwid_tier_identify.svg';
 
@@ -558,6 +561,7 @@ class $AssetsSvgsGen {
         icQwidSecurity,
         icQwidSuccess,
         icQwidTierBadge,
+        icQwidTierCompleted,
         icQwidTierIdentify,
         icQwidUncheckmark,
         icQwidUncompletedTier,
