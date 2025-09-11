@@ -82,6 +82,7 @@ const String icQwidTierIdentify = "$svgPath/ic_qwid_tier_identify.svg";
 const String icQwidTierCompleted = "$svgPath/ic_qwid_tier_completed.svg";
 const String icQwidIdentification2 = "$svgPath/ic_qwid_identification2.svg";
 const String icQwidFrame = "$svgPath/ic_qwid_frame.svg";
+const String icQwidCaptureButton = "$svgPath/ic_qwid_capture_button.svg";
 
 const String pngPath = "assets/pngs";
 const String icPlaceHolder = "$pngPath/ic_placeholder.png";
@@ -100,3 +101,4 @@ const String icQwidBook = "$pngPath/ic_qwid_book.png";
 const String icQwidCup = "$pngPath/ic_qwid_cup.png";
 const String icQwidWarning = "$pngPath/ic_qwid_warning.png";
 const String icQwidPaymentSuccess = "$pngPath/ic_qwid_check.png";
+const String icQwidPoweredBySumsub = "$pngPath/ic_qwid_powered_by_sumsub.png";

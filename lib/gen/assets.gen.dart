@@ -142,6 +142,10 @@ class $AssetsPngsGen {
   AssetGenImage get icQwidCup =>
       const AssetGenImage('assets/pngs/ic_qwid_cup.png');
 
+  /// File path: assets/pngs/ic_qwid_powered_by_sumsub.png
+  AssetGenImage get icQwidPoweredBySumsub =>
+      const AssetGenImage('assets/pngs/ic_qwid_powered_by_sumsub.png');
+
   /// File path: assets/pngs/ic_qwid_warning.png
   AssetGenImage get icQwidWarning =>
       const AssetGenImage('assets/pngs/ic_qwid_warning.png');
@@ -168,6 +172,7 @@ class $AssetsPngsGen {
         icQwidBook,
         icQwidCheck,
         icQwidCup,
+        icQwidPoweredBySumsub,
         icQwidWarning,
         icWindcave,
         qwidBg
@@ -302,6 +307,9 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/ic_qwid_camera.svg
   String get icQwidCamera => 'assets/svgs/ic_qwid_camera.svg';
+
+  /// File path: assets/svgs/ic_qwid_capture_button.svg
+  String get icQwidCaptureButton => 'assets/svgs/ic_qwid_capture_button.svg';
 
   /// File path: assets/svgs/ic_qwid_check.svg
   String get icQwidCheck => 'assets/svgs/ic_qwid_check.svg';
@@ -538,6 +546,7 @@ class $AssetsSvgsGen {
         icQwidBuilding,
         icQwidCalendar,
         icQwidCamera,
+        icQwidCaptureButton,
         icQwidCheck,
         icQwidCheckmark,
         icQwidCloud,

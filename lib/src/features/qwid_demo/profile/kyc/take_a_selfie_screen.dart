@@ -158,54 +158,23 @@ class _TakeASelfieScreenState extends State<TakeASelfieScreen> {
                         ),
                       ),
                       Positioned.fill(
-                        child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child:
-                              Column(mainAxisSize: MainAxisSize.min, children: [
-                            // Capture button
-                            GestureDetector(
-                              onTap: _takePicture,
-                              child: Container(
-                                width: 72,
-                                height: 72,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  shape: BoxShape.circle,
-                                  border:
-                                      Border.all(color: Colors.black, width: 3),
-                                ),
+                        child: SafeArea(
+                          child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child:
+                                Column(mainAxisSize: MainAxisSize.min, children: [
+                              // Capture button
+                              GestureDetector(
+                                onTap: _takePicture,
+                                child: SvgPicture.asset(icQwidCaptureButton, width: 90, height: 90),
                               ),
-                            ),
-                            const SizedBox(height: 12),
+                              const SizedBox(height: 12),
 
-                            // Powered by Sumsub
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  "Powered by ",
-                                  style: TextStyle(
-                                    fontFamily: 'Creato Display',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Icon(Icons.star, size: 14, color: Colors.white),
-                                SizedBox(width: 4),
-                                Text(
-                                  "Sumsub",
-                                  style: TextStyle(
-                                    fontFamily: 'Creato Display',
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 24),
-                          ]),
+                              // Powered by Sumsub
+                              Image.asset(icQwidPoweredBySumsub, width: 1410, height: 20),
+                              const SizedBox(height: 24),
+                            ]),
+                          ),
                         ),
                       ),
                     ],
