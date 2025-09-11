@@ -134,6 +134,18 @@ class $AssetsPngsGen {
   AssetGenImage get icQwidBook =>
       const AssetGenImage('assets/pngs/ic_qwid_book.png');
 
+  /// File path: assets/pngs/ic_qwid_check.png
+  AssetGenImage get icQwidCheck =>
+      const AssetGenImage('assets/pngs/ic_qwid_check.png');
+
+  /// File path: assets/pngs/ic_qwid_cup.png
+  AssetGenImage get icQwidCup =>
+      const AssetGenImage('assets/pngs/ic_qwid_cup.png');
+
+  /// File path: assets/pngs/ic_qwid_warning.png
+  AssetGenImage get icQwidWarning =>
+      const AssetGenImage('assets/pngs/ic_qwid_warning.png');
+
   /// File path: assets/pngs/ic_windcave.png
   AssetGenImage get icWindcave =>
       const AssetGenImage('assets/pngs/ic_windcave.png');
@@ -154,6 +166,9 @@ class $AssetsPngsGen {
         icPlaceholder,
         icPlaceholderLarge,
         icQwidBook,
+        icQwidCheck,
+        icQwidCup,
+        icQwidWarning,
         icWindcave,
         qwidBg
       ];
@@ -288,6 +303,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_check.svg
   String get icQwidCheck => 'assets/svgs/ic_qwid_check.svg';
 
+  /// File path: assets/svgs/ic_qwid_checkmark.svg
+  String get icQwidCheckmark => 'assets/svgs/ic_qwid_checkmark.svg';
+
   /// File path: assets/svgs/ic_qwid_cloud.svg
   String get icQwidCloud => 'assets/svgs/ic_qwid_cloud.svg';
 
@@ -351,6 +369,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_notification.svg
   String get icQwidNotification => 'assets/svgs/ic_qwid_notification.svg';
 
+  /// File path: assets/svgs/ic_qwid_pending.svg
+  String get icQwidPending => 'assets/svgs/ic_qwid_pending.svg';
+
   /// File path: assets/svgs/ic_qwid_profile.svg
   String get icQwidProfile => 'assets/svgs/ic_qwid_profile.svg';
 
@@ -362,6 +383,9 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/ic_qwid_success.svg
   String get icQwidSuccess => 'assets/svgs/ic_qwid_success.svg';
+
+  /// File path: assets/svgs/ic_qwid_uncheckmark.svg
+  String get icQwidUncheckmark => 'assets/svgs/ic_qwid_uncheckmark.svg';
 
   /// File path: assets/svgs/ic_qwid_uncompleted_tier.svg
   String get icQwidUncompletedTier =>
@@ -496,6 +520,7 @@ class $AssetsSvgsGen {
         icQwidBuilding,
         icQwidCalendar,
         icQwidCheck,
+        icQwidCheckmark,
         icQwidCloud,
         icQwidCoin,
         icQwidEdit,
@@ -517,10 +542,12 @@ class $AssetsSvgsGen {
         icQwidNotebook,
         icQwidNotiNoBadge,
         icQwidNotification,
+        icQwidPending,
         icQwidProfile,
         icQwidSearch,
         icQwidSecurity,
         icQwidSuccess,
+        icQwidUncheckmark,
         icQwidUncompletedTier,
         icQwidVerification,
         icRadio,

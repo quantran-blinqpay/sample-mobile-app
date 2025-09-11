@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/router/router.dart';
 
 class ProfileTab extends StatefulWidget {
   const ProfileTab({super.key});
@@ -88,11 +90,16 @@ class _ProfileTabState extends State<ProfileTab> {
                 _SectionCard(
                   title: 'Account',
                   children: [
-                    _tile(
-                      icon: icQwidProfile,
-                      title: 'Account Details',
-                      subtitle: 'View and update your personal details',
-                      trailing: SvgPicture.asset(icQwidArrowRight, width: 24, height: 24),
+                    InkWell(
+                      onTap: () {
+                        context.router.push(AccountDetailScreenRoute());
+                      },
+                      child: _tile(
+                        icon: icQwidProfile,
+                        title: 'Account Details',
+                        subtitle: 'View and update your personal details',
+                        trailing: SvgPicture.asset(icQwidArrowRight, width: 24, height: 24),
+                      ),
                     ),
                     _tile(
                       icon: icQwidIdentification,
