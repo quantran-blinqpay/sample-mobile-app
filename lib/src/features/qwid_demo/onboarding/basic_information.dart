@@ -1,7 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
-import 'package:qwid/src/features/authentication/presentation/views/onboarding/select_country_bottom_sheet.dart';
+import 'package:qwid/src/features/qwid_demo/onboarding/select_country_bottom_sheet.dart';
 import 'package:qwid/src/router/route_names.dart';
 import 'package:qwid/src/router/router.dart';
 import 'package:flutter/material.dart';

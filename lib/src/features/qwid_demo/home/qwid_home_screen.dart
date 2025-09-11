@@ -1,12 +1,10 @@
 import 'package:auto_route/annotations.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/tabs/accounts_tab.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/tabs/beneficiaries_tab.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/tabs/home_tab.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/tabs/profile_tab.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/tabs/trade_tab.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/widgets/card_carousel.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/widgets/exchange_card.dart';
+import 'package:qwid/src/features/qwid_demo/home/tabs/accounts_tab.dart';
+import 'package:qwid/src/features/qwid_demo/home/tabs/beneficiaries_tab.dart';
+import 'package:qwid/src/features/qwid_demo/home/tabs/home_tab.dart';
+import 'package:qwid/src/features/qwid_demo/home/tabs/profile_tab.dart';
+import 'package:qwid/src/features/qwid_demo/home/tabs/trade_tab.dart';
 import 'package:qwid/src/router/route_names.dart';
 import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';

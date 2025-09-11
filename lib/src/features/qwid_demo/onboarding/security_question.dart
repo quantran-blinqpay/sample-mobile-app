@@ -1,6 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
-import 'package:qwid/src/features/authentication/presentation/views/onboarding/loading_bottom_sheet.dart';
+import 'package:qwid/src/features/qwid_demo/onboarding/loading_bottom_sheet.dart';
 import 'package:qwid/src/router/route_names.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';

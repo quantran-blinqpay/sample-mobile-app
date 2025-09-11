@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/widgets/select_virtual_account_bottom_sheet.dart';
+import 'package:qwid/src/features/qwid_demo/home/widgets/select_virtual_account_bottom_sheet.dart';
 
 class InformUpdateAccount extends StatelessWidget {
   const InformUpdateAccount({super.key});

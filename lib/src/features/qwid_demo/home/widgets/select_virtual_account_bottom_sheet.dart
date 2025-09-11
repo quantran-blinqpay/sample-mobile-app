@@ -1,20 +1,22 @@
+import 'package:country_flags/country_flags.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
-import 'package:qwid/src/features/authentication/presentation/views/onboarding/models/countries.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:qwid/src/features/qwid_demo/onboarding/models/countries.dart';
 
-class SelectCountryCodeBottomSheet extends StatefulWidget {
-  const SelectCountryCodeBottomSheet({super.key});
+class SelectVirtualAccountBottomSheet extends StatefulWidget {
+  const SelectVirtualAccountBottomSheet({super.key});
 
   @override
-  State<SelectCountryCodeBottomSheet> createState() =>
-      _SelectCountryCodeBottomSheetState();
+  State<SelectVirtualAccountBottomSheet> createState() =>
+      _SelectVirtualAccountBottomSheetState();
 }
 
-class _SelectCountryCodeBottomSheetState extends State<SelectCountryCodeBottomSheet> {
+class _SelectVirtualAccountBottomSheetState extends State<SelectVirtualAccountBottomSheet> {
   final TextEditingController _searchController = TextEditingController();
 
   String _query = "";
+  List<String> _selecteds = [];
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,7 @@ class _SelectCountryCodeBottomSheetState extends State<SelectCountryCodeBottomSh
               SizedBox(
                 width: double.infinity,
                 child: const Text(
-                  "Select Country",
+                  "Request a Virtual Account",
                   style: TextStyle(
                     fontFamily: "Creato Display",
                     fontSize: 18,
@@ -81,7 +83,7 @@ class _SelectCountryCodeBottomSheetState extends State<SelectCountryCodeBottomSh
                       padding: const EdgeInsets.all(15.0),
                       child: SvgPicture.asset(icQwidSearch, width: 5, height: 5),
                     ),
-                    hintText: "Search for a country",
+                    hintText: "Search for a Currency",
                     hintStyle: const TextStyle(
                       fontFamily: "Creato Display",
                       fontSize: 14,
@@ -102,7 +104,7 @@ class _SelectCountryCodeBottomSheetState extends State<SelectCountryCodeBottomSh
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Text(
-                  "Countries",
+                  "Currencies",
                   style: const TextStyle(
                     fontFamily: "Creato Display",
                     fontSize: 16,
@@ -121,38 +123,34 @@ class _SelectCountryCodeBottomSheetState extends State<SelectCountryCodeBottomSh
                   itemBuilder: (context, index) {
                     final country = filteredCountries[index];
                     return ListTile(
-                      leading: Text(
-                        country["flag"]!,
-                        style: const TextStyle(fontSize: 24),
+                      leading: CountryFlag.fromCurrencyCode(
+                        country["currency"]!,
+                        width: 24,
+                        height: 15,
+                        shape: Rectangle(),
                       ),
-                      title: RichText(
-                        textAlign: TextAlign.start,
-                        text: TextSpan(
-                          children: [
-                            TextSpan(
-                              text: country["name"]!,
-                              style: const TextStyle(
-                                fontFamily: "Creato Display",
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xFF0A0A0C),
-                              ),
-                            ),
-                            TextSpan(
-                              text:
-                              ' (${country["code"]!})',
-                              style: const TextStyle(
-                                fontFamily: "Creato Display",
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xFF92939E),
-                              ),
-                            ),
-                          ],
+                      title: Text(
+                        country["name"]!,
+                        style: const TextStyle(
+                          fontFamily: "Creato Display",
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF0A0A0C),
                         ),
                       ),
+                      trailing: GestureDetector(
+                          onTap: (){
+                            setState(() {
+                              if(_selecteds.contains(country["name"])){
+                                _selecteds.remove(country["name"]);
+                              } else{
+                                _selecteds.add(country["name"]!);
+                              }
+                            });
+                          },
+                          child: SvgPicture.asset(_selecteds.contains(country["name"]) ? icQwidCheckmark : icQwidUncheckmark)),
                       onTap: () {
-                        Navigator.pop(context, '${country["flag"]} ${country["code"]}');
+                        Navigator.pop(context, country["name"]);
                       },
                     );
                   },

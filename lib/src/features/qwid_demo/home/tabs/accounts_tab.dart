@@ -1,10 +1,10 @@
 import 'package:country_flags/country_flags.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/widgets/account_carousel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/widgets/inform_update_account.dart';
+import 'package:qwid/src/features/qwid_demo/home/widgets/account_carousel.dart';
+import 'package:qwid/src/features/qwid_demo/home/widgets/inform_update_account.dart';
 
 // If you already have these in your app, import your constants instead.
 const _blue = Color(0xFF0092FF);

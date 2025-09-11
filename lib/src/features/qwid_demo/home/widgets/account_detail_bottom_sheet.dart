@@ -2,8 +2,7 @@ import 'package:country_flags/country_flags.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:qwid/src/features/authentication/presentation/views/home/widgets/select_account_summary_bottom_sheet.dart';
-import 'package:qwid/src/features/authentication/presentation/views/onboarding/models/countries.dart';
+import 'package:qwid/src/features/qwid_demo/home/widgets/select_account_summary_bottom_sheet.dart';
 
 class AccountDetailBottomSheet extends StatefulWidget {
   const AccountDetailBottomSheet({super.key});
