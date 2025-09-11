@@ -348,6 +348,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_identification.svg
   String get icQwidIdentification => 'assets/svgs/ic_qwid_identification.svg';
 
+  /// File path: assets/svgs/ic_qwid_identification2.svg
+  String get icQwidIdentification2 => 'assets/svgs/ic_qwid_identification2.svg';
+
   /// File path: assets/svgs/ic_qwid_information.svg
   String get icQwidInformation => 'assets/svgs/ic_qwid_information.svg';
 
@@ -547,6 +550,7 @@ class $AssetsSvgsGen {
         icQwidHelp,
         icQwidHome,
         icQwidIdentification,
+        icQwidIdentification2,
         icQwidInformation,
         icQwidKey,
         icQwidLock,

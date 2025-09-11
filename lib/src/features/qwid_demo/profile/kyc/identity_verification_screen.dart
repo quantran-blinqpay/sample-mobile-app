@@ -1,8 +1,10 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:qwid/src/router/route_names.dart';
+import 'package:qwid/src/router/router.dart';
 
 @RoutePage(name: identityVerification)
 class IdentityVerificationScreen extends StatelessWidget {
@@ -10,9 +12,7 @@ class IdentityVerificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const blue = Color(0xFF0092FF);
     const sub = Color(0xFF92939E);
-    const divider = Color(0xFFF3F5F7);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -95,7 +95,7 @@ class IdentityVerificationScreen extends StatelessWidget {
                 _optionTile(
                   title: "National Identification Number (NIN)",
                   onTap: () {
-                    // Navigate to NIN flow
+                    context.router.push(NationIdentificationScreenRoute());
                   },
                 ),
 
