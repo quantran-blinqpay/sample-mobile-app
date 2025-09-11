@@ -56,3 +56,4 @@ const String tier1Verification = 'Tier1VerificationScreenRoute';
 const String userInformation = 'UserInformationScreenRoute';
 const String identityVerification = 'IdentityVerificationScreenRoute';
 const String nationIdentification = 'NationIdentificationScreenRoute';
+const String facialVerification = 'FacialVerificationScreenRoute';

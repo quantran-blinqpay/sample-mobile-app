@@ -1,9 +1,11 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:qwid/src/router/route_names.dart';
+import 'package:qwid/src/router/router.dart';
 
 @RoutePage(name: nationIdentification)
 class NationIdentificationScreen extends StatefulWidget {
@@ -191,6 +193,7 @@ class _NationIdentificationScreenState extends State<NationIdentificationScreen>
                         setState(() => _isLoading = true);
                         Future.delayed(const Duration(seconds: 2), () {
                           setState(() => _isLoading = false);
+                          context.router.push(FacialVerificationScreenRoute());
                         });
                       }
                           : null,

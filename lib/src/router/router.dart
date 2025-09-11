@@ -67,6 +67,7 @@ import 'package:qwid/src/router/routes/guards/secure_guards.dart';
 import 'package:collection/collection.dart';
 
 import '../features/profile/presentation/views/change_password_screen.dart';
+import '../features/qwid_demo/profile/kyc/facial_verification_screen.dart';
 
 part './routes/home_routes.dart';
 part 'routes/auth_routes.dart';
