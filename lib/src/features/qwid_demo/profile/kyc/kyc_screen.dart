@@ -1,8 +1,10 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:qwid/src/router/route_names.dart';
+import 'package:qwid/src/router/router.dart';
 
 @RoutePage(name: kycRoute)
 class KycScreen extends StatelessWidget {
@@ -92,7 +94,7 @@ class KycScreen extends StatelessWidget {
                     elevation: 0,
                   ),
                   onPressed: () {
-                    // Next action
+                    context.router.push(Tier1VerificationScreenRoute());
                   },
                   child: const Text(
                     "Next",
