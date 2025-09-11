@@ -26,6 +26,8 @@ PODS:
     - Braintree/ThreeDSecure (~> 5.6.1)
     - Braintree/UnionPay (~> 5.6.1)
     - Braintree/Venmo (~> 5.6.1)
+  - camera_avfoundation (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - flutter_braintree (1.0.0):
     - Braintree/ApplePay (~> 5.6.3)
@@ -50,6 +52,7 @@ PODS:
     - FlutterMacOS
 
 DEPENDENCIES:
+  - camera_avfoundation (from `.symlinks/plugins/camera_avfoundation/ios`)
   - Flutter (from `Flutter`)
   - flutter_braintree (from `.symlinks/plugins/flutter_braintree/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
@@ -65,6 +68,8 @@ SPEC REPOS:
     - BraintreeDropIn
 
 EXTERNAL SOURCES:
+  camera_avfoundation:
+    :path: ".symlinks/plugins/camera_avfoundation/ios"
   Flutter:
     :path: Flutter
   flutter_braintree:
@@ -85,6 +90,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Braintree: cef7388a3647515f1e0861e52200c2f3dad0f98f
   BraintreeDropIn: 89df35f840004affa22ebb8f06b12d20615411bf
+  camera_avfoundation: be3be85408cd4126f250386828e9b1dfa40ab436
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_braintree: c4f6460d249e22c7d084b0e12af1235886ba1323
   image_picker_ios: 7fe1ff8e34c1790d6fff70a32484959f563a928a
@@ -94,6 +100,6 @@ SPEC CHECKSUMS:
   sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
   webview_flutter_wkwebview: 1821ceac936eba6f7984d89a9f3bcb4dea99ebb2
 
-PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
+PODFILE CHECKSUM: a26a729321a718330c25219c560574eed17c5840
 
 COCOAPODS: 1.16.2

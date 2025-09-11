@@ -22,4 +22,5 @@ final _qwidRoutes = [
   AutoRoute(path: 'identity_verification', page: IdentityVerificationScreenRoute.page),
   AutoRoute(path: 'nation_identification', page: NationIdentificationScreenRoute.page),
   AutoRoute(path: 'facial_verification', page: FacialVerificationScreenRoute.page),
+  AutoRoute(path: 'take_a_selfie', page: TakeASelfieScreenRoute.page),
 ];

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:qwid/src/router/route_names.dart';
+import 'package:qwid/src/router/router.dart';
 
 @RoutePage(name: facialVerification)
 class FacialVerificationScreen extends StatelessWidget {
@@ -152,7 +153,7 @@ class FacialVerificationScreen extends StatelessWidget {
                         elevation: 0,
                       ),
                       onPressed: () {
-                        // Submit action
+                        context.router.push(TakeASelfieScreenRoute());
                       },
                       child: const Text(
                         "Continue",

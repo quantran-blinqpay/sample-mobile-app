@@ -49,6 +49,7 @@ import 'package:qwid/src/features/qwid_demo/profile/account_detail.dart';
 import 'package:qwid/src/features/qwid_demo/profile/kyc/identity_verification_screen.dart';
 import 'package:qwid/src/features/qwid_demo/profile/kyc/kyc_screen.dart';
 import 'package:qwid/src/features/qwid_demo/profile/kyc/nation_identification_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/take_a_selfie_screen.dart';
 import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1_verification_screen.dart';
 import 'package:qwid/src/features/qwid_demo/profile/kyc/user_information_screen.dart';
 import 'package:qwid/src/features/splash/splash_screen.dart';

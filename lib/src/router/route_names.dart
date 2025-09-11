@@ -57,3 +57,4 @@ const String userInformation = 'UserInformationScreenRoute';
 const String identityVerification = 'IdentityVerificationScreenRoute';
 const String nationIdentification = 'NationIdentificationScreenRoute';
 const String facialVerification = 'FacialVerificationScreenRoute';
+const String takeASelfie = 'TakeASelfieScreenRoute';

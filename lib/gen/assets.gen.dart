@@ -333,6 +333,9 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/ic_qwid_fingerprint.svg
   String get icQwidFingerprint => 'assets/svgs/ic_qwid_fingerprint.svg';
 
+  /// File path: assets/svgs/ic_qwid_frame.svg
+  String get icQwidFrame => 'assets/svgs/ic_qwid_frame.svg';
+
   /// File path: assets/svgs/ic_qwid_gift.svg
   String get icQwidGift => 'assets/svgs/ic_qwid_gift.svg';
 
@@ -545,6 +548,7 @@ class $AssetsSvgsGen {
         icQwidEyeOff,
         icQwidEyeOn,
         icQwidFingerprint,
+        icQwidFrame,
         icQwidGift,
         icQwidGlobal,
         icQwidHelp,
