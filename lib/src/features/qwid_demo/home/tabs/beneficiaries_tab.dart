@@ -1,3 +1,4 @@
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -28,7 +29,7 @@ class _BeneficiariesTabState extends State<BeneficiariesTab> {
     const chipGreyBg = Color(0xFFFAFAFA);
     const borderGrey = Color(0xFFF3F5F7);
 
-    return Scaffold(
+    return AppScaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,

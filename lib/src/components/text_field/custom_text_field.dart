@@ -41,23 +41,23 @@ class CustomTextField extends StatefulWidget {
   });
 
   @override
-  State<CustomTextField> createState() => _CustomTextFieldState();
+  State<CustomTextField> createState() => CustomTextFieldState();
 }
 
-class _CustomTextFieldState extends State<CustomTextField> {
-  bool _passwordVisible = false;
-  bool _clearVisible = false;
-  bool? _hasFocus = false;
+class CustomTextFieldState extends State<CustomTextField> {
+  bool passwordVisible = false;
+  bool clearVisible = false;
+  bool? hasFocus = false;
   late AppColors? appColors;
 
   @override
   void initState() {
-    _clearVisible = widget.controller?.text.isNotEmpty == true;
-    _color = widget.enabledBorderColor;
+    clearVisible = widget.controller?.text.isNotEmpty == true;
+    color = widget.enabledBorderColor;
     super.initState();
   }
 
-  late Color? _color;
+  late Color? color;
   @override
   Widget build(BuildContext context) {
     appColors = Theme.of(context).extension<AppColors>();
@@ -65,15 +65,16 @@ class _CustomTextFieldState extends State<CustomTextField> {
     return Focus(
       onFocusChange: (hasFocus) {
         setState(() {
-          _hasFocus = hasFocus;
-          _color =
-              !hasFocus ? widget.enabledBorderColor : widget.focusedBorderColor;
+          hasFocus = hasFocus;
+          color = !hasFocus
+              ? widget.enabledBorderColor
+              : widget.focusedBorderColor;
         });
       },
       child: TextFormField(
         onChanged: (String text) {
           setState(() {
-            _clearVisible = widget.controller?.text.isNotEmpty == true;
+            clearVisible = widget.controller?.text.isNotEmpty == true;
           });
           if (widget.onChanged != null) {
             widget.onChanged!(text);
@@ -82,73 +83,96 @@ class _CustomTextFieldState extends State<CustomTextField> {
         controller: widget.controller,
         inputFormatters: widget.inputFormatters,
         keyboardType: widget.keyboardType,
-        decoration: InputDecoration(
-          hintText: widget.hintText,
-          hintStyle: widget.hintStyle ??
-              AppStyles.of(context).copyWith(
-                fontSize: 16,
-                color: appColors!.outerSpace,
-                fontWeight: FontWeight.normal,
-              ),
-          suffixIcon: widget.obscureText
-              ? IconButton(
-                  icon: _passwordVisible
-                      ? Icon(
-                          Icons.remove_red_eye_outlined,
-                          color: _color,
-                          size: 20,
-                        )
-                      : SvgPicture.asset(
-                          Assets.svgs.icEyeOff,
-                          colorFilter:
-                              ColorFilter.mode(_color!, BlendMode.srcIn),
-                        ),
-                  onPressed: () {
-                    setState(() {
-                      _passwordVisible = !_passwordVisible;
-                    });
-                  },
-                )
-              : _clearVisible && (_hasFocus ?? false)
-                  ? IconButton(
-                      icon: Container(
-                        width: 16,
-                        height: 16,
-                        padding: const EdgeInsets.all(4.3),
-                        decoration: BoxDecoration(
-                          color: _color,
-                          shape: BoxShape.circle,
-                        ),
-                        child: SvgPicture.asset(
-                          Assets.svgs.icClose,
-                          colorFilter: const ColorFilter.mode(
-                              Colors.white, BlendMode.srcIn),
-                        ),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          _clearVisible = false;
-                        });
-                        widget.controller?.clear();
-                        if (widget.onClear != null) {
-                          widget.onClear!();
-                        }
-                      },
-                    )
-                  : null,
-          suffixIconConstraints: BoxConstraints(maxHeight: 40),
-          focusedBorder: UnderlineInputBorder(
-            borderSide:
-                BorderSide(color: widget.focusedBorderColor, width: 0.5),
-          ),
-          enabledBorder: UnderlineInputBorder(
-            borderSide:
-                BorderSide(color: widget.enabledBorderColor, width: 0.5),
-          ),
-          contentPadding: widget.contentPadding ?? EdgeInsets.all(8),
-        ),
-        obscureText: (widget.obscureText == true && !_passwordVisible),
+        decoration: decoration(),
+        obscureText: (widget.obscureText == true && !passwordVisible),
       ),
+    );
+  }
+
+  void tapClear() {
+    setState(() {
+      clearVisible = false;
+    });
+    widget.controller?.clear();
+    if (widget.onClear != null) {
+      widget.onClear!();
+    }
+  }
+
+  InputDecoration decoration() {
+    return InputDecoration(
+      hintText: widget.hintText,
+      hintStyle:
+      widget.hintStyle ??
+          AppStyles.of(context).copyWith(
+            fontSize: 16,
+            color: (appColors?.outerSpace ?? AppColorss.gray),
+            fontWeight: FontWeight.normal,
+          ),
+      suffixIcon: widget.obscureText
+          ? IconButton(
+        icon: passwordVisible
+            ? Icon(
+          Icons.remove_red_eye_outlined,
+          color: color,
+          size: 20,
+        )
+            : SvgPicture.asset(
+          Assets.svgs.icEyeOff,
+          colorFilter: ColorFilter.mode(
+            color!,
+            BlendMode.srcIn,
+          ),
+        ),
+        onPressed: () {
+          setState(() {
+            passwordVisible = !passwordVisible;
+          });
+        },
+      )
+          : clearVisible /*&& (hasFocus ?? false)*/
+          ? IconButton(
+        icon: Container(
+          width: 16,
+          height: 16,
+          padding: const EdgeInsets.all(4.3),
+          decoration: BoxDecoration(
+            color: color,
+            shape: BoxShape.circle,
+          ),
+          child: SvgPicture.asset(
+            Assets.svgs.icClose,
+            colorFilter: const ColorFilter.mode(
+              Colors.white,
+              BlendMode.srcIn,
+            ),
+          ),
+        ),
+        onPressed: () {
+          setState(() {
+            clearVisible = false;
+          });
+          widget.controller?.clear();
+          if (widget.onClear != null) {
+            widget.onClear!();
+          }
+        },
+      )
+          : null,
+      suffixIconConstraints: BoxConstraints(maxHeight: 40),
+      focusedBorder: UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: widget.focusedBorderColor,
+          width: 0.5,
+        ),
+      ),
+      enabledBorder: UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: widget.enabledBorderColor,
+          width: 0.5,
+        ),
+      ),
+      contentPadding: widget.contentPadding ?? EdgeInsets.all(8),
     );
   }
 }
@@ -282,118 +306,132 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           inputFormatters: widget.inputFormatters,
           maxLines: widget.maxLines,
           validator: widget.validator,
-          decoration: widget.decoration ??
+          decoration:
+          widget.decoration ??
               InputDecoration(
                 prefixIcon: widget.prefixIcon,
                 fillColor: widget.backgroundColor ?? Colors.white,
                 filled: true,
                 hintText: widget.hintText,
-                hintStyle: widget.hintStyle ??
+                hintStyle:
+                widget.hintStyle ??
                     AppStyles.of(context).copyWith(
                       fontSize: 14,
-                      color: appColors!.manatee,
+                      color: (appColors?.manatee ?? AppColorss.textGray),
                       fontWeight: FontWeight.w500,
                     ),
-                suffixIcon: widget.readOnly == true ? SizedBox() : Row(
+                suffixIcon: widget.readOnly == true
+                    ? SizedBox()
+                    : Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     widget.obscureText
                         ? IconButton(
-                            icon: _passwordVisible
-                                ? Icon(
-                                    Icons.remove_red_eye_outlined,
-                                    color: _color,
-                                    size: 20,
-                                  )
-                                : SvgPicture.asset(
-                                    Assets.svgs.icEyeOff,
-                                    colorFilter: ColorFilter.mode(
-                                        _color!, BlendMode.srcIn),
-                                  ),
-                            onPressed: () {
-                              setState(() {
-                                _passwordVisible = !_passwordVisible;
-                              });
-                            },
-                          )
+                      icon: _passwordVisible
+                          ? Icon(
+                        Icons.remove_red_eye_outlined,
+                        color: _color,
+                        size: 20,
+                      )
+                          : SvgPicture.asset(
+                        Assets.svgs.icEyeOff,
+                        colorFilter: ColorFilter.mode(
+                          (_color ?? AppColorss.borderColor),
+                          BlendMode.srcIn,
+                        ),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _passwordVisible = !_passwordVisible;
+                        });
+                      },
+                    )
                         : _clearVisible &&
-                                ((widget.readOnly ?? false)
-                                    ? true
-                                    : (_hasFocus ?? false))
-                            ? IconButton(
-                                icon: Container(
-                                  width: 16,
-                                  height: 16,
-                                  padding: const EdgeInsets.all(4.3),
-                                  decoration: BoxDecoration(
-                                    color: _color,
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: SvgPicture.asset(
-                                    Assets.svgs.icClose,
-                                    colorFilter: const ColorFilter.mode(
-                                        Colors.white, BlendMode.srcIn),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    _clearVisible = false;
-                                  });
-                                  controller.clear();
-                                  if (widget.onClear != null) {
-                                    widget.onClear!();
-                                  }
-                                  widget.onChanged?.call('');
-                                },
-                              )
-                            : SizedBox(),
+                        ((widget.readOnly ?? false)
+                            ? true
+                            : (_hasFocus ?? false))
+                        ? IconButton(
+                      icon: Container(
+                        width: 16,
+                        height: 16,
+                        padding: const EdgeInsets.all(4.3),
+                        decoration: BoxDecoration(
+                          color: _color,
+                          shape: BoxShape.circle,
+                        ),
+                        child: SvgPicture.asset(
+                          Assets.svgs.icClose,
+                          colorFilter: const ColorFilter.mode(
+                            Colors.white,
+                            BlendMode.srcIn,
+                          ),
+                        ),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _clearVisible = false;
+                        });
+                        controller.clear();
+                        if (widget.onClear != null) {
+                          widget.onClear!();
+                        }
+                        widget.onChanged?.call('');
+                      },
+                    )
+                        : SizedBox(),
                     widget.suffixIcon ?? SizedBox(),
                   ],
                 ),
                 suffixIconConstraints: BoxConstraints(maxHeight: 40),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: widget.borderRadius ??
+                  borderRadius:
+                  widget.borderRadius ??
                       BorderRadius.circular(
-                          widget.shape == ShapeTextFieldButton.circle
-                              ? 100
-                              : 5),
+                        widget.shape == ShapeTextFieldButton.circle ? 100 : 5,
+                      ),
                   borderSide: BorderSide(
                     color: widget.focusedBorderColor ?? Colors.transparent,
                   ),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: widget.borderRadius ??
+                  borderRadius:
+                  widget.borderRadius ??
                       BorderRadius.circular(
-                          widget.shape == ShapeTextFieldButton.circle
-                              ? 100
-                              : 5),
+                        widget.shape == ShapeTextFieldButton.circle ? 100 : 5,
+                      ),
                   borderSide: BorderSide(
                     color: widget.enabledBorderColor ?? Colors.transparent,
                   ),
                 ),
                 disabledBorder: OutlineInputBorder(
-                  borderRadius: widget.borderRadius ??
+                  borderRadius:
+                  widget.borderRadius ??
                       BorderRadius.circular(
-                          widget.shape == ShapeTextFieldButton.circle
-                              ? 100
-                              : 5),
-                  borderSide: BorderSide(color: appColors!.lightGray),
+                        widget.shape == ShapeTextFieldButton.circle ? 100 : 5,
+                      ),
+                  borderSide: BorderSide(
+                    color: (appColors?.lightGray ?? AppColorss.lightGray),
+                  ),
                 ),
                 focusedErrorBorder: OutlineInputBorder(
-                  borderRadius: widget.borderRadius ??
+                  borderRadius:
+                  widget.borderRadius ??
                       BorderRadius.circular(
-                          widget.shape == ShapeTextFieldButton.circle
-                              ? 100
-                              : 5),
-                  borderSide: BorderSide(color: appColors!.red),
+                        widget.shape == ShapeTextFieldButton.circle ? 100 : 5,
+                      ),
+                  borderSide: BorderSide(
+                    color: (appColors?.red ?? AppColorss.crimson),
+                  ),
                 ),
                 errorBorder: OutlineInputBorder(
-                  borderRadius: widget.borderRadius ??
+                  borderRadius:
+                  widget.borderRadius ??
                       BorderRadius.circular(
-                          widget.shape == ShapeTextFieldButton.circle
-                              ? 100
-                              : 5),
-                  borderSide: BorderSide(color: appColors!.red),
+                        widget.shape == ShapeTextFieldButton.circle ? 100 : 5,
+                      ),
+                  borderSide: BorderSide(
+                    color: (appColors?.red ?? AppColorss.crimson),
+                  ),
                 ),
                 contentPadding: EdgeInsets.fromLTRB(16, 8, 16, 8),
               ),

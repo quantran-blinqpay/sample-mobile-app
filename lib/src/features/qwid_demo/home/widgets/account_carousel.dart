@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:country_flags/country_flags.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qwid/src/features/qwid_demo/home/widgets/account_detail_bottom_sheet.dart';
+import 'package:qwid/src/router/router.dart';
 
 class AccountCarousel extends StatefulWidget {
   const AccountCarousel({super.key, required this.onPageChanged});
@@ -309,7 +311,7 @@ class _AccountCarouselState extends State<AccountCarousel> {
 
     if (selected != null) {
       // _countryController.text = selected;
-      // context.router.push(PersonalInformationScreenRoute());
+      context.router.push(PersonalInformationScreenRoute());
     }
   }
 

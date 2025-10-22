@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:country_flags/country_flags.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:qwid/src/features/qwid_demo/home/widgets/select_account_summary_bottom_sheet.dart';
+import 'package:qwid/src/router/router.dart';
 
 class AccountDetailBottomSheet extends StatefulWidget {
   const AccountDetailBottomSheet({super.key});
@@ -201,7 +203,7 @@ class _AccountDetailBottomSheetState extends State<AccountDetailBottomSheet> {
 
     if (selected != null) {
       // _countryController.text = selected;
-      // context.router.push(PersonalInformationScreenRoute());
+      context.router.push(PersonalInformationScreenRoute());
     }
   }
 }

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/features/authentication/presentation/cubit/auth_cubit.dart';
 import 'package:qwid/src/features/helper/cubit/helper_cubit.dart';
 import 'package:qwid/src/router/route_names.dart';
 import 'package:qwid/src/router/router.dart';
@@ -61,7 +62,7 @@ class _SplashScreenState extends State<SplashScreen>
       backgroundColor: const Color(0xFFF2E9DC),
       body: Center(
         child: Image.asset(
-          qwidBg,
+          icQwidBg,
           width: double.infinity,
           height: double.infinity,
           fit: BoxFit.fill,

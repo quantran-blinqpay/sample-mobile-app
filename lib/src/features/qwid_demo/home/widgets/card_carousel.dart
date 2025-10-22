@@ -1,10 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:country_flags/country_flags.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:qwid/src/features/qwid_demo/home/add_funds.dart';
+import 'package:qwid/src/router/router.dart';
 
 class WalletCarousel extends StatefulWidget {
-  const WalletCarousel({super.key});
+  const WalletCarousel({super.key, required this.wallets});
+  final List<Map<String, String>> wallets;
+
   @override
   State<WalletCarousel> createState() => _WalletCarouselState();
 }
@@ -16,6 +21,7 @@ class _WalletCarouselState extends State<WalletCarousel> {
   static const double viewportFraction = 0.93; // how wide each card is (<= 1)
   static const double gap = 6;
   int _currentPage = 0;// space between cards
+  // late List<Map<String, String>> wallets;
 
   @override
   void initState() {
@@ -34,17 +40,17 @@ class _WalletCarouselState extends State<WalletCarousel> {
     return Column(
       children: [
         SizedBox(
-          height: 200,
+          height: (MediaQuery.of(context).size.width * 333 / 375) * 200 / 333,
           child: PageView.builder(
             controller: _controller,
             padEnds: true, // 👈 first/last show only one side
-            itemCount: wallets.length,
+            itemCount: widget.wallets.length,
             itemBuilder: (context, index) {
-              final wallet = wallets[index];
+              final wallet = widget.wallets[index];
 
               // Equal side gaps for middle pages; only inner gap for edges.
               final left = index == 0 ? 0.0 : gap / 2;
-              final right = index == wallets.length - 1 ? 0.0 : gap / 2;
+              final right = index == widget.wallets.length - 1 ? 0.0 : gap / 2;
 
               return Padding(
                 padding: EdgeInsets.only(left: left, right: right),
@@ -53,7 +59,7 @@ class _WalletCarouselState extends State<WalletCarousel> {
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      Image.network(wallet["image"]!, fit: BoxFit.cover),
+                      Image.asset(wallet["image"]!, fit: BoxFit.cover),
                       Container(
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
@@ -102,14 +108,18 @@ class _WalletCarouselState extends State<WalletCarousel> {
                                     ],
                                   ),
                                 ),
-                                SvgPicture.asset(icQwidMenu, width: 24, height: 24),
+                                InkWell(
+                                    onTap: () {
+                                      context.router.push(const AddFundsScreenRoute());
+                                    },
+                                    child: SvgPicture.asset(icQwidMenu, width: 24, height: 24)),
                               ],
                             ),
                             const Spacer(),
                             Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                SvgPicture.asset(icQwidBank, width: 16, height: 16),
+                                SvgPicture.asset(icQwidBank, width: 16, height: 16, color: Colors.white),
                                 const Text("Wallet Balance",
                                     style: TextStyle(
                                         fontFamily: 'Creato Display',
@@ -121,7 +131,7 @@ class _WalletCarouselState extends State<WalletCarousel> {
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: wallet["currency"],
+                                    text: wallet["prefix"],
                                     style: const TextStyle(
                                         fontFamily: 'Helonik',
                                         fontSize: 36,
@@ -163,7 +173,7 @@ class _WalletCarouselState extends State<WalletCarousel> {
         // Indicators
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(wallets.length, (index) {
+          children: List.generate(widget.wallets.length, (index) {
             return AnimatedContainer(
               duration: const Duration(milliseconds: 300),
               margin: const EdgeInsets.symmetric(horizontal: 4),
@@ -182,30 +192,3 @@ class _WalletCarouselState extends State<WalletCarousel> {
     );
   }
 }
-
-final List<Map<String, String>> wallets = [
-  {
-    "bank": "NGN Wallet",
-    "country": "NG",
-    "account": "Access Bank • 0123456789",
-    "balance": "1,827,630.41",
-    "image": "https://t4.ftcdn.net/jpg/03/79/96/25/360_F_379962515_j4dQNtf6gp1WyS4Jo2LTZ8KXe85ncZWC.jpg",
-    "currency": "₦",
-  },
-  {
-    "bank": "First American Bank",
-    "country": "US",
-    "account": "Access Bank • 9876543210",
-    "balance": "60,040.31",
-    "image": "https://images.squarespace-cdn.com/content/v1/62015f66f840ef671da14ae7/1aa35437-4cd2-4e39-aabc-2df68baac830/NYC-skyline-033.JPG",
-    "currency": "\$",
-  },
-  {
-    "bank": "CIBC",
-    "country": "CA",
-    "account": "Access Bank • 00123-045-1234567",
-    "balance": "40,060.13",
-    "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/landscape-of-city-vancouver-in-canada-deejpilot.jpg",
-    "currency": "CA\$",
-  },
-];

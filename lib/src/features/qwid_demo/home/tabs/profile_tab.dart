@@ -1,6 +1,9 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:qwid/src/router/router.dart';
 
@@ -20,7 +23,7 @@ class _ProfileTabState extends State<ProfileTab> {
     const sub = Color(0xFF92939E);
     const divider = Color(0xFFF3F5F7);
 
-    return Scaffold(
+    return AppScaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -92,7 +95,7 @@ class _ProfileTabState extends State<ProfileTab> {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        context.router.push(AccountDetailScreenRoute());
+                        context.router.push(const AccountDetailScreenRoute());
                       },
                       child: _tile(
                         icon: icQwidProfile,
@@ -103,7 +106,7 @@ class _ProfileTabState extends State<ProfileTab> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        context.router.push(KycScreenRoute());
+                        context.router.push(const KycScreenRoute());
                       },
                       child: _tile(
                         icon: icQwidIdentification,
@@ -183,6 +186,19 @@ class _ProfileTabState extends State<ProfileTab> {
                       subtitle: "You can always come back when you're ready.",
                       trailing: SvgPicture.asset(icQwidArrowRight, width: 24, height: 24),
                     ),
+                    GestureDetector(
+                      onTap: () {
+                        showLogoutDialog(context, onConfirm: () {
+                          // Get.find<AuthController>().logout();
+                        });
+                      },
+                      child: _tile(
+                        icon: '',
+                        title: 'Sign Out',
+                        subtitle: "",
+                        trailing: SizedBox(width: 24, height: 24),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),
@@ -191,6 +207,33 @@ class _ProfileTabState extends State<ProfileTab> {
           ],
         ),
       ),
+    );
+  }
+
+  Future<void> showLogoutDialog(BuildContext context, {required VoidCallback onConfirm}) async {
+    await showCupertinoDialog(
+      context: context,
+      builder: (context) {
+        return CupertinoAlertDialog(
+          title: const Text('Log Out'),
+          content: const Text('Are you sure you want to log out of your account?'),
+          actions: [
+            CupertinoDialogAction(
+              isDefaultAction: true,
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('Cancel'),
+            ),
+            CupertinoDialogAction(
+              isDestructiveAction: true,
+              onPressed: () {
+                Navigator.of(context).pop();
+                onConfirm();
+              },
+              child: const Text('Log Out'),
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -204,44 +247,47 @@ class _ProfileTabState extends State<ProfileTab> {
     const sub = Color(0xFF92939E);
     const divider = Color(0xFFF3F5F7);
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          icon.isEmpty ? SizedBox(width: 22, height: 22) : SvgPicture.asset(icon, width: 22, height: 22),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(title,
-                          style: const TextStyle(
-                            fontFamily: 'Creato Display',
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black,
-                          )),
-                      const SizedBox(height: 2),
-                      Text(subtitle,
-                          style: const TextStyle(
-                            fontFamily: 'Creato Display',
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: sub,
-                          )),
-                    ],
+    return ColoredBox(
+      color: Colors.transparent,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            icon.isEmpty ? SizedBox(width: 22, height: 22) : SvgPicture.asset(icon, width: 22, height: 22),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(title,
+                            style: const TextStyle(
+                              fontFamily: 'Creato Display',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                            )),
+                        const SizedBox(height: 2),
+                        Text(subtitle,
+                            style: const TextStyle(
+                              fontFamily: 'Creato Display',
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: sub,
+                            )),
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(width: 12),
-                trailing,
-              ],
+                  const SizedBox(width: 12),
+                  trailing,
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:qwid/src/features/qwid_demo/home/tabs/accounts_tab.dart';
 import 'package:qwid/src/features/qwid_demo/home/tabs/beneficiaries_tab.dart';
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<QwidHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppScaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: PageView(
@@ -117,6 +118,7 @@ class _HomeScreenState extends State<QwidHomeScreen> {
             type: BottomNavigationBarType.fixed,
             selectedItemColor: const Color(0xff0092FF),
             unselectedItemColor: Colors.grey,
+            backgroundColor: Colors.white,
             selectedFontSize: 12.0,
             unselectedFontSize: 12.0,
             items: [
@@ -132,8 +134,8 @@ class _HomeScreenState extends State<QwidHomeScreen> {
                   icon: Padding(
                     padding: const EdgeInsets.all(2.0),
                     child: SvgPicture.asset(icQwidBeneficiares,
-                        width: 20,
-                        height: 20,
+                        width: 24,
+                        height: 24,
                         color: _currentPage == 1
                             ? const Color(0xff0092FF)
                             : Color(0xff92939E)),

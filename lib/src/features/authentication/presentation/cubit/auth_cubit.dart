@@ -42,7 +42,7 @@ class AuthCubit extends Cubit<AuthState> {
     });
   }
 
-  void initData() async {
+  Future<void> initData() async {
     emit(state.copyWith(forgotPasswordStatus: ProgressStatus.inProgress));
     var token = await di<AccessTokenStorage>().read();
     var username = await di<UsernameStorage>().read();

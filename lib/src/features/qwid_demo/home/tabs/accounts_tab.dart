@@ -1,4 +1,5 @@
 import 'package:country_flags/country_flags.dart';
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -42,7 +43,7 @@ class _AccountsTabState extends State<AccountsTab> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppScaffold(
       backgroundColor: Colors.white,
 
       // Top app bar – same visual as HomeTab

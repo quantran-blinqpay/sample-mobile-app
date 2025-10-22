@@ -1,0 +1,172 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:country_flags/country_flags.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:qwid/src/configs/app_themes/app_images.dart';
+
+import 'account_carousel.dart';
+
+class SelectWalletBottomSheet extends StatefulWidget {
+  const SelectWalletBottomSheet({super.key});
+
+  @override
+  State<SelectWalletBottomSheet> createState() =>
+      _SelectWalletBottomSheetState();
+}
+
+class _SelectWalletBottomSheetState extends State<SelectWalletBottomSheet> {
+  final TextEditingController _searchController = TextEditingController();
+
+  String _query = "";
+
+  @override
+  Widget build(BuildContext context) {
+    final filteredCountries =
+        wallets
+            .where(
+              (c) => c["currency"]!.toLowerCase().contains(
+                _query.toLowerCase().trim(),
+              ),
+            )
+            .toList();
+
+    return DraggableScrollableSheet(
+      expand: false,
+      initialChildSize: 0.9,
+      maxChildSize: 0.95,
+      minChildSize: 0.5,
+      builder: (context, scrollController) {
+        return Container(
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Drag handle
+              SizedBox(
+                width: double.infinity,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(vertical: 12),
+                    width: 40,
+                    height: 4,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Title
+              SizedBox(
+                width: double.infinity,
+                child: const Text(
+                  "Add Wallet",
+                  style: TextStyle(
+                    fontFamily: "Creato Display",
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF27272A),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              const SizedBox(height: 12),
+
+              // Search bar
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: TextField(
+                  controller: _searchController,
+                  onChanged: (val) => setState(() => _query = val),
+                  decoration: InputDecoration(
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: SvgPicture.asset(
+                        icQwidSearch,
+                        width: 5,
+                        height: 5,
+                      ),
+                    ),
+                    hintText: "Search for a wallet",
+                    hintStyle: const TextStyle(
+                      fontFamily: "Creato Display",
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF8C909C),
+                    ),
+                    contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                    filled: true,
+                    fillColor: const Color(0xFFFAFAFA),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(100),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text(
+                  "Currencies",
+                  style: const TextStyle(
+                    fontFamily: "Creato Display",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF0A0A0C),
+                  ),
+                  textAlign: TextAlign.start,
+                ),
+              ),
+              const SizedBox(height: 8),
+              // List of countries
+              Expanded(
+                child: ListView.builder(
+                  controller: scrollController,
+                  itemCount: filteredCountries.length,
+                  itemBuilder: (context, index) {
+                    final country = filteredCountries[index];
+                    return ListTile(
+                      leading: CountryFlag.fromCurrencyCode(
+                        country["currency"]!,
+                        width: 24,
+                        height: 15,
+                        shape: Rectangle(),
+                      ),
+                      title: Text(
+                        country["currency"]!.toUpperCase(),
+                        style: const TextStyle(
+                          fontFamily: "Creato Display",
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF0A0A0C),
+                        ),
+                      ),
+                      trailing: Text(
+                        '${country["prefix"]!}100,000',
+                        style: const TextStyle(
+                          fontFamily: 'Helonik',
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff92939E),
+                        ),
+                      ),
+                      onTap: () {
+                        context.router.pop(country["currency"]);
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}

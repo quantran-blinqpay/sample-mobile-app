@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:qwid/src/components/scaffold/app_scaffold.dart';
 import 'package:qwid/src/router/route_names.dart';
 
 @RoutePage(name: accountDetailRoute)
@@ -12,7 +13,7 @@ class AccountDetailScreen extends StatelessWidget {
     const sub = Color(0xFF92939E);
     const divider = Color(0xFFF3F5F7);
 
-    return Scaffold(
+    return AppScaffold(
       backgroundColor: const Color(0xFFFcFcFc),
       appBar: AppBar(
         backgroundColor: Colors.white,

@@ -31,27 +31,50 @@ import 'package:qwid/src/features/payment/presentation/webview/payment_webview.d
 import 'package:qwid/src/features/profile/presentation/views/drafts_screen.dart';
 import 'package:qwid/src/features/payment/presentation/payment_wrapper_screen.dart';
 import 'package:qwid/src/features/profile/presentation/views/seller_screen.dart';
+import 'package:qwid/src/features/qwid_demo/home/add_funds.dart';
+import 'package:qwid/src/features/qwid_demo/home/bank_transfer.dart';
+import 'package:qwid/src/features/qwid_demo/home/beneficiaries_screen.dart';
+import 'package:qwid/src/features/qwid_demo/home/convert_funds.dart';
+import 'package:qwid/src/features/qwid_demo/home/currency_and_rate_screen.dart';
 import 'package:qwid/src/features/qwid_demo/home/qwid_home_screen.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/account_type.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/account_verification.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/account_verification_by_phone.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/basic_information.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/confirm_pin.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/contact_information.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/create_personal_account_screen.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/login.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/onboarding.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/personal_information.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/security_and_pin.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/security_question.dart';
-import 'package:qwid/src/features/qwid_demo/onboarding/setup_pin.dart';
 import 'package:qwid/src/features/qwid_demo/profile/account_detail.dart';
-import 'package:qwid/src/features/qwid_demo/profile/kyc/identity_verification_screen.dart';
-import 'package:qwid/src/features/qwid_demo/profile/kyc/kyc_screen.dart';
-import 'package:qwid/src/features/qwid_demo/profile/kyc/nation_identification_screen.dart';
-import 'package:qwid/src/features/qwid_demo/profile/kyc/take_a_selfie_screen.dart';
-import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1_verification_screen.dart';
-import 'package:qwid/src/features/qwid_demo/profile/kyc/user_information_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1/bank_verification_number_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1/facial_verification_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1/identity_verification_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1/kyc_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1/nation_identification_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1/take_a_selfie_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1/tier1_verification_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier1/user_information_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier2/document_upload_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier2/driver_license_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier2/international_passport_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier2/take_a_passport_picture_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier2/take_driver_license_picture_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier2/tier2_verification_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier3/proof_of_address_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier3/take_proof_of_address_picture_screen.dart';
+import 'package:qwid/src/features/qwid_demo/profile/kyc/tier3/tier3_verification_screen.dart';
+import 'package:qwid/src/features/qwid_demo/signup/business_account/business_basic_information.dart';
+import 'package:qwid/src/features/qwid_demo/signup/business_account/company_information.dart';
+import 'package:qwid/src/features/qwid_demo/signup/business_account/create_business_account_screen.dart';
+import 'package:qwid/src/features/qwid_demo/signup/business_account/create_business_account_success.dart';
+import 'package:qwid/src/features/qwid_demo/signup/business_account/create_password_screen.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/account_type_screen.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/account_verification.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/account_verification_by_phone.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/basic_information.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/confirm_pin.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/contact_information.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/create_personal_account_screen.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/login.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/onboarding_screen.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/personal_information.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/security_and_pin.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/security_question.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/setup_in_success.dart';
+import 'package:qwid/src/features/qwid_demo/signup/personal_account/setup_pin.dart';
+import 'package:qwid/src/features/qwid_demo/transaction_history/transaction_history_screen.dart';
 import 'package:qwid/src/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -68,7 +91,6 @@ import 'package:qwid/src/router/routes/guards/secure_guards.dart';
 import 'package:collection/collection.dart';
 
 import '../features/profile/presentation/views/change_password_screen.dart';
-import '../features/qwid_demo/profile/kyc/facial_verification_screen.dart';
 
 part './routes/home_routes.dart';
 part 'routes/auth_routes.dart';
@@ -94,7 +116,7 @@ class RootRouter extends RootStackRouter {
           ..._itemDetailRoutes,
           ..._createListingRoutes,
           ..._paymentRoutes,
-          AutoRoute(path: 'preview_image', page: PreviewImageScreenRoute.page),
+          // AutoRoute(path: 'preview_image', page: PreviewImageScreenRoute.page),
         ]),
       ];
 }
