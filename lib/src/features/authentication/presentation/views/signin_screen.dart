@@ -27,9 +27,9 @@ class SignInScreen extends StatelessWidget {
   SignInScreen({super.key});
 
   final _usernameController =
-      TextEditingController(text: kDebugMode ? 'dmquang321+1@gmail.com' : '');
+      TextEditingController(text: kDebugMode ? 'quan@test.com' : '');
   final _passwordController =
-      TextEditingController(text: kDebugMode ? 'Test123!' : '');
+      TextEditingController(text: kDebugMode ? 'Dw1234' : '');
 
   late BuildContext _currentContext;
   late AppColors? appColors;
@@ -40,11 +40,11 @@ class SignInScreen extends StatelessWidget {
     appColors = Theme.of(context).extension<AppColors>();
     return BlocListener<AuthCubit, AuthState>(
       listenWhen: (prev, current) => prev.signInStatus != current.signInStatus,
-      listener: (context, state) {
+      listener: (_, state) {
         if (state.signInStatus == ProgressStatus.failure) {
           _showMessage(message: 'Login fail', context: context);
         } else if (state.signInStatus == ProgressStatus.success) {
-          _currentContext.router.maybePop();
+          context.router.replace(HomeWrapperScreenRoute());
         }
         // else if (state is GetTokenSuccess) {
         //   if (state.token.isNotEmpty) {

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:qwid/src/configs/app_themes/app_images.dart';
+import 'package:qwid/src/core/network/response/enum/progress_status.dart';
 import 'package:qwid/src/features/authentication/presentation/cubit/auth_cubit.dart';
 import 'package:qwid/src/features/helper/cubit/helper_cubit.dart';
 import 'package:qwid/src/router/route_names.dart';
@@ -17,20 +18,12 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
-  // late final AnimationController _controller;
-  // guard against double-calls
-  bool _started = false;
   bool _navigated = false;
 
   @override
   void initState() {
     super.initState();
-    // Wait 1 second before navigating
-    Future.wait([Future.delayed(const Duration(seconds: 3))]).then((value) {
-      _startAfterLoaded().then((value) {
-        _onNavigated();
-      });
-    });
+    context.read<AuthCubit>().initData();
   }
 
   Future<void> _fetchingHelper() async {
@@ -60,24 +53,29 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF2E9DC),
-      body: Center(
-        child: Image.asset(
-          icQwidBg,
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.fill,
-        )/*Lottie.asset(
-          'assets/animations/Splash_Screen.json',
-          width: double.infinity,
-          height: double.infinity,
-          fit: BoxFit.fill,
-          controller: _controller,
-          onLoaded: (composition) {
-            if (_started) return;
-            _started = true;
-            _startAfterLoaded(composition);
-          },
-        )*/,
+      body: MultiBlocListener(
+        listeners: [
+          BlocListener<AuthCubit, AuthState>(
+            listener: (context, state) {
+              if (state.getTokenStatus == ProgressStatus.success) {
+                if(state.token?.isNotEmpty ?? false){
+                  context.router.replace(HomeWrapperScreenRoute());
+                } else {
+                  context.router.replace(SignInScreenRoute());
+                }
+              }
+
+            },
+          ),
+        ],
+        child: Center(
+          child: Image.asset(
+            icQwidBg,
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.fill,
+          ),
+        ),
       ),
     );
   }

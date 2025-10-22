@@ -43,7 +43,7 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> initData() async {
-    emit(state.copyWith(forgotPasswordStatus: ProgressStatus.inProgress));
+    emit(state.copyWith(getTokenStatus: ProgressStatus.inProgress));
     var token = await di<AccessTokenStorage>().read();
     var username = await di<UsernameStorage>().read();
     var country = await di<CountryStorage>().read();
@@ -51,7 +51,7 @@ class AuthCubit extends Cubit<AuthState> {
       token: token,
       username: username,
       isFromAud: country?.toLowerCase() == kAustralia,
-      forgotPasswordStatus: ProgressStatus.success,
+      getTokenStatus: ProgressStatus.success,
     ));
   }
 

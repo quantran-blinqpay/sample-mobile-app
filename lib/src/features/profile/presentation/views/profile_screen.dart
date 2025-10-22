@@ -28,7 +28,6 @@ class ProfileScreen extends StatefulWidget implements AutoRouteWrapper {
     return MultiBlocProvider(providers: [
       BlocProvider<ProfileCubit>(
           create: ((context) => di<ProfileCubit>()..getMyProfile())),
-      BlocProvider<AuthCubit>(create: ((context) => di<AuthCubit>())),
     ], child: this);
   }
 
